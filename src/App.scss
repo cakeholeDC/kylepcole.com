@@ -21,10 +21,27 @@ div {
 
 .projects-container {
 	width: 80%;
+	margin: auto;
+	min-height: 100%;
+  	display: flex;
+  	flex-wrap: wrap;
+  	flex-direction: row;
+  	justify-content: center;
+
+	div {
+		display: flex; 
+		flex-basis: calc(25% - 40px);  
+		justify-content: center;
+		margin: 1rem;
+		flex-direction: column;
+	}
 
 	img {
-		max-width: 500px;
-		max-height: 500px;
+		/*max-width: 300px;*/
+		/*max-height: 300px;*/
+		width: 300px;
+		height: 300px;
+		object-fit: cover;
 	}
 }
 
