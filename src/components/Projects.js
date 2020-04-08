@@ -4,7 +4,7 @@ import ProjectItem from '../components/ProjectItem'
 
 function Projects()  {
 	return (
-		<div className="flex-grid-projects" >
+		<div className="projects-container" >
 			{ PROJECTS.map(project => <ProjectItem project={ project } key={ project.name }/> ) }
 		</div>
 	)

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Header from './containers/Header.js'
 import HomePage from './containers/HomePage.js'
 

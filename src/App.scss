@@ -19,6 +19,33 @@ div {
 	padding-right: 1em;
 }
 
+.projects-container {
+	width: 80%;
+	margin: auto;
+	min-height: 100%;
+  	display: flex;
+  	flex-wrap: wrap;
+  	flex-direction: row;
+  	justify-content: center;
+
+	div {
+		display: flex; 
+		flex-basis: calc(25% - 40px);  
+		justify-content: center;
+		margin: 1rem;
+		flex-direction: column;
+	}
+
+	img {
+		/*max-width: 300px;*/
+		/*max-height: 300px;*/
+		width: 300px;
+		height: 300px;
+		object-fit: cover;
+	}
+}
+
+/* @TODO rename to skills-flex-container */
 .flex-grid-skills {
   min-height: 100%;
   width: 70%;
