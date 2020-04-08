@@ -1,6 +1,50 @@
 .App {
   /*text-align: center;*/
 }
- div {
+
+div {
   border: 1px black solid;
- }
+}
+
+#header-container img {
+	float: left;
+	height: 8rem;
+	width: 8rem;
+}
+
+#navbar {
+	float: right;
+}
+#navbar a{
+	padding-right: 1em;
+}
+
+.flex-grid-skills {
+  min-height: 100%;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.flex-grid-skills > .col {
+  display: flex; 
+  flex-basis: calc(25% - 40px);  
+  justify-content: center;
+  margin: 1rem;
+  flex-direction: column;
+}
+
+.flex-grid-skills > .col > img,
+.flex-grid-skills > .col > p {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.flex-grid-skills > .col > img {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+}
