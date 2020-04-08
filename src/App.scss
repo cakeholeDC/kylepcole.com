@@ -19,6 +19,16 @@ div {
 	padding-right: 1em;
 }
 
+.projects-container {
+	width: 80%;
+
+	img {
+		max-width: 500px;
+		max-height: 500px;
+	}
+}
+
+/* @TODO rename to skills-flex-container */
 .flex-grid-skills {
   min-height: 100%;
   width: 70%;
