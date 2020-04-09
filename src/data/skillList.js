@@ -16,6 +16,10 @@ const skillList = [
 		icon: "react-128"
 	},
 	{
+		name: "Redux",
+		icon: "redux"// NOT SQUARE
+	},
+	{
 		name: "Angular",
 		icon: ""
 	},
@@ -54,6 +58,10 @@ const skillList = [
 	{
 		name: "GIT",
 		icon: "github-solid"
+	},
+	{
+		name: "Creatve Cloud",
+		icon: "creative-cloud-round-128"
 	},
 	{
 		name: "Photoshop",
