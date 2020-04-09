@@ -1,23 +1,28 @@
 const skillList = [
 	{
 		name: "HTML5",
-		icon: ""
+		icon: "html"
 	},
 	{
 		name: "CSS3",
-		icon: ""
+		icon: "css"
 	},
 	{
 		name: "JavaScript",
-		icon: ""
+		icon: "javascript"
+	},
+	{
+		name: "Ruby",
+		icon: "ruby"
 	},
 	{
 		name: "ReactJS",
-		icon: "react-128"
+		// icon: "react-128"
+		icon: "react-atom-small"
 	},
 	{
 		name: "Redux",
-		icon: "redux"// NOT SQUARE
+		icon: "redux"
 	},
 	{
 		name: "Angular",
@@ -25,10 +30,11 @@ const skillList = [
 	},
 	{
 		name: "VueJS",
-		icon: "vue-128"
+		icon: "vue-400"
+		// icon: "vue-round"
 	},
 	{
-		name: "Ruby",
+		name: "Rails",
 		icon: ""
 	},
 	{
@@ -36,20 +42,8 @@ const skillList = [
 		icon: "postgres-120"
 	},
 	{
-		name: "Rails",
-		icon: ""
-	},
-	{
 		name: "Heroku",
 		icon: "heroku-logo-solid-round"
-	},
-	{
-		name: "TypeScript",
-		icon: ""
-	},
-	{
-		name: "Node.js",
-		icon: "node-128"
 	},
 	{
 		name: "SASS/SCSS",
@@ -58,6 +52,14 @@ const skillList = [
 	{
 		name: "GIT",
 		icon: "github-solid"
+	},
+	{
+		name: "Node.js",
+		icon: "node-128"
+	},
+	{
+		name: "TypeScript",
+		icon: ""
 	},
 	{
 		name: "Creatve Cloud",

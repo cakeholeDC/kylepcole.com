@@ -5,7 +5,7 @@ export default class NavBar extends React.Component {
 		return(
 			<nav id="navbar">
 				<a href="/about">About</a>
-				<a href="/projects">Project</a>
+				<a href="/projects">Projects</a>
 				<a href="/resume">Resume</a>
 				<a href="/contact">Contact</a>
 			</nav>
