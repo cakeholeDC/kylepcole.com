@@ -1,6 +1,6 @@
 import React from 'react'
-import Skills from '../components/Skills'
-import Projects from '../components/Projects'
+import Skills from '../containers/Skills'
+import Projects from '../containers/Projects'
 
 function HomePage() {
 	return(

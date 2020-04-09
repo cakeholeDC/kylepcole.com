@@ -1,5 +1,5 @@
 .App {
-  /*text-align: center;*/
+  text-align: center;
 }
 
 div {
@@ -21,14 +21,14 @@ div {
 
 .projects-container {
 	width: 80%;
-	margin: auto;
 	min-height: 100%;
+	margin: auto;
   	display: flex;
   	flex-wrap: wrap;
   	flex-direction: row;
   	justify-content: center;
 
-	div {
+	.project {
 		display: flex; 
 		flex-basis: calc(25% - 40px);  
 		justify-content: center;
@@ -46,32 +46,33 @@ div {
 }
 
 /* @TODO rename to skills-flex-container */
-.flex-grid-skills {
-  min-height: 100%;
-  width: 70%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-}
-.flex-grid-skills > .col {
-  display: flex; 
-  flex-basis: calc(25% - 40px);  
-  justify-content: center;
-  margin: 1rem;
-  flex-direction: column;
-}
+.skills-container {
+	min-height: 100%;
+	width: 70%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
 
-.flex-grid-skills > .col > img,
-.flex-grid-skills > .col > p {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
+	.skill {
+		display: flex; 
+		flex-basis: calc(25% - 40px);	
+		justify-content: center;
+		margin: 1rem;
+		flex-direction: column;
 
-.flex-grid-skills > .col > img {
-  height: 80%;
-  width: 80%;
-  margin: auto;
+		/*img,
+		p {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+		}*/
+
+		img {
+		  height: 8rem;
+		  width: 8rem;
+		  margin: auto;
+		}
+	}
 }

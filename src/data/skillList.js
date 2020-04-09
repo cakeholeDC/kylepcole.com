@@ -1,67 +1,75 @@
 const skillList = [
 	{
 		name: "HTML5",
-		logo: ""
+		icon: ""
 	},
 	{
 		name: "CSS3",
-		logo: ""
+		icon: ""
 	},
 	{
 		name: "JavaScript",
-		logo: ""
+		icon: ""
 	},
 	{
-		name: "React",
-		logo: ""
+		name: "ReactJS",
+		icon: "react-128"
 	},
 	{
 		name: "Angular",
-		logo: ""
+		icon: ""
 	},
 	{
-		name: "Vue",
-		logo: ""
+		name: "VueJS",
+		icon: "vue-128"
 	},
 	{
 		name: "Ruby",
-		logo: ""
+		icon: ""
+	},
+	{
+		name: "PostgreSQL",
+		icon: "postgres-120"
 	},
 	{
 		name: "Rails",
-		logo: ""
+		icon: ""
+	},
+	{
+		name: "Heroku",
+		icon: "heroku-logo-solid-round"
 	},
 	{
 		name: "TypeScript",
-		logo: ""
+		icon: ""
 	},
 	{
 		name: "Node.js",
-		logo: ""
+		icon: "node-128"
 	},
 	{
-		name: "SCSS",
-		logo: ""
-	},
-	{
-		name: "SASS",
-		logo: ""
+		name: "SASS/SCSS",
+		icon: "sass-128"
 	},
 	{
 		name: "GIT",
-		logo: ""
+		icon: "github-solid"
 	},
 	{
 		name: "Photoshop",
-		logo: ""
+		icon: ""
 	},
 	{
 		name: "Illustrator",
-		logo: ""
+		icon: ""
 	},
 	{
 		name: "InDesign",
-		logo: ""
+		icon: ""
+	},
+	{
+		name: "Magento",
+		icon: ""
 	}
 ]
 
