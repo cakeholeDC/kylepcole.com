@@ -1,20 +1,42 @@
 const projects = [
 	{
+		id: 1,
 		name: 'Hunger Swype',
 		thumbnail: '/projects/thumbs/hunger-swype.jpg',
 		description: '',
 		technologies: [
-			"Ruby on Rails",
 			"ReactJS",
 			"Redux",
+			"Ruby on Rails",
+			"JSON Web Tokens (JWT)",
+			"BCrypt",
+			"Postgres",
 			"Spoonacular API",
-
+			"CSS Grid",
+			"SASS/SCSS",
 		],
 		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
+		link: ''
+	},
+	{
+		id: 2,
+		name: 'Portfolio',
+		thumbnail: 'https://www.fillmurray.com/300/400',
+		description: '',
+		technologies: [
+			"Node.js",
+			"ReactJS",
+			"Flexbox",
+			"SASS/SCSS",
+		],
+		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
 
 	},
 	{
+		id: 3,
 		name: 'expiRATION',
 		thumbnail: 'https://www.fillmurray.com/700/800',
 		description: '',
@@ -22,13 +44,15 @@ const projects = [
 			"Ruby on Rails",
 			"ReactJS",
 			"MomentJS",
-			"Semantic UI React"
+			"Semantic UI React",
 		],
 		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
 
 	},
 	{
+		id: 4,
 		name: 'Flytinerary',
 		thumbnail: 'https://www.fillmurray.com/300/300',
 		description: '',
@@ -37,9 +61,25 @@ const projects = [
 			"JavaScript ES6",
 			"MomentJS",
 			"Semantic UI",
-
 		],
 		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
+		link: ''
+
+	},
+	{
+		id: 5,
+		name: 'Bandmates',
+		thumbnail: 'https://via.placeholder.com/300',
+		description: '',
+		technologies: [
+			"Ruby on Rails",
+			"Rails Auth",
+			"ReactJS",
+			"Semantic UI",
+		],
+		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
 
 	},

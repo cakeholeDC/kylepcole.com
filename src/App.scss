@@ -34,21 +34,68 @@ div {
   	justify-content: center;
 
 	.project {
+		//flexbox
 		display: flex; 
-		flex-basis: calc(25% - 40px);  
+		flex-basis: calc(25% - 40px); // numColumns = 100/[percentage] / MINUS / space around = integer  
 		justify-content: center;
 		margin: 1rem;
 		flex-direction: column;
+		position: relative;
+		// width: 50%;
+
+		//styles
+		background: black; //shows through image when transparent
+
+		//animations
+		&:hover {
+			.project-image {
+			  opacity: 0.3;
+			}
+			.project-overlay {
+			  opacity: 1;
+			}
+		}
+
+		.project-image {
+		  //animations 
+		  opacity: 1;
+		  display: block;
+		  transition: .5s ease;
+		  backface-visibility: hidden;
+
+		  //content
+		  align-content: center;
+		  width: 18.75rem;
+	      height: 18.75rem;
+		  min-width: 100%;
+		  object-fit: cover;
+		}
+
+		.project-overlay {
+			//animations
+			transition: .5s ease;
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			
+			//content
+			text-align: center;
+			
+			.overlay-content {
+			  // background-color: #4CAF50;
+			  color: white;
+			  font-size: 2rem;
+			  // padding: 16px 32px;
+			}
+		}
+
+
 	}
 
-	img {
-		align-content: center;
-		width: 18.75rem;
-		height: 18.75rem;
-		min-width: 100%;
-		/*height: 100%;*/
-		object-fit: cover;
-	}
+
 }
 
 /* @TODO rename to skills-flex-container */
