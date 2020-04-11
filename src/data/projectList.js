@@ -20,25 +20,9 @@ const projects = [
 		link: ''
 	},
 	{
-		id: 2,
-		name: 'Portfolio',
-		thumbnail: 'https://www.fillmurray.com/300/400',
-		description: '',
-		technologies: [
-			"Node.js",
-			"ReactJS",
-			"Flexbox",
-			"SASS/SCSS",
-		],
-		demo: '',
-		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
-		link: ''
-
-	},
-	{
 		id: 3,
 		name: 'expiRATION',
-		thumbnail: 'https://www.fillmurray.com/700/800',
+		thumbnail: 'https://www.fillmurray.com/300/300',
 		description: '',
 		technologies: [
 			"Ruby on Rails",
@@ -49,12 +33,11 @@ const projects = [
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
-
 	},
 	{
 		id: 4,
 		name: 'Flytinerary',
-		thumbnail: 'https://www.fillmurray.com/300/300',
+		thumbnail: '',
 		description: '',
 		technologies: [
 			"Ruby on Rails",
@@ -65,12 +48,11 @@ const projects = [
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
-
 	},
 	{
 		id: 5,
 		name: 'Bandmates',
-		thumbnail: 'https://via.placeholder.com/300',
+		thumbnail: '',
 		description: '',
 		technologies: [
 			"Ruby on Rails",
@@ -81,7 +63,21 @@ const projects = [
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
-
+	},
+	{
+		id: 2,
+		name: 'Portfolio',
+		thumbnail: '',
+		description: '',
+		technologies: [
+			"Node.js",
+			"ReactJS",
+			"Flexbox",
+			"SASS/SCSS",
+		],
+		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
+		link: ''
 	},
 ]
 

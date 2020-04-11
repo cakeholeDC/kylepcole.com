@@ -6,7 +6,8 @@ function SkillItem (props) {
 	console.log("SkillItem", props.skill)
 	return(
 		<div className="skill">
-			<img src={`/icons/skills/${ props.skill.icon ? props.skill.icon : `${props.skill.name.replace(/ /g, '').toLowerCase()}-128`}.png`} onError={event => event.target.src = "icons/skills/coding-128.png"} />
+			{<img src={`/icons/skills/${ props.skill.icon ? props.skill.icon : `${props.skill.name.replace(/ /g, '').toLowerCase()}-128`}.png`} onError={event => event.target.src = "icons/skills/coding-128.png"} />}
+			{/*<img src="https://via.placeholder.com/128" />*/}
 			<p>{props.skill.name}</p>
 		</div>
 	)

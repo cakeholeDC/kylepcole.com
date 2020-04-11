@@ -10,10 +10,14 @@ function Skills(props)  {
 	// }
 
 	return (
-		<div className="skills-container" >
-			{ /* props.homepage ? <h1>Top Skills</h1> : null */ }
-			{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
-		</div>
+		<React.Fragment>
+		<hr />
+			{  props.homepage ? <h1>Technologies and Software</h1> : null  }
+		<hr />
+			<div className="skills-container" >
+				{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
+			</div>
+		</React.Fragment>
 	)
 }
 

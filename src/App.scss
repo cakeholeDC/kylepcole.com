@@ -1,15 +1,28 @@
+#error404 {
+	text-align: center;
+
+	img {
+		width: 60%;
+	}
+}
+
 .App {
   text-align: center;
 }
 
 div {
-  border: 1px black solid;
+  // border: 1px black solid;
 }
 
-#header-container {
+#header {
 	text-align: left;
 
+	h1, h3 {;
+		// display: block;
+	}
+
 	img {
+		display: block;
 		height: 8rem;
 		width: 8rem;
 	}
@@ -91,13 +104,25 @@ div {
 			  // padding: 16px 32px;
 			}
 		}
-
-
 	}
-
-
 }
 
+.project-page-container{
+	.project-featured {
+		width: 25rem;
+	}
+
+	.project-tech {
+		width: 70%;
+		margin: auto;
+		// list-style: none;
+		text-align: left;
+
+		li {
+			margin: 0 0 1rem 0;
+		}
+	}
+}
 /* @TODO rename to skills-flex-container */
 .skills-container {
 	min-height: 100%;
