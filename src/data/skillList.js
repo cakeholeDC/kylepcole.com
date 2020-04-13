@@ -16,9 +16,17 @@ const skillList = [
 		icon: "ruby"
 	},
 	{
+		name: "Php",
+		icon: "php"
+	},
+	{
 		name: "ReactJS",
 		// icon: "react-128"
 		icon: "react-atom-small"
+	},
+	{
+		name: "React Native",
+		icon: "react-native"
 	},
 	{
 		name: "Redux",
