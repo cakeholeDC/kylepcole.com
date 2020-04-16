@@ -5,17 +5,23 @@ import styled from 'styled-components'
 
 const ProjectContainer = styled.div`
 
-	width: 100%;
 	display: inline-block;
+	padding: 0 3rem;
 
 	img {
 		width: 25rem;
 		float: left;
 	}
 
+	p {
+		margin: 1rem;
+		// float: right;
+	}
+
 	ul {
-		width: 70%;
-		margin: auto;
+		clear: left;
+		// width: 70%;
+		// margin: auto;
 		// list-style: none;
 		text-align: left;
 
@@ -50,6 +56,7 @@ function ProjectPage(props)  {
 		<ProjectContainer>
 			<h1>{ project.name }</h1>
 			<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
+			<p>{ project.description }</p>
 			<ul>
 				<h3>Technologies Used:</h3>
 				{ project.technologies.map(tech => <li className="tech">{ tech }</li>) }
