@@ -13,7 +13,9 @@ const SkillsContainer = styled.div`
 	justify-content: center;
 
 	h1 {
-		width: 100%
+		width: 100%;
+		border-bottom: 1px solid lightgray;
+		padding-bottom: 7px;
 	}
 `
 
@@ -26,7 +28,7 @@ function Skills(props)  {
 
 	return (
 		<SkillsContainer>
-			<h1>Technologies I've Worked With</h1>
+			<h1>Skills</h1>
 			{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
 		</SkillsContainer>
 	)

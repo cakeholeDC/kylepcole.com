@@ -5,7 +5,7 @@ import Projects from '../containers/Projects'
 function HomePage() {
 	return(
 		<div id="homepage-container">
-			<img id="full-screen" src="https://via.placeholder.com/1800x200" style={{ width: "100%"}}/>
+			<img id="full-screen" src="https://via.placeholder.com/1800x600" style={{ width: "100%"}}/>
 			<Projects homepage/>
 			<Skills homepage/>
 		</div>

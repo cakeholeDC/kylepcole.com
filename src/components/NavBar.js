@@ -1,14 +1,12 @@
 import React from 'react'
+import PROJECTS from '../data/projectList.js'
 import styled from 'styled-components'
 
 const links = 4
 
 const Navbar = styled.nav`
-	border: 1px black solid;
 	float: right;
-	margin: 1rem 1rem 0 0;
-	min-width: 45%;
-	height: 2rem;
+	min-width: 35%;
 	display: flex;
 	text-align: right;
 		
@@ -31,7 +29,10 @@ export default class NavBar extends React.Component {
 		return(
 			<Navbar>
 				<a href="/about">About</a>
-				<a href="/projects">Projects</a>
+				<a href="/projects">
+					Projects
+					{ /* PROJECTS.map(p => <a href={`/${p.name.replace(/ /g,'-').toLowerCase()}`} >{p.name}</a>) */ }
+				</a>
 				<a href="/resume">Resume</a>
 				<a href="/contact">Contact</a>
 			</Navbar>
