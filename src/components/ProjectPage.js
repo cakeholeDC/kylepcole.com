@@ -1,6 +1,29 @@
 import React from 'react'
 import PROJECTS from '../data/projectList.js'
 import { Redirect } from "react-router-dom";
+import styled from 'styled-components'
+
+const ProjectContainer = styled.div`
+
+	width: 100%;
+	display: inline-block;
+
+	img {
+		width: 25rem;
+		float: left;
+	}
+
+	ul {
+		width: 70%;
+		margin: auto;
+		// list-style: none;
+		text-align: left;
+
+		li {
+			margin: 0 0 1rem 0;
+		}
+	}
+`
 
 function ProjectPage(props)  {
 	console.log(props)
@@ -24,14 +47,14 @@ function ProjectPage(props)  {
 	
 	else 
 	return(
-		<div className="project-page-container">
+		<ProjectContainer>
 			<h1>{ project.name }</h1>
-			<img className="project-featured" src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
-			<ul className="project-tech">
+			<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
+			<ul>
 				<h3>Technologies Used:</h3>
 				{ project.technologies.map(tech => <li className="tech">{ tech }</li>) }
 			</ul>
-		</div>
+		</ProjectContainer>
 	)
 }
 

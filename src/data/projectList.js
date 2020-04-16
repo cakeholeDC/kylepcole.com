@@ -74,6 +74,7 @@ const projects = [
 			"ReactJS",
 			"Flexbox",
 			"SASS/SCSS",
+			"Styled Components",
 		],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],

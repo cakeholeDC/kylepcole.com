@@ -1,44 +1,44 @@
 const skillList = [
 	{
 		name: "HTML5",
-		icon: "html"
+		icon: "html.png"
 	},
 	{
 		name: "CSS3",
-		icon: "css"
+		icon: "css.png"
 	},
 	{
 		name: "JavaScript",
-		icon: "javascript"
+		icon: "javascript.png"
 	},
 	{
 		name: "Ruby",
-		icon: "ruby"
+		icon: "ruby.png"
 	},
 	{
 		name: "Php",
-		icon: "php"
+		icon: "new-php-logo.svg"
 	},
 	{
 		name: "ReactJS",
 		// icon: "react-128"
-		icon: "react-atom-small"
+		icon: "react-atom-small.png"
 	},
 	{
 		name: "React Native",
-		icon: "react-native"
+		icon: "react-native.png"
 	},
 	{
 		name: "Redux",
-		icon: "redux"
+		icon: "redux.png"
 	},
 	{
 		name: "Angular",
-		icon: ""
+		icon: "angular.svg"
 	},
 	{
 		name: "VueJS",
-		icon: "vue-400"
+		icon: "vue-400.png"
 		// icon: "vue-round"
 	},
 	{
@@ -47,31 +47,31 @@ const skillList = [
 	},
 	{
 		name: "PostgreSQL",
-		icon: "postgres-120"
+		icon: "postgres-120.png"
 	},
 	{
 		name: "Heroku",
-		icon: "heroku-logo-solid-round"
+		icon: "heroku-logo-solid-purple.svg"
 	},
 	{
 		name: "SASS/SCSS",
-		icon: "sass-128"
+		icon: "sass-128.png"
 	},
 	{
 		name: "GIT",
-		icon: "github-solid"
+		icon: "github-solid.png"
 	},
 	{
 		name: "Node.js",
-		icon: "node-128"
+		icon: "node-128.png"
 	},
 	{
 		name: "TypeScript",
 		icon: ""
 	},
 	{
-		name: "Creatve Cloud",
-		icon: "creative-cloud-round-128"
+		name: "Creative Cloud",
+		icon: "creative-cloud-round-128.png"
 	},
 	{
 		name: "Photoshop",

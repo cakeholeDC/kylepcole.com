@@ -1,6 +1,21 @@
 import React from 'react'
 import SKILLS from '../data/skillList.js'
 import SkillItem from '../components/SkillItem'
+import styled from 'styled-components'
+
+const SkillsContainer = styled.div`
+	min-height: 100%;
+	width: 70%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+
+	h1 {
+		width: 100%
+	}
+`
 
 function Skills(props)  {
 	
@@ -10,14 +25,10 @@ function Skills(props)  {
 	// }
 
 	return (
-		<React.Fragment>
-		<hr />
-			{  props.homepage ? <h1>Technologies and Software</h1> : null  }
-		<hr />
-			<div className="skills-container" >
-				{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
-			</div>
-		</React.Fragment>
+		<SkillsContainer>
+			<h1>Technologies I've Worked With</h1>
+			{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
+		</SkillsContainer>
 	)
 }
 
