@@ -15,7 +15,7 @@ const SkillsContainer = styled.div`
 	h1 {
 		width: 100%;
 		border-bottom: 1px solid lightgray;
-		padding-bottom: 7px;
+		padding-bottom: 2rem;
 	}
 `
 

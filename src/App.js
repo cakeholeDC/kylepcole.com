@@ -6,7 +6,10 @@ import HomePage from './containers/HomePage.js'
 import Projects from './containers/Projects.js'
 import ProjectPage from './components/ProjectPage.js'
 import About from './components/About.js'
+import Blog from './containers/Blog.js'
 import ErrorPage from './components/ErrorPage.js'
+import Footer from './containers/Footer.js'
+
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
     	<Switch>
           <Route exact path="/404" component={ ErrorPage } />
           <Route exact path="/about" component={ About } />
+          <Route exact path="/blog" component={ Blog } />
           <Route exact path="/projects" component={ Projects } />
           <Route exact path="/projects/:id" component={ ProjectPage } />
           <Route exact path="/resume" component={ Projects } />
@@ -24,6 +28,7 @@ function App() {
       { /* allows for shortpath links to projects. Will direct to 404 as needed from ProjectPage.js */ }
           <Route exact path="/:id" component={ ProjectPage } />
         </Switch>
+        <Footer />
     </div>
   );
 }

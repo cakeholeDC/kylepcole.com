@@ -4,9 +4,15 @@ import { Redirect } from "react-router-dom";
 import styled from 'styled-components'
 
 const ProjectContainer = styled.div`
-
+	width: 75%;
 	display: inline-block;
 	padding: 0 3rem;
+
+	h1 {
+		width: 100%;
+		border-bottom: 1px solid lightgray;
+		padding-bottom: 2rem;
+	}
 
 	img {
 		width: 25rem;

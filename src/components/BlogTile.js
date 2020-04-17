@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from 'styled-components'
+import ReactHtmlParser from 'react-html-parser';
+
 
 const Project = styled.div`
 	display: flex; 
@@ -11,7 +13,7 @@ const Project = styled.div`
 	margin: 1rem;
 
 	//styles
-	background: black; //shows through image when transparent
+	// background: black; //shows through image when transparent
 
 	//animations
 	&:hover {
@@ -33,7 +35,7 @@ const Project = styled.div`
 	  //content
 	  align-content: center;
 	  width: 18.75rem;
-      height: 18.75rem;
+      height: 12.5rem;
 	  min-width: 100%;
 	  object-fit: cover;
 	}
@@ -43,47 +45,37 @@ const Project = styled.div`
 		transition: .5s ease;
 		opacity: 0;
 		position: absolute;
-		top: 50%;
+		top: 39%;
 		left: 50%;
+		// width: 18.75rem;
+        // height: 12.5rem;
 		transform: translate(-50%, -50%);
 		-ms-transform: translate(-50%, -50%);
 		
 		//content
-		width: 80%;
 		text-align: center;
 		
 		.overlay-content {
-		  color: white;
-		  font-size: 1.5rem;
-
-		  h2 {
-		  	line-height: 1;
-		  }
-
-		  p {
-		  	font-size: 1rem;
-		  }
+		  color: black;
+		  font-size: 1rem;
 		}
 	}
 `
 
 
-function ProjectItem(props)  {
-	
+function BlogTile(props)  {
+	const post = props.post
+	console.log(props)
 	return(
-			<Link to={`/projects/${props.project.name.replace(/ /g,'-').toLowerCase()}`}>
-			<Project>
-				<img className="project-image" src={ props.project.thumbnail} onError={event => event.target.src = `https://source.unsplash.com/random/300x300/?${props.project.name.replace(/ /g,'-').toLowerCase()}`} />
-				<div className="project-overlay">
-					<div className="overlay-content">
-						<h2>{ props.project.name }</h2>
-						<p>{ props.project.teaser }</p>
-					</div>
-				</div>
-			</Project>
-			</Link>
+		<Project>
+			<img className="project-image" src={ /*props.post.thumbnail*/'https://via.placeholder.com/300x200' } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
+			<div className="project-overlay">
+				<h2 className="overlay-content">{ post.title }</h2>
+			</div>
+			<div>{ post.teaser }</div>
+		</Project>
 	)
 }
 
 
-export default ProjectItem
+export default BlogTile

@@ -4,26 +4,21 @@ import styled from 'styled-components'
 import Headroom from 'react-headroom'
 
 const HeaderBar = styled.div`
-    display: inline-block;
-    position: relative;
+    // display: inline-block;
+    display: flex;
+    // position: relative;
     width: 100%;
     height: 100px;
 	text-align: left;
-    border-bottom: 1px solid black;
-    padding: 1em;
+    padding: 2.5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
 
-	img {
-		display: inline-block;
-		height: 8rem;
-		width: 8rem;
-		float: left;
-		// margin: 1rem;
-	}
-
-	a { 
+	#home { 
+		flex: 2;
 		text-decoration: none;
 		color: black;
 
@@ -33,8 +28,15 @@ const HeaderBar = styled.div`
 	}
 
 	.title {
+		font-family: 'Fjalla One', sans-serif;
 		display: inline-block;
-	    margin-left: 5rem;
+		margin: 0px;
+		margin-top: -.375rem;
+	}
+
+	.nav-container {
+		flex: 1;
+		text-align: right;
 	}
 `
 
@@ -42,14 +44,15 @@ export default function Header() {
 	return(
 		<Headroom style={{
             background: 'rgb(255, 255, 255)',
-            boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
+            boxShadow: '2px 2px 2px rgba(0,0,0,0.25)',
           }}>
 		<HeaderBar>
-			<NavBar />
-			{/*<a href='/'><img id="logo" src="/kpclogoTransparent.png" /></a>*/}
-			<a href='/'><div className="title">
+			<a id="home" href='/'><h1 className="title">
 				Kyle P. Cole — Web Developer
-			</div></a>
+			</h1></a>
+			<div className="nav-container">
+				<NavBar />
+			</div>
 		</HeaderBar>
 		</Headroom>
 	)
