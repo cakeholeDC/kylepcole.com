@@ -8,7 +8,7 @@ const Project = styled.div`
 	flex-basis: calc(25% - 40px); // numColumns = 100/[percentage] / MINUS / space around = integer  
 	justify-content: center;
 	position: relative;
-	margin: 1rem;
+	// margin: 1rem;
 
 	//styles
 	background: black; //shows through image when transparent
@@ -69,15 +69,16 @@ const Project = styled.div`
 
 
 function ProjectItem(props)  {
+	let project = props.project
 	
 	return(
-			<Link to={`/projects/${props.project.name.replace(/ /g,'-').toLowerCase()}`}>
+			<Link to={`/projects/${project.name.replace(/ /g,'-').toLowerCase()}`}>
 			<Project>
-				<img className="project-image" src={ props.project.thumbnail} onError={event => event.target.src = `https://source.unsplash.com/random/300x300/?${props.project.name.replace(/ /g,'-').toLowerCase()}`} />
+				<img className="project-image" src={ project.thumbnail} onError={event => event.target.src = "https://via.placeholder.com/300"} />
 				<div className="project-overlay">
 					<div className="overlay-content">
-						<h2>{ props.project.name }</h2>
-						<p>{ props.project.teaser }</p>
+						<h2>{ project.name }</h2>
+						<p>{ project.teaser }</p>
 					</div>
 				</div>
 			</Project>

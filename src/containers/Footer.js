@@ -2,17 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FooterBar = styled.div`
+	flex-shrink: 0;
     display: inline-block;
     position: relative;
     width: 100%;
-    height: 100px;
+    // height: 100px;
 	text-align: left;
-    padding: 2.5rem;
+    padding: 1rem;
     padding-left: 4.5rem;
     padding-right: 4.5rem;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;
+    border-top: 1px solid lightgray;
+    margin-top: 2.5rem;
 
 	a { 
 		text-decoration: none;

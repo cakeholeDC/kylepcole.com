@@ -18,7 +18,7 @@ const HeaderBar = styled.div`
     box-sizing: border-box;
 
 	#home { 
-		flex: 2;
+		flex: 4;
 		text-decoration: none;
 		color: black;
 
@@ -35,7 +35,7 @@ const HeaderBar = styled.div`
 	}
 
 	.nav-container {
-		flex: 1;
+		flex: 3;
 		text-align: right;
 	}
 `
@@ -48,7 +48,7 @@ export default function Header() {
           }}>
 		<HeaderBar>
 			<a id="home" href='/'><h1 className="title">
-				Kyle P. Cole — Web Developer
+				Kyle P. Cole
 			</h1></a>
 			<div className="nav-container">
 				<NavBar />

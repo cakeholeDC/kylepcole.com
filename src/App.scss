@@ -1,11 +1,16 @@
-//fonts
-$headerFont: "Archivo Black";
-
-// font-family: 'Archivo Black', sans-serif;
-// font-family: 'Roboto', sans-serif;
-
+body, html, #root {
+	height: 100%;
+}
 
 .App {
-	// font-family: serif;
-  text-align: center;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	.content {
+	  flex: 1 0 auto;
+	}  
 }
+
+
