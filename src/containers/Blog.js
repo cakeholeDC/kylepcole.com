@@ -18,15 +18,18 @@ const BlogList = styled.div`
 		width: 100%;
 		border-bottom: 1px solid lightgray;
 		padding-bottom: 7px;
+		font-family: 'Fjalla One', sans-serif;
 	}
 `
 
 function Blog(props)  {
-	let posts = [...POSTS]
-
+	// let posts = [...POSTS]
+	let posts = props.posts
+	console.log("BLOG =>", posts)
 	return (
 		<BlogList>
-			{ posts.map(post => <BlogTile post={post} key={ post.title }/> ) }
+			<h1>Sometimes I write.</h1>
+			{ posts ? posts.map(post => <BlogTile {...post} key={ post.title }/> ) : <h3>Loading...</h3> }
 		</BlogList>
 	)
 }

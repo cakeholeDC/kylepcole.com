@@ -1,0 +1,116 @@
+---
+
+Styling Components in React
+When it comes to styling components in ReactJS, there are many approaches a developer can take. Each approach has it's own pros and cons, and some are suited better for specific purposes than others. This post will not cover every possible approach to styling components in React - there are far too many to cover them all. What I will cover in this post are my three favorite ways to style components, and when or why I use them.
+So chic.Before we get started, let's recap what a component is in React. According to the official React docs, "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen." In their most basic form, Components are HTML elements. And like any HTML element, we apply styling to them via CSS (or SASS/SCSS).
+1. Inline Styling
+Inline styling is the most basic way to apply a style to a react component. Like inline styling in HTML, the styles are applied directly inline when creating the element. Styles do not live in an external file, and classes are not used.
+In React, inline styles are applied using the style prop. The style prop accepts a JSX Object containing the camelCase equivalent of the CSS properties as key/value pairs. If you wanted set a CSS property of an element to be background-color: red; you would use backgroundColor: "red", in the style object.
+export default function MyComponent() {
+    return(
+      <div style={{ 
+        background-color: "red", 
+        font-size: '2rem'
+      }}>Component Content</div>
+    )
+}
+Most developers will tell you to stay away from inline styling for a number of reasons. For starters, every element has to be individually styled-even if they look the same. If you ever want to change the style of those elements you better buckle up, because you're going to be there a while. Also, they cannot be overridden easily.
+
+My recommendation follows this best practice. Steer clear of inline styling unless you absolutely have to (but you shouldn't ever have to)
+
+2. Class Names and CSS/SASS/SCSS
+
+This has been my go to method for years, long before learning React. By applying class names to components you are able to group similar elements together under a unified style. All elements with a given class name, will have the same styles and behavior applied to them. These styles are then defined in an external style sheet using CSS (or SASS/SCSS, if you're into that) which is linked to the PWA through the html header. To assign a class name in react, pass the component a prop of className that is equal to the class you wish to assign.
+export default function MyComponent() {
+    return(
+      <div className="my-styled-component">Component Content</div>
+    )
+}
+In your style sheet you'll then define the CSS for that class and all elements with the class name of my-styled-component will have the following styles applied.
+.my-styled-component {
+    background-color: red;
+    font-size: 3rem;
+}
+This approach works very well for managing different component types across an application, especially if you're utilizing SCSS/SASS to work with variables or nest your styles. One downside to this approach is that by giving every single component a unique class name, you now have a lot of class names to keep up with. When the time comes to update or redesign the component you have to open Component.js and identify the className and then go over to your App.scss file, locate the class name and then make your changes. The extra step doesn't seem that bad, until you're undergoing a full redesign. 
+3. Styled Components
+A new approach that I recently learned is Styled Components. Styled Components is a node package that lets you add styling to Component.js without using inline styles. You still define the styles just like you would in an external CSS file, but they're not separate. This is a huge time saver when it comes time to update a component as you don't have to jump across multiple files. 
+Styled Components is pretty straight forward to use. Once imported, you create a const and assign it to styled.[html-element-type]. Styled Components will turn that const into a React component with the specified styles applied to it. You can then return that component as you would any other component. Note: Styled Components takes the actual CSS properties, not camelCased like React inline styling does. 
+import styled from 'styled-components'
+const MyStyledComponent = styled.div`
+ display:flex;
+ width: 90%;
+ margin: auto;
+ text-align: left;
+`
+export default function MyComponent() {
+    return(
+      <MyStyledComponent>
+        Component Content
+      <MyStyledComponent/>
+    )
+}
+One really cool thing about Styled Components is that it allows you to change the style based on props. Using JSX within your styled component, you could apply a dynamic style to the component: color: ${props => props.primary ? "red" : "white"}. Sure, you could also do this with class names: className={ props.primary ? "red-div" : "white-div" } but again, that's two more class names to manage in your CSS.
+If you have installed node-sass in your application, then Styled Components will accept SASS/SCSS in addition to CSS. However, one downside I've discovered to Styled Components is that SASS variables no longer work globally-they only work in the component in which they are defined.
+Since variables are one of the primary reasons I love SASS, that was almost a deal breaker for me. Then I discovered that Styled Components has a ThemeProvider that allows you to create a theme and share across your components-basically the exact thing that SASS variables provides. I still need a little more practice with ThemeProvider as it's a little counter-intuitive IMO, but we're getting there. 
+
+
+---
+
+Well, that's how I'm styling these days. As with everything coding, I'm sure I'll be doing it differently in a month once I learn something new. There's a method called JSS that I'm very interested in trying-it is very similar to Styled Components where the styles are written directly in Component.js but the syntax is closer to JavaScript (camelCased) and also utilizes class names again. I'll report back on that.
+cakehole out.---
+
+Styling Components in React
+When it comes to styling components in ReactJS, there are many approaches a developer can take. Each approach has it's own pros and cons, and some are suited better for specific purposes than others. This post will not cover every possible approach to styling components in React - there are far too many to cover them all. What I will cover in this post are my three favorite ways to style components, and when or why I use them.
+So chic.Before we get started, let's recap what a component is in React. According to the official React docs, "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen." In their most basic form, Components are HTML elements. And like any HTML element, we apply styling to them via CSS (or SASS/SCSS).
+1. Inline Styling
+Inline styling is the most basic way to apply a style to a react component. Like inline styling in HTML, the styles are applied directly inline when creating the element. Styles do not live in an external file, and classes are not used.
+In React, inline styles are applied using the style prop. The style prop accepts a JSX Object containing the camelCase equivalent of the CSS properties as key/value pairs. If you wanted set a CSS property of an element to be background-color: red; you would use backgroundColor: "red", in the style object.
+export default function MyComponent() {
+    return(
+      <div style={{ 
+        background-color: "red", 
+        font-size: '2rem'
+      }}>Component Content</div>
+    )
+}
+Most developers will tell you to stay away from inline styling for a number of reasons. For starters, every element has to be individually styled-even if they look the same. If you ever want to change the style of those elements you better buckle up, because you're going to be there a while. Also, they cannot be overridden easily.
+My recommendation follows this best practice. Steer clear of inline styling unless you absolutely have to (but you shouldn't ever have to).
+2. Class Names and CSS/SASS/SCSS
+This has been my go to method for years, long before learning React. By applying class names to components you are able to group similar elements together under a unified style. All elements with a given class name, will have the same styles and behavior applied to them. These styles are then defined in an external style sheet using CSS (or SASS/SCSS, if you're into that) which is linked to the PWA through the html header. To assign a class name in react, pass the component a prop of className that is equal to the class you wish to assign.
+export default function MyComponent() {
+    return(
+      <div className="my-styled-component">Component Content</div>
+    )
+}
+In your style sheet you'll then define the CSS for that class and all elements with the class name of my-styled-component will have the following styles applied.
+.my-styled-component {
+    background-color: red;
+    font-size: 3rem;
+}
+This approach works very well for managing different component types across an application, especially if you're utilizing SCSS/SASS to work with variables or nest your styles. One downside to this approach is that by giving every single component a unique class name, you now have a lot of class names to keep up with. When the time comes to update or redesign the component you have to open Component.js and identify the className and then go over to your App.scss file, locate the class name and then make your changes. The extra step doesn't seem that bad, until you're undergoing a full redesign. 
+3. Styled Components
+A new approach that I recently learned is Styled Components. Styled Components is a node package that lets you add styling to Component.js without using inline styles. You still define the styles just like you would in an external CSS file, but they're not separate. This is a huge time saver when it comes time to update a component as you don't have to jump across multiple files. 
+Styled Components is pretty straight forward to use. Once imported, you create a const and assign it to styled.[html-element-type]. Styled Components will turn that const into a React component with the specified styles applied to it. You can then return that component as you would any other component. Note: Styled Components takes the actual CSS properties, not camelCased like React inline styling does. 
+import styled from 'styled-components'
+const MyStyledComponent = styled.div`
+ display:flex;
+ width: 90%;
+ margin: auto;
+ text-align: left;
+`
+export default function MyComponent() {
+    return(
+      <MyStyledComponent>
+        Component Content
+      <MyStyledComponent/>
+    )
+}
+One really cool thing about Styled Components is that it allows you to change the style based on props. Using JSX within your styled component, you could apply a dynamic style to the component: color: ${props => props.primary ? "red" : "white"}. Sure, you could also do this with class names: className={ props.primary ? "red-div" : "white-div" } but again, that's two more class names to manage in your CSS.
+If you have installed node-sass in your application, then Styled Components will accept SASS/SCSS in addition to CSS. However, one downside I've discovered to Styled Components is that SASS variables no longer work globally-they only work in the component in which they are defined.
+Since variables are one of the primary reasons I love SASS, that was almost a deal breaker for me. Then I discovered that Styled Components has a ThemeProvider that allows you to create a theme and share across your components-basically the exact thing that SASS variables provides. I still need a little more practice with ThemeProvider as it's a little counter-intuitive IMO, but we're getting there. 
+
+
+---
+
+Well, that's how I'm styling these days. As with everything coding, I'm sure I'll be doing it differently in a month once I learn something new. There's a method called JSS that I'm very interested in trying-it is very similar to Styled Components where the styles are written directly in Component.js but the syntax is closer to JavaScript (camelCased) and also utilizes class names again. I'll report back on that.
+cakehole out.

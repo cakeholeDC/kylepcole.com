@@ -5,7 +5,7 @@ const FooterBar = styled.div`
 	flex-shrink: 0;
     display: inline-block;
     position: relative;
-    width: 100%;
+    // width: 100%;
     // height: 100px;
 	text-align: left;
     padding: 1rem;

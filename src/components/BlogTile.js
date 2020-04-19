@@ -12,6 +12,8 @@ const Project = styled.div`
 	justify-content: center;
 	position: relative;
 	margin: 1rem;
+	// box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 0px 1px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
 	//styles
 	// background: black; //shows through image when transparent
@@ -86,21 +88,45 @@ const Project = styled.div`
 `
 
 
-function BlogTile(props)  {
-	const post = props.post
-	return(
-		<Project>
-			<img className="blog-image" src={ /*props.post.thumbnail*/'https://via.placeholder.com/300x200' } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
-			<div className="image-overlay">
-				<h2 className="overlay-content">{ post.timestamp !== '' ? post.timestamp : "January 1, 1970" }</h2>
-			</div>
-			<div className="post-title-teaser">
-				<h3>{ post.title }</h3>
-				<hr/>
-				<p>{ post.teaser }</p>
-			</div>
-		</Project>
-	)
+class BlogTile extends React.Component {
+	/*props = {
+		title: '',
+		pubDate: '',
+		link: '',
+		guid: '',
+		author: '',
+		thumbnail: '',
+		description: '',
+		content: '',
+		enclosure: {}
+		categories: []
+	}*/
+
+
+	getBlogImage = () => {
+		if (this.props.thumbnail.includes("https://medium.com/_/stat?")){
+			return `https://source.unsplash.com/random/300x200/?${this.props.categories[0]}`
+		} else {
+			return this.props.thumbnail
+		}
+	}
+
+	render(){
+		const teaser = ReactHtmlParser(this.props.description.substring(4,150))
+		return(
+			<Project>
+				<img className="blog-image" src={ this.getBlogImage() } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
+				<div className="image-overlay">
+					<h2 className="overlay-content">{ this.props.pubDate !== '' ? this.props.pubDate : "January 1, 1970" }</h2>
+				</div>
+				<div className="post-title-teaser">
+					<h3>{ this.props.title }</h3>
+					<hr/>
+					<p>{ teaser/*.substring(4, 100)*/ }...</p>
+				</div>
+			</Project>
+		)
+	}
 }
 
 
