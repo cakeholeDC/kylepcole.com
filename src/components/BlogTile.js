@@ -113,12 +113,14 @@ class BlogTile extends React.Component {
 
 	render(){
 		const teaser = ReactHtmlParser(this.props.description.substring(4,150))
+		var moment = require('moment');
+
 		return(
 			<Project onClick={ () => this.props.history.push(`${this.props.title.replace(/ /g,'-').toLowerCase()}`)}>
 			{/*<Link to={`/blog/${this.props.title.replace(/ /g,'-').toLowerCase()}`}>*/}
 				<img className="blog-image" src={ this.getBlogImage() } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
 				<div className="image-overlay">
-					<h2 className="overlay-content">{ this.props.pubDate !== '' ? this.props.pubDate : "January 1, 1970" }</h2>
+					<h2 className="overlay-content">{ this.props.pubDate !== '' ? moment(this.props.pubDate).format(`MMMM D, YYYY`) : "January 1, 1970" }</h2>
 				</div>
 				<div className="post-title-teaser">
 					<h3>{ this.props.title }</h3>

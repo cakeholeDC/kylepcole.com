@@ -19,6 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
+    // @TODO, use this package https://www.npmjs.com/package/rss-to-json??
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cakehole")
       .then(res => res.json())
       .then(json => {

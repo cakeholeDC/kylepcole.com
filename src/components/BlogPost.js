@@ -79,13 +79,13 @@ class BlogPost extends React.Component {
 	      })
 	}
 
-	parseImageLinks = (content) => {
-		//<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)</a>
-		const length = (content.match(/<a href="https:\/\/medium.com\/media\/`/g) || []).length; 
-		// jQuery('a[href*="https://medium.com/media/"]').each(function() {
-		//     alert('Contains question mark');
-		// });
-	}
+	// parseImageLinks = (content) => {
+	// 	//<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)</a>
+	// 	const length = (content.match(/<a href="https:\/\/medium.com\/media\/`/g) || []).length; 
+	// 	// jQuery('a[href*="https://medium.com/media/"]').each(function() {
+	// 	//     alert('Contains question mark');
+	// 	// });
+	// }
 
 	getPostContent = () => {
 		if (this.state.post) {
@@ -105,8 +105,8 @@ class BlogPost extends React.Component {
 	}
 
 	render() {
-		let content = this.state.post ? this.state.post.content : ''
-		console.log(content.replace(/<a.+?\s*href\s*=\s*["\']?([^"\'\s>]+)["\']?/gi, `<img src='$1' />` ))
+		// let content = this.state.post ? this.state.post.content : ''
+		// console.log(content.replace(/<a.+?\s*href\s*=\s*["\']?([^"\'\s>]+)["\']?/gi, `<img src='$1' />` ))
 		return(
 			<Post>	
 				{ this.getPostContent() }
