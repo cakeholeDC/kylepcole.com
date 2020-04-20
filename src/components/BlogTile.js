@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 
-
 const Project = styled.div`
 	vertical-align: top;
 	display: flex; 
@@ -70,6 +69,7 @@ const Project = styled.div`
 		padding: .5rem;
 		text-align: left;
 		height: 10rem;
+
 		
 		h3{
 			margin-top: 0;
@@ -83,6 +83,11 @@ const Project = styled.div`
 
 		p{
 			margin-top: 0.375rem;
+			text-overflow: ellipsis;
+
+			&:after {
+				content: '...';
+			}
 		}
 	}
 `
@@ -104,7 +109,7 @@ class BlogTile extends React.Component {
 
 
 	getBlogImage = () => {
-		if (this.props.thumbnail.includes("https://medium.com/_/stat?")){
+		if (this.props.thumbnail.includes("https://medium.com/_/stat?") || this.props.thumbnail == ''){
 			return `https://source.unsplash.com/random/300x200/?${this.props.categories[0]}`
 		} else {
 			return this.props.thumbnail
@@ -112,20 +117,23 @@ class BlogTile extends React.Component {
 	}
 
 	render(){
-		const teaser = ReactHtmlParser(this.props.description.substring(4,150))
 		var moment = require('moment');
+		const { title, pubDate, description, history } = this.props
+
+		const published = moment(pubDate).format(`MMMM D, YYYY`)
+		const teaser = ReactHtmlParser(description.substring(4,150))
 
 		return(
-			<Project onClick={ () => this.props.history.push(`${this.props.title.replace(/ /g,'-').toLowerCase()}`)}>
+			<Project onClick={ () => this.props.history.push(`${title.replace(/ /g,'-').toLowerCase()}`)}>
 			{/*<Link to={`/blog/${this.props.title.replace(/ /g,'-').toLowerCase()}`}>*/}
 				<img className="blog-image" src={ this.getBlogImage() } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
 				<div className="image-overlay">
-					<h2 className="overlay-content">{ this.props.pubDate !== '' ? moment(this.props.pubDate).format(`MMMM D, YYYY`) : "January 1, 1970" }</h2>
+					<h2 className="overlay-content">{ published }</h2>
 				</div>
 				<div className="post-title-teaser">
-					<h3>{ this.props.title }</h3>
+					<h3>{ title }</h3>
 					<hr/>
-					<p>{ teaser/*.substring(4, 100)*/ }...</p>
+					<p>{ teaser }</p>
 				</div>
 			{/*</Link>*/}
 			</Project>

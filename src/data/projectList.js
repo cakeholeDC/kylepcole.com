@@ -117,6 +117,9 @@ const projects = [
 			"Flexbox",
 			"SASS/SCSS",
 			"Styled Components",
+			"Moment.js",
+			"ReactHTMLParser",
+			"Medium API",
 		],
 		icons:[
 			"ruby",

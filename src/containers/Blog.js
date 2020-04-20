@@ -1,7 +1,8 @@
 import React from 'react'
-import POSTS from '../data/posts.js'
+// import POSTS from '../data/posts.js'
 import BlogTile from '../components/BlogTile.js'
 import styled from 'styled-components'
+// import AngularBlog from '../data/AngularBlog'
 
 
 
@@ -25,7 +26,12 @@ const BlogList = styled.div`
 function Blog(props)  {
 	// let posts = [...POSTS]
 	let posts = props.posts
-	console.log("BLOG =>", posts)
+
+	// if (posts && AngularBlog) { 
+		// posts.push(AngularBlog)
+		// posts.sort((a, b) => a.pubDate > b.pubDate ? 1 : -1 )
+	// }
+
 	return (
 		<BlogList>
 			<h1>Sometimes I write.</h1>
