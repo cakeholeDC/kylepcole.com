@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 
@@ -114,7 +114,8 @@ class BlogTile extends React.Component {
 	render(){
 		const teaser = ReactHtmlParser(this.props.description.substring(4,150))
 		return(
-			<Project>
+			<Project onClick={ () => this.props.history.push(`${this.props.title.replace(/ /g,'-').toLowerCase()}`)}>
+			{/*<Link to={`/blog/${this.props.title.replace(/ /g,'-').toLowerCase()}`}>*/}
 				<img className="blog-image" src={ this.getBlogImage() } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
 				<div className="image-overlay">
 					<h2 className="overlay-content">{ this.props.pubDate !== '' ? this.props.pubDate : "January 1, 1970" }</h2>
@@ -124,10 +125,11 @@ class BlogTile extends React.Component {
 					<hr/>
 					<p>{ teaser/*.substring(4, 100)*/ }...</p>
 				</div>
+			{/*</Link>*/}
 			</Project>
 		)
 	}
 }
 
 
-export default BlogTile
+export default withRouter(BlogTile)

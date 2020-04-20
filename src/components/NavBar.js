@@ -15,7 +15,7 @@ const Navbar = styled.nav`
 		text-transform: uppercase;
 
 		&:hover {
-			text-decoration: underline;
+			border-bottom: 2px solid lightgray;
 			color: lightgray;
 		}
 	}

@@ -9,6 +9,7 @@ import Skills from './containers/Skills.js'
 import Footer from './containers/Footer.js'
 import ProjectPage from './components/ProjectPage.js'
 import About from './components/About.js'
+import BlogPost from './components/BlogPost.js'
 import ErrorPage from './components/ErrorPage.js'
 
 
@@ -39,6 +40,7 @@ class App extends React.Component {
               <Route exact path="/404" component={ ErrorPage } />
               <Route exact path="/about" component={ About } />
               <Route exact path="/blog" render={() => <Blog posts={ this.state.posts }/> }/>
+              <Route exact path="/blog/:id" render={() => <BlogPost posts={ this.state.posts }/> }/>
               <Route exact path="/projects" component={ Projects } />
               <Route exact path="/projects/:id" component={ ProjectPage } />
               <Route exact path="/resume" component={ Skills } />
