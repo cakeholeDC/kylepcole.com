@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 
+
 const Project = styled.div`
 	vertical-align: top;
 	display: flex; 
@@ -69,6 +70,7 @@ const Project = styled.div`
 		padding: .5rem;
 		text-align: left;
 		height: 10rem;
+		overflow: hidden;
 
 		
 		h3{
@@ -86,7 +88,7 @@ const Project = styled.div`
 			text-overflow: ellipsis;
 
 			&:after {
-				content: '...';
+				// content: '...';
 			}
 		}
 	}
@@ -121,7 +123,7 @@ class BlogTile extends React.Component {
 		const { title, pubDate, description, history } = this.props
 
 		const published = moment(pubDate).format(`MMMM D, YYYY`)
-		const teaser = ReactHtmlParser(description.substring(4,150))
+		const teaser = $lorem//ReactHtmlParser(description)//.substring(4,150)
 
 		return(
 			<Project onClick={ () => this.props.history.push(`${title.replace(/ /g,'-').toLowerCase()}`)}>
@@ -140,6 +142,9 @@ class BlogTile extends React.Component {
 		)
 	}
 }
+
+const $lorem = "Sunt cupidatat consectetur minim dolore sit ullamco sunt esse elit ut esse eiusmod elit anim sed voluptate in incididunt labore tempor occaecat ad non laboris occaecat voluptate ad adipisicing ex cupidatat nisi cillum ut cillum incididunt proident laborum in amet ut in nulla excepteur in laboris dolor laboris tempor qui pariatur proident consectetur aliqua ullamco enim in laboris fugiat mollit sint non aliquip tempor laborum in sunt proident excepteur amet officia et dolor aliqua irure tempor fugiat et adipisicing aute commodo culpa eiusmod veniam excepteur adipisicing sint aliqua culpa occaecat incididunt officia in elit et commodo esse proident velit incididunt ad ut commodo in sit elit minim ut et laboris consequat officia ut anim sit velit excepteur ut nisi dolor ullamco tempor eiusmod laborum reprehenderit sint enim id dolore sit commodo excepteur consectetur exercitation eiusmod occaecat do do non consectetur eu enim ullamco occaecat in sed sint ex anim voluptate consequat est dolore quis labore dolor sed est ut excepteur esse ut nisi labore laborum officia reprehenderit ullamco exercitation anim labore aute consectetur labore sit reprehenderit quis sed dolor dolore sint ad culpa nisi reprehenderit nisi tempor consectetur laborum commodo pariatur elit duis cupidatat irure pariatur exercitation velit sed esse sunt minim ut reprehenderit tempor sunt duis esse aute in tempor proident anim in in ut dolor cillum esse cupidatat adipisicing dolor ea dolore voluptate deserunt voluptate elit veniam cillum dolore do deserunt ex et ex ad exercitation aliquip do adipisicing anim nostrud esse sit pariatur ex tempor et eiusmod eiusmod consequat cillum sunt enim aliqua laboris sint in aute quis nulla dolor pariatur."
+
 
 
 export default withRouter(BlogTile)

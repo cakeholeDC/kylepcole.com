@@ -1,5 +1,4 @@
 import React from 'react'
-import PROJECTS from '../data/projectList.js'
 import ProjectItem from '../components/ProjectItem'
 import styled from 'styled-components'
 
@@ -20,7 +19,7 @@ const ProjectsContainer = styled.div`
 `
 
 function Projects(props)  {
-	let projects = [...PROJECTS]
+	let projects = [...props.projects]
 	// if (props.homepage){
 	// 	projects = projects.slice(0,4)
 	// }

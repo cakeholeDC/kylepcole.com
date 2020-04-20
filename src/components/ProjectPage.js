@@ -7,9 +7,11 @@ const ProjectContainer = styled.div`
 	width: 75%;
 	display: inline-block;
 	padding: 0 3rem;
+	margin-top: 3rem;
 
 	h1 {
-		width: 100%;
+		margin-top: 0px;
+		// width: 100%;
 		border-bottom: 1px solid lightgray;
 		padding-bottom: 2rem;
 	}
@@ -17,10 +19,12 @@ const ProjectContainer = styled.div`
 	img {
 		width: 25rem;
 		float: left;
+		margin-right: 1.5rem;
 	}
 
 	p {
 		margin: 1rem;
+		text-align: justify;
 		// float: right;
 	}
 
