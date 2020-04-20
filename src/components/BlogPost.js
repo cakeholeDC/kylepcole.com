@@ -43,6 +43,10 @@ const Post = styled.div`
 		color: #4AF626;
 	}
 
+	h1 {
+		margin-bottom: 0px;
+	}
+
 	code {
 		background: black;
 	}
@@ -50,6 +54,7 @@ const Post = styled.div`
 	blockquote {
 		background-color: #e0e0e0;
 		padding: 1rem;
+		border-left: 5px solid gray;
 	}
 `
 const Disclaimer = styled.div`
@@ -59,6 +64,11 @@ const Disclaimer = styled.div`
 	font-family: monospaced;
 	padding: 1rem;
 	font-style: italic;
+`
+
+const PubDate = styled.div`
+	font-style: italic;
+
 `
 
 class BlogPost extends React.Component {
@@ -88,6 +98,8 @@ class BlogPost extends React.Component {
 	// }
 
 	getPostContent = () => {
+		var moment = require('moment');
+
 		if (this.state.post) {
 			return (
 				<React.Fragment>
@@ -96,6 +108,7 @@ class BlogPost extends React.Component {
 						<br/><a href={ this.state.post.link }>Click here to view the original post.</a>
 					</Disclaimer>
 					<h1>{ ReactHtmlParser(this.state.post.title) }</h1>
+					<PubDate>Published { moment(this.state.post.pubDate).format(`dddd, MMMM D, YYYY`) }</PubDate>
 					{ ReactHtmlParser(this.state.post.content) }
 				</React.Fragment>
 			)
