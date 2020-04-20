@@ -42,7 +42,6 @@ const ProjectContainer = styled.div`
 `
 
 function ProjectPage(props)  {
-	console.log(props)
 	const projects = [...PROJECTS]
 	let project = projects.find(proj => proj.id == props.match.params.id)
 
@@ -69,7 +68,7 @@ function ProjectPage(props)  {
 			<p>{ project.description }</p>
 			<ul>
 				<h3>Technologies Used:</h3>
-				{ project.technologies.map(tech => <li className="tech">{ tech }</li>) }
+				{ project.technologies.map(tech => <li className="tech" key={ tech.replace(/ /g, '-').toLowerCase() }>{ tech }</li>) }
 			</ul>
 		</ProjectContainer>
 	)

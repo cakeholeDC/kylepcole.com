@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+/* DESIGN NOTES */
 /* 8rem = 128px */
 /* 6.25rem = 100px */
 const Skill = styled.div`
@@ -22,7 +23,6 @@ const Skill = styled.div`
 	    transform: translate3d(2px, 0, 0);
 	  }
 	}
-
 
 	display: flex; 
 	flex-basis: calc(25% - 40px);	
@@ -50,13 +50,11 @@ const Skill = styled.div`
 `
 
 function SkillItem (props) {
-	//https://www.fillmurray.com/128/128
-	//"https://via.placeholder.com/128"
 	console.log("SkillItem", props.skill)
 	return(
 		<Skill>
-			{<img src={`/icons/skills/${ props.skill.icon ? props.skill.icon : `${props.skill.name.replace(/ /g, '').toLowerCase()}-128.png`}`} onError={event => event.target.src = "icons/skills/coding-128.png"} />}
-			{/*<img src="https://via.placeholder.com/128" />*/}
+			<img src={ `icons/skills/${props.skill.icon}` } onError={event => event.target.src = "https://via.placeholder.com/128"} />
+			{/* @TODO => FALLBACK = icons/skills/coding-128.png */}
 			<p>{props.skill.name}</p>
 		</Skill>
 	)

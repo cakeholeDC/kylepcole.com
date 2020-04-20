@@ -17,7 +17,9 @@ import ErrorPage from './components/ErrorPage.js'
 
 class App extends React.Component {
   state={
-    posts: null
+    projects: null,
+    posts: null,
+    skills: null,
   }
 
   componentDidMount(){
@@ -50,7 +52,8 @@ class App extends React.Component {
       .then(json => {
         console.log(json.items)
         this.setState({ 
-          posts: json.items
+          posts: json.items,
+          // projects: [...PROJECTS]
         })
       })
 
