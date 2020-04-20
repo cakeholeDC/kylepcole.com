@@ -9,17 +9,31 @@ const ProjectContainer = styled.div`
 	padding: 0 3rem;
 	margin-top: 3rem;
 
-	h1 {
-		margin-top: 0px;
-		// width: 100%;
+	.project-header {
+		display: flex;
+		width: 100vh;
 		border-bottom: 1px solid lightgray;
-		padding-bottom: 2rem;
+		text-align: left;
+		
+		h1 {
+			flex: 8;
+			margin-top: 0px;
+			margin-bottom: 1vh;
+		}
+
+		p {
+			flex: 2;
+			text-align: right;
+			margin-right: 0;
+		}
 	}
 
+
 	img {
-		width: 25rem;
-		float: left;
-		margin-right: 1.5rem;
+		width: 100vh;
+	    height: 50vh;
+	    object-fit: cover;
+	    object-position: center;
 	}
 
 	p {
@@ -63,8 +77,11 @@ function ProjectPage(props)  {
 	else 
 	return(
 		<ProjectContainer>
-			<h1>{ project.name }</h1>
 			<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
+			<div className="project-header">
+				<h1>{ project.name }</h1>
+				<p>Est. { project.year }</p>
+			</div>
 			<p>{ project.description }</p>
 			<ul>
 				<h3>Technologies Used:</h3>
