@@ -43,7 +43,7 @@ const skillList = [
 	},
 	{
 		name: "Rails",
-		icon: ""
+		icon: "rails-logo.svg"
 	},
 	{
 		name: "PostgreSQL",

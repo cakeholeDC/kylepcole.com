@@ -7,6 +7,7 @@ const links = 4
 const Navbar = styled.nav`
 	display: flex;
 	flex-direction: row;
+    flex-wrap: wrap;
 	justify-content: space-evenly;
 		
 	a {

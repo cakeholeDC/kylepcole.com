@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 import { withRouter } from "react-router-dom";
-import { convertNodeToElement } from 'react-html-parser';
 
 
 const Post = styled.div`
@@ -80,22 +79,12 @@ class BlogPost extends React.Component {
 		fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cakehole")
 	      .then(res => res.json())
 	      .then(json => {
-	        console.log(json.items)
 	        const postContent = json.items.find(post => post.title.replace(/ /g,'-').toLowerCase() === this.props.match.params.id)
-	      	// debugger
 	        this.setState({ 
 	          post: postContent
 	        })
 	      })
 	}
-
-	// parseImageLinks = (content) => {
-	// 	//<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)</a>
-	// 	const length = (content.match(/<a href="https:\/\/medium.com\/media\/`/g) || []).length; 
-	// 	// jQuery('a[href*="https://medium.com/media/"]').each(function() {
-	// 	//     alert('Contains question mark');
-	// 	// });
-	// }
 
 	getPostContent = () => {
 		var moment = require('moment');
@@ -118,8 +107,6 @@ class BlogPost extends React.Component {
 	}
 
 	render() {
-		// let content = this.state.post ? this.state.post.content : ''
-		// console.log(content.replace(/<a.+?\s*href\s*=\s*["\']?([^"\'\s>]+)["\']?/gi, `<img src='$1' />` ))
 		return(
 			<Post>	
 				{ this.getPostContent() }
