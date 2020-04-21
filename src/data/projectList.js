@@ -24,6 +24,7 @@ const projects = [
 			"CSS Grid",
 			"SASS/SCSS",
 		],
+		collaborators: [],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
@@ -46,7 +47,9 @@ const projects = [
 			"ReactJS",
 			"MomentJS",
 			"Semantic UI React",
+			"Flaticon API"
 		],
+		collaborators: [],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
@@ -71,6 +74,7 @@ const projects = [
 			"Semantic UI",
 			"Unsplash API",
 		],
+		collaborators: [],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
@@ -92,8 +96,14 @@ const projects = [
 			"Ruby on Rails",
 			"Rails Auth",
 			"ReactJS",
-			"Semantic UI",
+			"Semantic UI React",
 			"Unsplash API",
+		],
+		collaborators: [
+			{
+				name: "Matt Heavner",
+				link: "https://github.com/mrh9ud"
+			}
 		],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
@@ -118,9 +128,11 @@ const projects = [
 			"SASS/SCSS",
 			"Styled Components",
 			"Moment.js",
-			"ReactHTMLParser",
 			"Medium API",
+			"rss-to-json",
+			"ReactHTMLParser",
 		],
+		collaborators: [],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
@@ -140,8 +152,16 @@ const projects = [
 		},
 		technologies: [
 			"Ruby on Rails",
+			"Rails Auth",
 			"Google Books API",
-			"Unsplash API"
+			"Unsplash API",
+			"Bulma CSS",
+		],
+		collaborators: [
+			{
+				name: "Sara Tarnvik",
+				link: "https://github.com/stvik"
+			}
 		],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
@@ -162,6 +182,12 @@ const projects = [
 		technologies: [
 			"Ruby",
 			"ProPublica API",
+		],
+		collaborators: [
+			{
+				name: "Matt Bechtel",
+				link: 'https://mattbechtel1.github.io/'
+			}
 		],
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],

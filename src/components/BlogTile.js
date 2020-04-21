@@ -5,6 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 
 const Project = styled.div`
+	max-width: 19rem;
 	vertical-align: top;
 	display: flex; 
 	flex-direction: column;
@@ -123,7 +124,7 @@ class BlogTile extends React.Component {
 		const { title, pubDate, description, history } = this.props
 
 		const published = moment(pubDate).format(`MMMM D, YYYY`)
-		const teaser = $lorem//ReactHtmlParser(description)//.substring(4,150)
+		const teaser = ReactHtmlParser(description.replace('&lt;',''))//.substring(4,150)
 
 		return(
 			<Project onClick={ () => this.props.history.push(`${title.replace(/ /g,'-').toLowerCase()}`)}>

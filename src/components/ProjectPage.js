@@ -10,38 +10,61 @@ const ProjectContainer = styled.div`
 	margin-top: 3rem;
 
 	.project-header {
-		display: flex;
 		width: 100%;
-		border-bottom: 1px solid lightgray;
 		text-align: left;
+		margin-top: .75rem;
 		
-		h1 {
-			flex: 2;
-			margin-top: 0px;
+		.project-title{
+			display: flex;
 			margin-bottom: 1rem;
-		}
+			border-bottom: 1px solid lightgray;
+			
+			h1 {
+				flex: 2;
+				margin-top: 0px;
+				font-family: 'Fjalla One', sans-serif;
+			}
 
-		.stack-icons {
-			text-align: center;
-			flex: 1;
-			display:flex;
-			justify-content: flex-start;
-			padding-top: .75rem;
+			.stack-icons {
+				text-align: center;
+				flex: 2;
+				display:flex;
+				justify-content: flex-end;
+				padding-top: .5rem;
 
-			img.stack-icon {
-				flex: 1;
-				max-height: 2rem;
-				max-width: 2rem;
-				object-fit: contain;
-				margin-right: .5rem;
+				.stack-icon {
+					flex: 1;
+					max-height: 2rem;
+					max-width: 2rem;
+					object-fit: contain;
+					margin-right: .5rem;
+				}
 			}
 		}
 
-		p {
-			flex: 2;
-			text-align: right;
-			margin-right: 0;
+		.project-details {
+			display: flex;
+			margin-bottom: 1rem;
+			border-bottom: 1px solid lightgray;
+
+			p {
+				flex: 2;
+				margin-top: 0px;
+			}
+
+			.project-collaborators {
+			    margin-right: 1rem;
+				flex: 2;
+				display:flex;
+				justify-content: flex-end;
+			}
 		}
+
+	}
+	p {
+		flex: 2;
+		text-align: right;
+		margin-right: 0;
 	}
 
 
@@ -55,14 +78,10 @@ const ProjectContainer = styled.div`
 	p {
 		margin: 1rem;
 		text-align: justify;
-		// float: right;
 	}
 
 	ul {
 		clear: left;
-		// width: 70%;
-		// margin: auto;
-		// list-style: none;
 		text-align: left;
 
 		li {
@@ -90,44 +109,69 @@ class ProjectPage extends React.Component  {
 
 	// @TODO refactor to SWITCH
 	getStackIcon(tech){
-		const icon = tech.toLowerCase()
-		if (icon ==="ruby") {
-			return <img className="stack-icon" alt="ruby" src={ '/icons/skills/ruby-128.png' }/> // round
+		let title, icon
+		switch(tech.toLowerCase()) {
+			case "ruby":
+				title = "Ruby"
+				icon = 'ruby-128.png'
+			break;
+			case "rails":
+				title = "Ruby on Rails"
+				icon = 'rails-128.png'
+			break;
+			case "react":
+				title = "ReactJS"
+				icon = 'react-128.png'
+			break;
+			case "postgres":
+				title = "PostgreSQL"
+				icon = 'Postgresql_elephant.svg'
+			break;
+			case "mongo":
+				title = "MongoDB"
+				icon = 'mongo.png'
+			break;
+			case "sqlite":
+				title = "SQLite"
+				icon = 'Sqlite.svg'
+			break;
+		  	default:
+		    	return ''
 		}
-		if (icon ==="rails") {
-			return <img className="stack-icon" alt="rails" src={ '/icons/skills/rails-128.png' }/> // round
-		}
-		if (icon ==="react") {
-			return <img className="stack-icon" alt="react" src={ '/icons/skills/react-128.png' }/> // round
-		}
-		if (icon ==="postgres") {
-			return <img className="stack-icon" alt="postgres" src={ '/icons/skills/Postgresql_elephant.svg' }/>
-		}
-		if (icon ==="mongo") {
-			return <img className="stack-icon" alt="mongo" src={ '/icons/skills/mongo.png' }/>
-		}
-		if (icon ==="sqlite") {
-			return <img className="stack-icon" alt="sqlite" src={ '/icons/skills/Sqlite.svg' }/>
-		}
-		return ''
+
+		return <img className="stack-icon" title={ title } alt={ icon } src={ `/icons/skills/${icon}` }/>
 	}
 
 	getStack = (stack) => {
-		console.log("Stack", stack)
 		return Object.values(stack).map(tech => this.getStackIcon(tech))
+	}
+
+	getCollaborators = () => {
+		if (this.state.project.collaborators.length > 0){
+			const devs = this.state.project.collaborators.map(dev => <a className="collaborator"href={dev.link}>{dev.name}</a>)
+			return <div className="project-collaborators">Collaboration with&nbsp;{devs}</div>
+		} else {
+			return null
+		}
 	}
 	
 	render(){
 		const project = this.state.project
+
 		return(
 			<ProjectContainer>
 				{ project ?
 					<React.Fragment>
 					<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
 					<div className="project-header">
-						<h1>{ project.name }</h1>
-						<div className="stack-icons">{ this.getStack(project.stack) }</div>
+						<div className="project-title">
+							<h1>{ project.name }</h1>
+							<div className="stack-icons">{ this.getStack(project.stack) }</div>
+						</div>
+						<div className="project-details">
 						<p>Est. { project.year }</p>
+						{ this.getCollaborators() }
+						</div>
 					</div>
 					<p>{ project.description }</p>
 					<ul>
