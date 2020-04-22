@@ -20,7 +20,7 @@ const ProjectsContainer = styled.div`
 `
 
 function Projects(props)  {
-	let projects = [...props.projects]
+	let projects = props.projects
 	// if (props.homepage){
 	// 	projects = projects.slice(0,4)
 	// }

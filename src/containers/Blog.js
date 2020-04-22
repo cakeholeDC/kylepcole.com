@@ -27,10 +27,10 @@ function Blog(props)  {
 	// let posts = [...POSTS]
 	let posts = props.posts
 
-	if (posts && AngularBlog) { 
-		posts.push(AngularBlog)
-		posts.sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 )
-	}
+	// if (posts && AngularBlog) { 
+	// 	posts.push(AngularBlog)
+	// 	posts.sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 )
+	// }
 
 	return (
 		<BlogList>

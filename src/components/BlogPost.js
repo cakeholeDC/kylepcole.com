@@ -2,7 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 import { withRouter } from "react-router-dom";
+import AngularBlog from '../data/AngularBlog'
 
+//helper functions
+import stringToURL  from '../utils/stringToUrl.js'
+import getMediumBlogPosts from '../utils/getMediumBlogPosts.js'
 
 const Post = styled.div`
 
@@ -75,16 +79,15 @@ class BlogPost extends React.Component {
 		post: null
 	}
 
-	componentDidMount(){
-		fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cakehole")
-	      .then(res => res.json())
-	      .then(json => {
-	        const postContent = json.items.find(post => post.title.replace(/ /g,'-').toLowerCase() === this.props.match.params.id)
-	        this.setState({ 
-	          post: postContent
-	        })
-	      })
+	async componentDidMount(){
+		//FETCH POSTS IF NOT PASSED AS PROPS.
+		const posts = this.props.posts.length > 0 ? this.props.posts : await getMediumBlogPosts()
+	    const postContent = posts.find(post => stringToURL(post.title) === this.props.match.params.id)
+        this.setState({ 
+          post: postContent
+        })
 	}
+
 
 	getPostContent = () => {
 		var moment = require('moment');

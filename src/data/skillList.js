@@ -70,6 +70,10 @@ const skillList = [
 		icon: ""
 	},
 	{
+		name: "PostScript",
+		icon: ""
+	},
+	{
 		name: "Creative Cloud",
 		icon: "creative-cloud-round-128.png"
 	},

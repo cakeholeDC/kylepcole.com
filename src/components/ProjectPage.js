@@ -1,7 +1,10 @@
 import React from 'react'
-import projectData from '../data/projectList.js'
-import { Redirect } from "react-router-dom";
+import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
+
+//helper functions
+import stringToURL  from '../utils/stringToUrl.js'
+
 
 const ProjectContainer = styled.div`
 	width: 75%;
@@ -92,53 +95,39 @@ const ProjectContainer = styled.div`
 
 class ProjectPage extends React.Component  {
 	state={
-		project: null
+		project: {
+			id: 0,
+			year: 1111,
+			name: '',
+			thumbnail: '',
+			teaser: '',
+			description: '',
+			stack: {},
+			technologies: [],
+			collaborators: [],
+			demo: '',
+			gallery: [],
+			link: ''
+		}
 	}
 
 	componentDidMount(){
-		if (this.props.project){
-			this.setState({ 
-				project: this.props.project
-			})
-		} else {
-			this.setState({ 
-				project: projectData.find(proj => proj.name.replace(/ /g,'-').toLowerCase() === this.props.match.params.id)
-			})
-		}
+		this.setState({ 
+			project: this.props.projects.find(proj => stringToURL(proj.name) === this.props.match.params.id)
+		})
 	}
 
-	// @TODO refactor to SWITCH
 	getStackIcon(tech){
 		let title, icon
 		switch(tech.toLowerCase()) {
-			case "ruby":
-				title = "Ruby"
-				icon = 'ruby-128.png'
-			break;
-			case "rails":
-				title = "Ruby on Rails"
-				icon = 'rails-128.png'
-			break;
-			case "react":
-				title = "ReactJS"
-				icon = 'react-128.png'
-			break;
-			case "postgres":
-				title = "PostgreSQL"
-				icon = 'Postgresql_elephant.svg'
-			break;
-			case "mongo":
-				title = "MongoDB"
-				icon = 'mongo.png'
-			break;
-			case "sqlite":
-				title = "SQLite"
-				icon = 'Sqlite.svg'
-			break;
-		  	default:
-		    	return ''
+			case "ruby": title = "Ruby"; icon = 'ruby-128.png'; break;
+			case "rails": title = "Ruby on Rails"; icon = 'rails-128.png'; break;
+			case "react": title = "ReactJS"; icon = 'react-128.png'; break;
+			case "postgres": title = "PostgreSQL"; icon = 'Postgresql_elephant.svg'; break;
+			case "mongo": title = "MongoDB"; icon = 'mongo.png'; break;
+			case "sqlite": title = "SQLite"; icon = 'Sqlite.svg'; break;
+		  	default: return '';
 		}
-
 		return <img className="stack-icon" title={ title } alt={ icon } src={ `/icons/skills/${icon}` }/>
 	}
 
@@ -148,7 +137,13 @@ class ProjectPage extends React.Component  {
 
 	getCollaborators = () => {
 		if (this.state.project.collaborators.length > 0){
-			const devs = this.state.project.collaborators.map(dev => <a className="collaborator"href={dev.link}>{dev.name}</a>)
+			const devs = this.state.project.collaborators.map(dev => 
+				<a 
+					className="collaborator" 
+					key={ stringToURL(dev.name) } 
+					href={ dev.link }
+				>{ dev.name }</a>
+			)
 			return <div className="project-collaborators">Collaboration with&nbsp;{devs}</div>
 		} else {
 			return null
@@ -160,9 +155,7 @@ class ProjectPage extends React.Component  {
 
 		return(
 			<ProjectContainer>
-				{ project ?
-					<React.Fragment>
-					<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
+				<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
 					<div className="project-header">
 						<div className="project-title">
 							<h1>{ project.name }</h1>
@@ -176,14 +169,11 @@ class ProjectPage extends React.Component  {
 					<p>{ project.description }</p>
 					<ul>
 						<h3>Technologies Used:</h3>
-						{ project.technologies.map(tech => <li className="tech" key={ tech.replace(/ /g, '-').toLowerCase() }>{ tech }</li>) }
+						{ project.technologies.map(tech => <li className="tech" key={ stringToURL(tech) }>{ tech }</li>) }
 					</ul>
-					</React.Fragment>
-				: <h1>Project { this.props.match.params.id.replace(/-/g," ") } Not Found</h1> // @TODO 404 page.
-			}
 			</ProjectContainer>
 		)
 	}
 }
 
-export default ProjectPage
+export default withRouter(ProjectPage)

@@ -1,6 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
+
+
+//helper functions
+import stringToURL  from '../utils/stringToUrl.js'
 
 const Project = styled.div`
 	display: flex; 
@@ -69,10 +73,10 @@ const Project = styled.div`
 
 
 function ProjectItem(props)  {
-	let project = props.project
+	let project = props.project ? props.project : props.projects.find(project => stringToURL(project.title) === props.match.params.id)
 	
 	return(
-			<Link to={`/projects/${project.name.replace(/ /g,'-').toLowerCase()}`}>
+			<Link to={`/projects/${stringToURL(project.name)}`}>
 			<Project>
 				<img className="project-image" src={ project.thumbnail} onError={event => event.target.src = "https://via.placeholder.com/300"} />
 				<div className="project-overlay">
@@ -87,4 +91,4 @@ function ProjectItem(props)  {
 }
 
 
-export default ProjectItem
+export default withRouter(ProjectItem)

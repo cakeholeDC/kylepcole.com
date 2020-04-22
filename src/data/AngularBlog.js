@@ -4,7 +4,7 @@ const AngularBlog = {
 	"link": "",
 	"guid": "",
 	"author": "Kyle Cole",
-	"thumbnail": "",
+	"thumbnail": "/blog/angular.jpg",
 	"description": "I tried Angular, here's a few things I learned.",
 	"content": "I tried Angular, here's a few things I learned.",
 	"enclosure": {},

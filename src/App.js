@@ -7,60 +7,34 @@ import About from './components/About.js'
 import Projects from './containers/Projects.js'
 import Blog from './containers/Blog.js'
 import Skills from './containers/Skills.js'
-import PROJECTS from './data/projectList.js'
 import ProjectPage from './components/ProjectPage.js'
 import BlogPost from './components/BlogPost.js'
 import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
-// import Feed from 'rss-to-json'
+import Feed from 'rss-to-json'
 
+//helpers
+import getMediumBlogPosts from './utils/getMediumBlogPosts.js'
+
+//static content
+import $AngularBlog from './data/AngularBlog'
+import $ProjectList from './data/projectList.js'
+import $SkillList from './data/skillList.js'
 
 class App extends React.Component {
   state={
-    projects: null,
-    posts: null,
-    skills: null,
+    projects: $ProjectList,
+    posts: [],
+    skills: $SkillList,
   }
 
-  componentDidMount(){
-    const corsProxy = "https://cors-anywhere.herokuapp.com/"
-    const blogRSS = 'https://medium.com/feed/@cakehole';
-
-    // //npm package
-    // //no limits, runs locally
-    // var Feed = require('rss-to-json');
-    // var blogPosts
-    // var test
- 
-    // debugger
-    // Feed.load(corsProxy + blogRSS, function(err, rss){
-    //     console.log(rss) // need this output....
-    //     blogPosts = [...rss.items]
-    //   }
-    // )
-    // this.setState({
-    //   test: blogPosts
-    // })
-
-
-    // use URL converter api
-    // one hour update, 10k requests per day
-    const apiPrefix = 'https://api.rss2json.com/v1/api.json?rss_url=';
-
-    fetch(apiPrefix + blogRSS)
-      .then(res => res.json())
-      .then(json => {
-        console.log(json.items)
-        this.setState({ 
-          posts: json.items,
-          // projects: [...PROJECTS]
-        })
-      })
-
+  async componentDidMount(){
+    this.setState({ 
+      posts: await getMediumBlogPosts()
+    })
   }
 
   render(){
-    
     return (
       <div className="App">
       	<Header />
@@ -68,11 +42,11 @@ class App extends React.Component {
         	<Switch>
               <Route exact path="/404" component={ ErrorPage } />
               <Route exact path="/about" component={ About } />
-              <Route exact path="/blog" render={() => <Blog posts={ this.state.posts }/> }/>
-              <Route exact path="/blog/:id" render={() => <BlogPost posts={ this.state.posts }/> }/>
-              <Route exact path="/projects" render={()=> <Projects projects={ PROJECTS } /> } /> 
-              <Route exact path="/projects/:id" component={ ProjectPage } />
-              <Route exact path="/resume" component={ Skills } />
+              <Route exact path="/blog" render={ () => <Blog posts={ this.state.posts }/> }/>
+              <Route exact path="/blog/:id" render={ () => <BlogPost posts={ this.state.posts }/> }/>
+              <Route exact path="/projects" render={ ()=> <Projects projects={ this.state.projects } /> } /> 
+              <Route exact path="/projects/:id" render={ () => <ProjectPage projects={ this.state.projects } /> } />
+              <Route exact path="/resume" render={ () => <Skills skills={ this.state.skills }/> } />
               <Route exact path="/contact" component={ About } />
               <Route exact path="/home" component={ HomePage } />
               <Route exact path="/" component={ HomePage } />

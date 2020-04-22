@@ -3,6 +3,8 @@ import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 
+//helper functions
+import stringToURL  from '../utils/stringToUrl.js'
 
 const Project = styled.div`
 	max-width: 19rem;
@@ -18,6 +20,14 @@ const Project = styled.div`
 
 	//styles
 	// background: black; //shows through image when transparent
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		hr {
+			color: lightgray;
+		}
+	}
 
 	//animations
 	&:hover {
@@ -112,7 +122,7 @@ class BlogTile extends React.Component {
 
 
 	getBlogImage = () => {
-		if (this.props.thumbnail.includes("https://medium.com/_/stat?") || this.props.thumbnail == ''){
+		if (this.props.thumbnail.includes("https://medium.com/_/stat?") || this.props.thumbnail === ''){
 			return `https://source.unsplash.com/random/300x200/?${this.props.categories[0]}`
 		} else {
 			return this.props.thumbnail
@@ -127,18 +137,18 @@ class BlogTile extends React.Component {
 		const teaser = ReactHtmlParser(description.replace('&lt;',''))//.substring(4,150)
 
 		return(
-			<Project onClick={ () => this.props.history.push(`${title.replace(/ /g,'-').toLowerCase()}`)}>
-			{/*<Link to={`/blog/${this.props.title.replace(/ /g,'-').toLowerCase()}`}>*/}
-				<img className="blog-image" src={ this.getBlogImage() } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
-				<div className="image-overlay">
-					<h2 className="overlay-content">{ published }</h2>
-				</div>
-				<div className="post-title-teaser">
-					<h3>{ title }</h3>
-					<hr/>
-					<p>{ teaser }</p>
-				</div>
-			{/*</Link>*/}
+			<Project>
+				<Link to={`/blog/${stringToURL(this.props.title)}`}>
+					<img className="blog-image" src={ this.getBlogImage() } onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
+					<div className="image-overlay">
+						<h2 className="overlay-content">{ published }</h2>
+					</div>
+					<div className="post-title-teaser">
+						<h3>{ title }</h3>
+						<hr/>
+						<p>{ teaser }</p>
+					</div>
+				</Link>
 			</Project>
 		)
 	}
