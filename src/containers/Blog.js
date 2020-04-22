@@ -2,9 +2,7 @@ import React from 'react'
 // import POSTS from '../data/posts.js'
 import BlogTile from '../components/BlogTile.js'
 import styled from 'styled-components'
-import AngularBlog from '../data/AngularBlog'
-
-
+import moment from 'moment'
 
 const BlogList = styled.div`
 	width: 70%;
@@ -23,21 +21,108 @@ const BlogList = styled.div`
 	}
 `
 
-function Blog(props)  {
-	// let posts = [...POSTS]
-	let posts = props.posts
+const Filters = styled.div`
+	display: flex;
+	width: 100%;
+	height: 3rem;
 
-	// if (posts && AngularBlog) { 
-	// 	posts.push(AngularBlog)
-	// 	posts.sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 )
-	// }
+	.sort {
+		flex: 1;
+		// justify-content: space-between;
+		display:flex;
 
-	return (
-		<BlogList>
-			<h1>Sometimes I write.</h1>
-			{ posts ? posts.map(post => <BlogTile {...post} key={ post.title }/> ) : <h3>Loading...</h3> }
-		</BlogList>
-	)
+		label {
+			flex: 1;
+		}
+	}
+
+	.filter {
+		flex: 1;
+		justify-content: flex-end;
+		display: flex;
+
+		select {
+			margin-left: 1rem;
+			margin-top:.25rem;
+		}
+	}
+`
+
+class Blog extends React.Component {
+	state={
+		sort: "new-old",
+		filter: 'all'
+	}
+
+	getAllPostYears = () => {
+		const years = this.props.posts.map(p => moment(p.pubDate).format('YYYY') )
+		
+		let onlyUnique = (value, index, self) => { 
+		    return self.indexOf(value) === index;
+		}
+		
+		return years.filter( onlyUnique )
+	}
+
+	eventToState = (e) => {
+		this.setState({
+			[e.target.name]: e.target.value
+		})
+	}
+	
+	sortedPosts = (array) => {
+		if (this.state.sort === "old-new") {
+			array.sort((a, b) => a.pubDate > b.pubDate ? 1 : -1 )
+		} else {
+			array.sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 )
+		}
+
+		if (this.state.filter === 'all') {
+			return array
+		}
+		return array.filter(post => moment(post.pubDate).format('YYYY') === this.state.filter)
+	}
+
+	render(){
+		let posts = this.sortedPosts(this.props.posts)
+
+		return (
+			<BlogList>
+				<h1>Sometimes I write.</h1>
+				<Filters >
+					<div className="sort">
+						<label for="sort">Sort</label>
+						<label for="new-old">
+							<input 
+								checked={this.state.sort === "new-old"}
+								type="radio"
+								name="sort"
+								value="new-old"
+								onChange={ (e) => this.eventToState(e) }
+							/>
+						Newest First</label>
+						<label for="old-new">
+							<input 
+								checked={this.state.sort === "old-new"}
+								type="radio"
+								name="sort"
+								value="old-new"
+								onChange={ (e) => this.eventToState(e) }
+							/>
+						Oldest First</label>
+					</div>
+					<div className="filter">
+						Filter by Year
+						<select name="filter" onChange={ (e) => this.eventToState(e) }>
+							<option selected value="all">All</option>
+							{ this.getAllPostYears().map(year => <option value={ year }>{ year }</option> ) }
+						</select>
+					</div>
+				</Filters>
+				{ posts.map(post => <BlogTile { ...post } key={ post.title }/> ) }
+			</BlogList>
+		)
+	}
 }
 
 export default Blog

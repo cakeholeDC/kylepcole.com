@@ -72,7 +72,7 @@ const Project = styled.div`
 `
 
 
-function ProjectItem(props)  {
+function ProjectTile(props)  {
 	let project = props.project ? props.project : props.projects.find(project => stringToURL(project.title) === props.match.params.id)
 	
 	return(
@@ -91,4 +91,4 @@ function ProjectItem(props)  {
 }
 
 
-export default withRouter(ProjectItem)
+export default withRouter(ProjectTile)

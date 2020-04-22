@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectItem from '../components/ProjectItem'
+import ProjectTile from '../components/ProjectTile'
 import styled from 'styled-components'
 
 const ProjectsContainer = styled.div`
@@ -21,13 +21,11 @@ const ProjectsContainer = styled.div`
 
 function Projects(props)  {
 	let projects = props.projects
-	// if (props.homepage){
-	// 	projects = projects.slice(0,4)
-	// }
+
 	return (
 		<ProjectsContainer>
 			<h1>Things I've Built</h1>
-			{ projects.map(project => <ProjectItem project={ project } key={ project.name }/> ) }
+			{ projects.map(project => <ProjectTile project={ project } key={ project.name }/> ) }
 		</ProjectsContainer>
 	)
 }

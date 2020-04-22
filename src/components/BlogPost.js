@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 import { withRouter } from "react-router-dom";
 import AngularBlog from '../data/AngularBlog'
+import moment from 'moment'
 
 //helper functions
 import stringToURL  from '../utils/stringToUrl.js'
@@ -90,7 +91,6 @@ class BlogPost extends React.Component {
 
 
 	getPostContent = () => {
-		var moment = require('moment');
 
 		if (this.state.post) {
 			return (

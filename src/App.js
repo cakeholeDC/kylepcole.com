@@ -11,13 +11,11 @@ import ProjectPage from './components/ProjectPage.js'
 import BlogPost from './components/BlogPost.js'
 import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
-import Feed from 'rss-to-json'
 
 //helpers
 import getMediumBlogPosts from './utils/getMediumBlogPosts.js'
 
 //static content
-import $AngularBlog from './data/AngularBlog'
 import $ProjectList from './data/projectList.js'
 import $SkillList from './data/skillList.js'
 
