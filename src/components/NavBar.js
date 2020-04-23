@@ -1,8 +1,5 @@
 import React from 'react'
-import PROJECTS from '../data/projectList.js'
 import styled from 'styled-components'
-
-const links = 4
 
 const Navbar = styled.nav`
 	display: flex;

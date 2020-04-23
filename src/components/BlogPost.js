@@ -6,11 +6,10 @@ import AngularBlog from '../data/AngularBlog'
 import moment from 'moment'
 
 //helper functions
-import stringToURL  from '../utils/stringToUrl.js'
+import stringToURL from '../utils/stringToUrl.js'
 import getMediumBlogPosts from '../utils/getMediumBlogPosts.js'
 
 const Post = styled.div`
-
 	width: 65%;
 	margin: auto;
 	text-align: left;

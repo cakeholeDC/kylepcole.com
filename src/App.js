@@ -6,7 +6,7 @@ import HomePage from './containers/HomePage.js'
 import About from './components/About.js'
 import Projects from './containers/Projects.js'
 import Blog from './containers/Blog.js'
-import Skills from './containers/Skills.js'
+import Resume from './containers/Resume.js'
 import ProjectPage from './components/ProjectPage.js'
 import BlogPost from './components/BlogPost.js'
 import Footer from './containers/Footer.js'
@@ -44,7 +44,7 @@ class App extends React.Component {
               <Route exact path="/blog/:id" render={ () => <BlogPost posts={ this.state.posts }/> }/>
               <Route exact path="/projects" render={ ()=> <Projects projects={ this.state.projects } /> } /> 
               <Route exact path="/projects/:id" render={ () => <ProjectPage projects={ this.state.projects } /> } />
-              <Route exact path="/resume" render={ () => <Skills skills={ this.state.skills }/> } />
+              <Route exact path="/resume" render={ () => <Resume skills={ this.state.skills }/> } />
               <Route exact path="/contact" component={ About } />
               <Route exact path="/home" component={ HomePage } />
               <Route exact path="/" component={ HomePage } />

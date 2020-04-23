@@ -1,11 +1,10 @@
 import React from 'react'
-// import POSTS from '../data/posts.js'
 import BlogTile from '../components/BlogTile.js'
 import styled from 'styled-components'
 import moment from 'moment'
 
 const BlogList = styled.div`
-	width: 70%;
+	width: 75%;
 	min-height: 100%;
 	margin: auto;
   	display: flex;
