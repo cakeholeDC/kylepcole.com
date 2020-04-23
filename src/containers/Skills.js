@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const SkillsContainer = styled.div`
 	min-height: 100%;
-	width: 70%;
+	// width: 70%;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
@@ -22,10 +22,9 @@ const SkillsContainer = styled.div`
 
 function Skills(props)  {
 	
-	let skills = [...SKILLS]//.sort((a,b) => a.name < b.name ? -1 : 1)
-	// if (props.homepage){
-	// 	skills = skills.slice(0,8)
-	// }
+	let skills = [...SKILLS]
+	// Sort alphabetically?
+	// skills.sort((a,b) => a.name < b.name ? -1 : 1)
 
 	return (
 		<SkillsContainer>

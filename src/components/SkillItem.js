@@ -25,14 +25,17 @@ const Skill = styled.div`
 	}
 
 	display: flex; 
-	flex-basis: calc(25% - 40px);	
+	flex-basis: calc(25% - 40px);
+	// flex-basis: calc(20% - 40px);
 	justify-content: center;
 	margin: 1rem;
 	flex-direction: column;
 
 	img {
-	  max-height: 8rem;
-	  max-width: 8rem;
+	  // max-height: 8rem;
+	  // max-width: 8rem;
+	  max-height: 5rem;
+	  max-width: 5rem;
 	  margin: auto;
 		
 		&:hover {
@@ -45,12 +48,12 @@ const Skill = styled.div`
 	}
 
 	p {
+		font-size: .8rem;
 		font-weight: bold;
 	}
 `
 
 function SkillItem (props) {
-	console.log("SkillItem", props.skill)
 	return(
 		<Skill>
 			<img src={ `icons/skills/${props.skill.icon}` } onError={event => event.target.src = "https://via.placeholder.com/128"} />

@@ -3,6 +3,7 @@ import RESUME from '../data/resume.js'
 import styled from 'styled-components'
 import Skills from './Skills.js'
 import Experience from '../components/Experience.js'
+import Education from '../components/Education.js'
 
 
 const ResumeContainer = styled.div`
@@ -25,11 +26,14 @@ const ResumeContainer = styled.div`
 function Resume(props)  {
 	
 	let resume = RESUME
+	let education = resume.education.sort((a,b) => a.graduationYear > b.graduationYear ? -1 : 1)
 
 	return (
 		<ResumeContainer>
 			<h1>WORK EXPERIENCE</h1>
 			{ resume.experience.map(job => <Experience job={ job } key={ job.company }/> ) }
+			<h1>Education</h1>
+			{ education.map(school => <Education school={ school }/>) }
 			<Skills />
 		</ResumeContainer>
 	)

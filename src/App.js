@@ -11,6 +11,7 @@ import ProjectPage from './components/ProjectPage.js'
 import BlogPost from './components/BlogPost.js'
 import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
+import { withTheme } from 'styled-components';
 
 //helpers
 import getMediumBlogPosts from './utils/getMediumBlogPosts.js'
@@ -18,6 +19,11 @@ import getMediumBlogPosts from './utils/getMediumBlogPosts.js'
 //static content
 import $ProjectList from './data/projectList.js'
 import $SkillList from './data/skillList.js'
+
+// let theme = {
+//   $header: "'Fjalla One', sans-serif;",
+//   $body: "'Cantarell', sans-serif;"
+// }
 
 class App extends React.Component {
   state={
@@ -32,7 +38,9 @@ class App extends React.Component {
     })
   }
 
+
   render(){
+    console.log(this.props)
     return (
       <div className="App">
       	<Header />
@@ -58,4 +66,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withTheme(App);
