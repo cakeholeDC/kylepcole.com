@@ -30,6 +30,7 @@ function Resume(props)  {
 		<ResumeContainer>
 			<h1>WORK EXPERIENCE</h1>
 			{ resume.experience.map(job => <Experience job={ job } key={ job.company }/> ) }
+			<Skills />
 		</ResumeContainer>
 	)
 }

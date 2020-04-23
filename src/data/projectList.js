@@ -12,6 +12,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "React",
+			hosting: 'Heroku',
 		},
 		technologies: [
 			"ReactJS",
@@ -41,6 +42,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "React",
+			hosting: '',
 		},
 		technologies: [
 			"Ruby on Rails",
@@ -66,6 +68,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "Javascript",
+			hosting: '',
 		},
 		technologies: [
 			"Ruby on Rails",
@@ -91,6 +94,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "React",
+			hosting: '',
 		},
 		technologies: [
 			"Ruby on Rails",
@@ -121,6 +125,7 @@ const projects = [
 			back: '',
 			api: '',
 			front: "React",
+			hosting: 'AWS',
 		},
 		technologies: [
 			"ReactJS",
@@ -149,6 +154,7 @@ const projects = [
 			back: "Ruby",
 			api: "",
 			front: "Rails",
+			hosting: '',
 		},
 		technologies: [
 			"Ruby on Rails",
@@ -178,6 +184,7 @@ const projects = [
 			back: "Ruby",
 			api: "",
 			front: "",
+			hosting: '',
 		},
 		technologies: [
 			"Ruby",

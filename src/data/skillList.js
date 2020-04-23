@@ -78,6 +78,10 @@ const skillList = [
 		icon: "creative-cloud-round-128.png"
 	},
 	{
+		name: "Amazon Web Services",
+		icon: "aws.png"
+	},
+	{
 		name: "Photoshop",
 		icon: ""
 	},

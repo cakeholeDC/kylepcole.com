@@ -126,8 +126,11 @@ class ProjectPage extends React.Component  {
 			case "postgres": title = "PostgreSQL"; icon = 'Postgresql_elephant.svg'; break;
 			case "mongo": title = "MongoDB"; icon = 'mongo.png'; break;
 			case "sqlite": title = "SQLite"; icon = 'Sqlite.svg'; break;
+			case "heroku": title = "Heroku"; icon = 'heroku-logo-solid-purple.svg'; break;
+			case "aws": title = "AWS"; icon = 'aws.png'; break;
 		  	default: return '';
 		}
+		const awsIcon = "https://d0.awsstatic.com/logos/powered-by-aws.png"
 		return <img className="stack-icon" title={ title } alt={ icon } src={ `/icons/skills/${icon}` }/>
 	}
 
