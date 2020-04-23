@@ -1,6 +1,5 @@
 const projects = [
 	{
-		id: 1,
 		year: 2020,
 		name: 'Hunger Swype',
 		// thumbnail: '/projects/thumbs/hunger-swype.jpg',
@@ -31,7 +30,6 @@ const projects = [
 		link: ''
 	},
 	{
-		id: 3,
 		year: 2020,
 		name: 'expiRATION',
 		thumbnail: '/projects/thumbs/expiration.jpg',
@@ -57,11 +55,10 @@ const projects = [
 		link: ''
 	},
 	{
-		id: 4,
 		year: 2019,
 		name: 'Flytinerary',
 		thumbnail: 'https://source.unsplash.com/collection/431862/300x300',
-		teaser: "A group itinerary planner.",
+		teaser: "Group itinerary planner.",
 		description: 'Mollit duis mollit in reprehenderit do dolore veniam aliqua nostrud minim et sint laborum sit ex do consequat nisi sunt et officia occaecat est ea qui velit exercitation ut consectetur excepteur irure id in irure mollit duis nisi cupidatat consequat sint amet fugiat adipisicing sit et dolore dolor adipisicing culpa exercitation incididunt anim id amet non consequat dolor amet nisi magna cillum exercitation proident sunt proident enim irure adipisicing id mollit ex nulla dolore esse fugiat sunt qui sit cupidatat dolore veniam tempor velit sed consectetur consequat nostrud occaecat minim consequat veniam pariatur reprehenderit laboris consequat fugiat anim anim esse cupidatat nisi non dolor laborum mollit amet magna exercitation elit esse laborum mollit anim culpa mollit sit qui dolore incididunt in mollit enim in excepteur ea magna aliqua cillum eiusmod ea anim laborum duis enim sunt adipisicing nostrud cillum sit aute ut duis veniam ut esse aute cupidatat nulla proident velit et irure dolore in cupidatat tempor esse ut elit dolor laborum do.',
 		stack: {
 			database: "SQLite",
@@ -83,7 +80,28 @@ const projects = [
 		link: ''
 	},
 	{
-		id: 5,
+		year: 2020,
+		name: 'U Brew',
+		thumbnail: 'https://source.unsplash.com/collection/9448810/300x300',
+		teaser: 'Find breweries by state.',
+		description: 'Incididunt anim sunt aute ad sed eu anim dolore et dolore id aliqua irure elit exercitation aliquip nostrud labore ea reprehenderit veniam laboris ex irure qui excepteur esse duis ut incididunt sunt reprehenderit tempor dolor exercitation enim ad id deserunt proident eiusmod nulla cupidatat velit commodo cupidatat mollit nostrud qui mollit fugiat ut duis in ea eu consequat eiusmod pariatur officia dolore consectetur quis quis in ex fugiat proident dolore esse id sunt in eu est ex aliqua dolore eiusmod est ut amet fugiat commodo laboris ut culpa tempor fugiat in incididunt voluptate dolore labore consequat mollit culpa fugiat qui id qui consequat minim est in ullamco sint esse nisi veniam sit ullamco ad proident velit nostrud sunt qui elit nulla dolore sed irure exercitation voluptate cillum cillum quis velit deserunt in non consectetur nostrud commodo minim in amet aliqua reprehenderit occaecat in enim magna dolore dolor duis nostrud irure sunt aute in nisi pariatur est in in.',
+		stack: {
+			database: "",
+			back: "",
+			api: "openbrewerydb",
+			front: "Angular",
+			hosting: '',
+		},
+		technologies: [
+			"Angular",
+			"Open Brewery API",
+		],
+		collaborators: [],
+		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
+		link: ''
+	},
+	{
 		year: 2020,
 		name: 'Bandmates',
 		thumbnail: 'https://source.unsplash.com/collection/1068/300x300',
@@ -114,7 +132,6 @@ const projects = [
 		link: ''
 	},
 	{
-		id: 2,
 		year: 2020,
 		name: 'Portfolio',
 		thumbnail: 'https://source.unsplash.com/collection/2369878/300x300',
@@ -143,7 +160,6 @@ const projects = [
 		link: ''
 	},
 	{
-		id: 6,
 		year: 2019,
 		name: 'Bökmarke',
 		thumbnail: '/projects/thumbs/bokmarke.jpg',
@@ -172,8 +188,8 @@ const projects = [
 		demo: '',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
-	},{
-		id: 7,
+	},
+	{
 		year: 2019,
 		name: 'Capitol Bill',
 		thumbnail: 'https://source.unsplash.com/collection/8660571/300x300',

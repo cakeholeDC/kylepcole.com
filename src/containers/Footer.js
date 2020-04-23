@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
+
 
 const FooterBar = styled.div`
 	flex-shrink: 0;
@@ -30,11 +32,10 @@ const FooterBar = styled.div`
 `
 
 export default function Footer() {
-	const currentYear = new Date()
-	console.log(currentYear)
+	const currentYear = moment().format("YYYY")
 	return(
 		<FooterBar>
-			Copyright & Design &copy;2020 Kyle P. Cole
+			Copyright & Design &copy;{ currentYear } Kyle P. Cole
 		</FooterBar>
 	)
 }
