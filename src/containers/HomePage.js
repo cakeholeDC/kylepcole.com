@@ -26,7 +26,7 @@ function HomePage() {
 			<img id="full-screen" src="https://via.placeholder.com/1800x600" style={{ width: "100%"}}/>
 			<HomePageContent>
 				<Left>Hi, I'm Kyle. I'm a Web Developer living in Washington, DC. <br/>My passions are code, music, sustainability, and accesibiilty.</Left>
-				<Right><p>My background is in print marketing and design, I spent the last few years at <a href="https://www.morevang.com">More Vang</a> where I was coding PDFs from scratch on a daily basis and oversaw the product team. Before that, I worked at Apple and managed a print shop. When I'm not writing code I can be found ouside enjoying nature or playing guitar in my basement.</p>
+				<Right><p>I'm a product manager turned engineer with a design background. I spent the last few years at <a href="https://www.morevang.com">More Vang</a> where I was coding PDFs from scratch on a daily basis and oversaw the product team. Before that, I worked at Apple and managed a print shop. When I'm not writing code I can be found ouside enjoying nature or playing guitar in my basement.</p>
 				<p>Checkout my <a href='/projects'>projects</a> to see what I'm into, or my <a href='blog'>blog</a> to see what I'm up to.</p>
 				</Right>
 			</HomePageContent>

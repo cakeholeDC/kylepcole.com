@@ -17,6 +17,7 @@ const Project = styled.div`
 	margin: 1rem;
 	// box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	box-shadow: 0 0px 1px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	border-radius: .5rem;
 
 	//styles
 	// background: black; //shows through image when transparent
@@ -45,6 +46,9 @@ const Project = styled.div`
 	  display: block;
 	  transition: .5s ease;
 	  backface-visibility: hidden;
+	  border-radius: .5rem;
+	  border-bottom-left-radius: 0px;
+	  border-bottom-right-radius: 0px;
 
 	  //content
 	  align-content: center;
@@ -80,7 +84,7 @@ const Project = styled.div`
 	.post-title-teaser {
 		padding: .75rem;
 		text-align: left;
-		height: 10rem;
+		height: 9.5rem;
 		overflow: hidden;
 
 		

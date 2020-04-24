@@ -100,6 +100,18 @@ const resume = {
 			graduationYear: 2020,
 			program: "Full Stack Software Engineering Ruby on Rails and JavaScript immersive program",
 		}
+	],
+	funFacts: [
+		{
+			year: 2006,
+			fact: "Eagle Scout",
+			note: `Page 56: <a href=https://www.windhamnh.gov/Archive/ViewFile/Item/262" target="_blank">Town of Windham, New Hampshire - Annual Report 2006</a>`
+		},
+		{
+			year: 2002,
+			fact: `Macy's Thanksgiving Day Parade`,
+			note: `Link: <a href="https://www.youtube.com/watch?v=2u8dbugNdgA" target="_blank">At 1m:11s I'm the fourth up from the base of the Y in NYC; the tall guy</a>`
+		}
 	]
 }
 

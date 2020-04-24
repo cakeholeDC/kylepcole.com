@@ -2,6 +2,7 @@ import React from 'react'
 import RESUME from '../data/resume.js'
 import styled from 'styled-components'
 import Skills from './Skills.js'
+import FunFacts from './FunFacts.js'
 import Experience from '../components/Experience.js'
 import Education from '../components/Education.js'
 
@@ -35,6 +36,7 @@ function Resume(props)  {
 			<h1>Education</h1>
 			{ education.map(school => <Education school={ school }/>) }
 			<Skills />
+			<FunFacts facts={ resume.funFacts }/>
 		</ResumeContainer>
 	)
 }

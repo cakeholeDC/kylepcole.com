@@ -95,6 +95,7 @@ const projects = [
 		technologies: [
 			"Angular",
 			"Open Brewery API",
+			"Bootstrap"
 		],
 		collaborators: [],
 		demo: '',

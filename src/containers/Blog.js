@@ -24,9 +24,12 @@ const Filters = styled.div`
 	display: flex;
 	width: 100%;
 	height: 3rem;
+	border-bottom: 1px solid lightgray;
+	padding: 0 1rem;
+
 
 	.sort {
-		flex: 3;
+		flex: 4;
 		// justify-content: space-between;
 		display:flex;
 
