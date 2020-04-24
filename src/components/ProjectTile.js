@@ -69,6 +69,18 @@ const Project = styled.div`
 		  }
 		}
 	}
+
+
+	// @TODO mobile overlays
+	// @media (min-width: 576px) { 
+	// 	.project-image {
+	// 	  opacity: 0.3 !important;
+	// 	}
+	// 	.project-overlay {
+	// 	  opacity: 1 !important;
+	// 	}
+	// }
+
 `
 
 
