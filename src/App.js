@@ -8,6 +8,7 @@ import Blog from './containers/Blog.js'
 import Resume from './containers/Resume.js'
 import ProjectPage from './components/ProjectPage.js'
 import BlogPost from './components/BlogPost.js'
+import Contact from './containers/Contact.js'
 import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
 import { withTheme } from 'styled-components';
@@ -52,7 +53,7 @@ class App extends React.Component {
               <Route exact path="/projects" render={ ()=> <Projects projects={ this.state.projects } /> } /> 
               <Route exact path="/projects/:id" render={ () => <ProjectPage projects={ this.state.projects } /> } />
               <Route exact path="/resume" render={ () => <Resume skills={ this.state.skills }/> } />
-              <Route exact path="/contact" component={ HomePage } />
+              <Route exact path="/contact" component={ Contact } />
               <Route exact path="/home" component={ HomePage } />
               <Route exact path="/" component={ HomePage } />
           { /* allows for shortpath links to projects. Will direct to 404 as needed from ProjectPage.js */ }
