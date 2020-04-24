@@ -78,7 +78,7 @@ const Project = styled.div`
 	}
 
 	.post-title-teaser {
-		padding: .5rem;
+		padding: .75rem;
 		text-align: left;
 		height: 10rem;
 		overflow: hidden;
@@ -96,11 +96,7 @@ const Project = styled.div`
 
 		p{
 			margin-top: 0.375rem;
-			text-overflow: ellipsis;
-
-			&:after {
-				// content: '...';
-			}
+		    overflow: hidden;
 		}
 	}
 `
@@ -130,11 +126,18 @@ class BlogTile extends React.Component {
 	}
 
 	render(){
+		const PostTeaser = styled.div`
+			display: -webkit-box;
+		    -webkit-line-clamp: ${this.props.title.length > 35 ? 4 : 5};
+		    -webkit-box-orient: vertical;
+		    overflow: hidden;
+		    height: 79%;
+		`
 		var moment = require('moment');
 		const { title, pubDate, description, history } = this.props
 
 		const published = moment(pubDate).format(`MMMM D, YYYY`)
-		const teaser = ReactHtmlParser(description.replace('&lt;',''))//.substring(4,150)
+		const teaser = ReactHtmlParser(description)//.replace('&lt;','')) // hotfix for <Component /> title => fixed in medium, pending update
 
 		return(
 			<Project>
@@ -146,7 +149,7 @@ class BlogTile extends React.Component {
 					<div className="post-title-teaser">
 						<h3>{ title }</h3>
 						<hr/>
-						<p>{ teaser }</p>
+						<PostTeaser>{ teaser }</PostTeaser>
 					</div>
 				</Link>
 			</Project>
