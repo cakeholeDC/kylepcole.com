@@ -3,7 +3,6 @@ import './App.scss';
 import { Switch, Route, Link } from "react-router-dom";
 import Header from './containers/Header.js'
 import HomePage from './containers/HomePage.js'
-import About from './components/About.js'
 import Projects from './containers/Projects.js'
 import Blog from './containers/Blog.js'
 import Resume from './containers/Resume.js'
@@ -47,13 +46,13 @@ class App extends React.Component {
         <div className="content">
         	<Switch>
               <Route exact path="/404" component={ ErrorPage } />
-              <Route exact path="/about" component={ About } />
+              <Route exact path="/about" component={ HomePage } />
               <Route exact path="/blog" render={ () => <Blog posts={ this.state.posts }/> }/>
               <Route exact path="/blog/:id" render={ () => <BlogPost posts={ this.state.posts }/> }/>
               <Route exact path="/projects" render={ ()=> <Projects projects={ this.state.projects } /> } /> 
               <Route exact path="/projects/:id" render={ () => <ProjectPage projects={ this.state.projects } /> } />
               <Route exact path="/resume" render={ () => <Resume skills={ this.state.skills }/> } />
-              <Route exact path="/contact" component={ About } />
+              <Route exact path="/contact" component={ HomePage } />
               <Route exact path="/home" component={ HomePage } />
               <Route exact path="/" component={ HomePage } />
           { /* allows for shortpath links to projects. Will direct to 404 as needed from ProjectPage.js */ }
