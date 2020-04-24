@@ -6,6 +6,7 @@ const PositionDetails = styled.div`
 	text-align: justify;
 	width: 90%;
 	margin: auto;
+	margin-bottom: 3rem;
 	
 	h1 {
 		font-size: 1.5rem;

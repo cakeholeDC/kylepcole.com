@@ -26,7 +26,7 @@ const Filters = styled.div`
 	height: 3rem;
 
 	.sort {
-		flex: 1;
+		flex: 3;
 		// justify-content: space-between;
 		display:flex;
 
@@ -36,7 +36,7 @@ const Filters = styled.div`
 	}
 
 	.filter {
-		flex: 1;
+		flex: 4;
 		justify-content: flex-end;
 		display: flex;
 
@@ -90,7 +90,7 @@ class Blog extends React.Component {
 				<h1>Sometimes I write.</h1>
 				<Filters >
 					<div className="sort">
-						<label for="sort">Sort</label>
+						<label for="sort">Sort Posts:</label>
 						<label for="new-old">
 							<input 
 								checked={this.state.sort === "new-old"}

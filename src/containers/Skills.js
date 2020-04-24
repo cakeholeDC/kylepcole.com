@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const SkillsContainer = styled.div`
 	min-height: 100%;
-	// width: 70%;
+	width: 100%;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;

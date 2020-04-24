@@ -26,7 +26,7 @@ const Skill = styled.div`
 
 	display: flex; 
 	flex-basis: calc(25% - 40px);
-	// flex-basis: calc(20% - 40px);
+	// flex-basis: calc(20%);
 	justify-content: center;
 	margin: 1rem;
 	flex-direction: column;
