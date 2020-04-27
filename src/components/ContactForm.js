@@ -6,7 +6,7 @@ const ContactMe = styled.form`
   width: 100%;
 
   fieldset {
-    width: 100%;
+    // width: 100%;
     margin: 0;
     padding: 1rem 1.5rem;
     border: 1px solid lightgray;

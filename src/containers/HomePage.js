@@ -2,6 +2,7 @@ import React from 'react'
 // import Skills from '../containers/Skills'
 // import Projects from '../containers/Projects'
 import styled from 'styled-components'
+// import TwitterFeed from '../components/TwitterFeed'
 
 const HomePageContent = styled.div`
 	display:flex;
@@ -30,6 +31,7 @@ function HomePage() {
 				<p>Checkout my <a href='/projects'>projects</a> to see what I'm into, or my <a href='blog'>blog</a> to see what I'm up to.</p>
 				</Right>
 			</HomePageContent>
+			
 		</div>
 	)
 }
