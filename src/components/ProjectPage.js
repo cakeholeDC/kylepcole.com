@@ -1,6 +1,9 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
+import ReactHtmlParser from 'react-html-parser';
+import TwitterFeed from '../components/TwitterFeed'
+
 
 //helper functions
 import stringToURL  from '../utils/stringToUrl.js'
@@ -170,7 +173,7 @@ class ProjectPage extends React.Component  {
 						{ this.getCollaborators() }
 						</div>
 					</div>
-					<p>{ project.description }</p>
+					<p>{ project.name !== "Scootie Gang" ? ReactHtmlParser(project.description) : <TwitterFeed profile={project.link}/> }</p>
 					<ul>
 						<h3>Technologies Used:</h3>
 						{ project.technologies.map(tech => <li className="tech" key={ stringToURL(tech) }>{ tech }</li>) }

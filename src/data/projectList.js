@@ -217,6 +217,25 @@ const projects = [
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: ''
 	},
+	{
+		year: 2018,
+		name: 'Scootie Gang',
+		thumbnail: 'https://source.unsplash.com/collection/5058104/300x300',
+		teaser: 'A Micro-Mobility and Public Transit focused Twitter Account',
+		description: '<a class="twitter-timeline" href="https://twitter.com/ScootieGang?ref_src=twsrc%5Etfw">Tweets by ScootieGang</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
+		stack: {
+			database: "",
+			back: "",
+			api: "",
+			front: "",
+			hosting: '',
+		},
+		technologies: [],
+		collaborators: [],
+		demo: '',
+		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
+		link: 'https://twitter.com/ScootieGang'
+	},
 ]
 
 export default projects
