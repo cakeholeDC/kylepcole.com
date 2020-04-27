@@ -1,26 +1,31 @@
 import React, { useEffect } from "react";
 import styled from 'styled-components'
 
+
 const FeedContainer = styled.section`
   flex: 1;
+
+  twitter-embed{
+    ${props => props.profile ? "margin: auto;" : null}
+  }
 
   h1 {
     margin-bottom: 0px;
   }
 `
 
-
 const TwitterFeed = (props) => {
 
   const twitterURL = props.profile ? props.profile : 'https://twitter.com/kylepcole'
+  const username = twitterURL.replace('https://twitter.com/','')
   
   useEffect(() => {
     const anchor = document.createElement("a");
     anchor.setAttribute("class", "twitter-timeline");
     anchor.setAttribute("data-theme", "light"); //light/dark
     // anchor.setAttribute("data-tweet-limit", "3");
-    anchor.setAttribute("data-height", "400");
-    anchor.setAttribute("data-width", "300");
+    anchor.setAttribute("data-height", props.profile ? '1200' : "400");
+    anchor.setAttribute("data-width", props.profile ? "80%" : "300");
     anchor.setAttribute("data-dnt", "true");
     anchor.setAttribute("data-chrome", "noheader nofooter "); //noheader / nofooter / noborders
     anchor.setAttribute("href", twitterURL);
@@ -35,7 +40,7 @@ const TwitterFeed = (props) => {
     <FeedContainer className="twitter-feed">
       <h1>Tweets:</h1>
       <div className="twitter-embed"></div>
-      <a href={`${twitterURL}?ref_src=twsrc%5Etfw`} class="twitter-follow-button" data-show-count="true">Follow @kylepcole</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href={`${twitterURL}?ref_src=twsrc%5Etfw`} class="twitter-follow-button" data-show-count="true">Follow @{username}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </FeedContainer>
   );
 };

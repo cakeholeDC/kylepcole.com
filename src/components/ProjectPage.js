@@ -48,7 +48,7 @@ const ProjectContainer = styled.div`
 			}
 		}
 
-		.project-details {
+		.project-info {
 			display: flex;
 			margin-bottom: 1rem;
 			border-bottom: 1px solid lightgray;
@@ -67,6 +67,21 @@ const ProjectContainer = styled.div`
 		}
 
 	}
+
+	.project-details {
+		display:flex;
+
+		.tech {
+			flex: 1;
+		}
+
+		.desc {
+			flex: 2;
+		}
+
+		h3 { display: block;}
+	}
+
 	p {
 		flex: 2;
 		text-align: right;
@@ -91,7 +106,7 @@ const ProjectContainer = styled.div`
 		text-align: left;
 
 		li {
-			margin: 0 0 1rem 0;
+			margin: 0 0 1rem 3rem;
 		}
 	}
 `
@@ -168,16 +183,20 @@ class ProjectPage extends React.Component  {
 							<h1>{ project.name }</h1>
 							<div className="stack-icons">{ this.getStack(project.stack) }</div>
 						</div>
-						<div className="project-details">
+						<div className="project-info">
 						<p>Est. { project.year }</p>
 						{ this.getCollaborators() }
 						</div>
 					</div>
-					<p>{ project.name !== "Scootie Gang" ? ReactHtmlParser(project.description) : <TwitterFeed profile={project.link}/> }</p>
-					<ul>
-						<h3>Technologies Used:</h3>
-						{ project.technologies.map(tech => <li className="tech" key={ stringToURL(tech) }>{ tech }</li>) }
-					</ul>
+					<div className="project-details">
+					{ project.technologies.length > 0
+						? <ul className="tech">
+							<h3>Technologies Used:</h3>
+								{ project.technologies.map(tech => <li className="tech" key={ stringToURL(tech) }>{ tech }</li>) }
+							</ul>
+					: null }
+					{ project.name !== "Scootie Gang" ? <div className="desc">{ReactHtmlParser(project.description)}</div> : <TwitterFeed profile={project.link}/> }
+					</div>
 			</ProjectContainer>
 		)
 	}
