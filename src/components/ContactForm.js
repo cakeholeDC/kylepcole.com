@@ -37,9 +37,19 @@ const ContactMe = styled.form`
 
   button{
     padding: .5rem 1rem;
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-family: 'Fjalla One', sans-serif;
     text-transform: uppercase;
+    float: right;
+    border-radius: .5rem;
+    background-color: rgba(0,0,0,.2);
+    border: 0px;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0,0,0,.8);
+      color: white;
+    }
 
   }
 `

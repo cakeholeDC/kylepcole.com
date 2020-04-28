@@ -6,11 +6,15 @@ const FeedContainer = styled.section`
   flex: 1;
 
   twitter-embed{
-    ${props => props.profile ? "margin: auto;" : null}
+    //${props => props.profile ? "margin: auto;" : null}
+    width: 94%;
+    margin: auto;
   }
 
   h1 {
     margin: 0px;
+    border-bottom: 0px;
+    font-family: 'Fjalla One', sans-serif;
   }
 `
 
@@ -38,7 +42,7 @@ const TwitterFeed = (props) => {
 
   return (
     <FeedContainer className="twitter-feed">
-      <h1>Twitter:</h1>
+      <h1>{props.profile ? "Tweets" : "Twitter:" }</h1>
       <div className="twitter-embed"></div>
       <a href={`${twitterURL}?ref_src=twsrc%5Etfw`} class="twitter-follow-button" data-show-count="true">Follow @{username}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </FeedContainer>
