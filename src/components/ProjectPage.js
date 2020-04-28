@@ -86,17 +86,6 @@ const ProjectContainer = styled.div`
 		flex: 2;
 		text-align: right;
 		margin-right: 0;
-	}
-
-
-	img {
-		width: 100%;
-	    height: 25rem;
-	    object-fit: cover;
-	    object-position: center;
-	}
-
-	p {
 		margin: 1rem;
 		text-align: justify;
 	}
@@ -109,6 +98,13 @@ const ProjectContainer = styled.div`
 			margin: 0 0 1rem 3rem;
 		}
 	}
+`
+const ProjectImg = styled.img`
+	width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    ${props => props.name === "Scootie Gang" ? "object-position: bottom;" : "object-position: center;"}
+    // object-position: center;
 `
 
 class ProjectPage extends React.Component  {
@@ -138,19 +134,28 @@ class ProjectPage extends React.Component  {
 	getStackIcon(tech){
 		let title, icon
 		switch(tech.toLowerCase()) {
-			case "ruby": title = "Ruby"; icon = 'ruby-128.png'; break;
-			case "rails": title = "Ruby on Rails"; icon = 'rails-128.png'; break;
-			case "react": title = "ReactJS"; icon = 'react-128.png'; break;
-			case "postgres": title = "PostgreSQL"; icon = 'Postgresql_elephant.svg'; break;
-			case "mongo": title = "MongoDB"; icon = 'mongo.png'; break;
-			case "sqlite": title = "SQLite"; icon = 'Sqlite.svg'; break;
-			case "heroku": title = "Heroku"; icon = 'heroku-logo-solid-purple.svg'; break;
-			case "aws": title = "AWS"; icon = 'aws.png'; break;
-			case "angular": title = "Angular"; icon = 'angular-official.png'; break;
+			case "ruby": title = "Ruby"; icon = 'ruby.svg'; break;
+			case "rails": title = "Ruby on Rails"; icon = 'rails.svg'; break;
+			case "react": title = "ReactJS"; icon = 'react.svg'; break;
+			case "postgres": title = "PostgreSQL"; icon = 'postgres.svg'; break;
+			case "mongo": title = "MongoDB"; icon = 'mongodb-icon.svg'; break;
+			case "sqlite": title = "SQLite"; icon = 'sqlite.svg'; break;
+			case "heroku": title = "Heroku"; icon = 'heroku.svg'; break;
+			case "aws": title = "AWS"; icon = 'aws.svg'; break;
+			case "angular": title = "Angular"; icon = 'angular.svg'; break;
 		  	default: return '';
 		}
-		const awsIcon = "https://d0.awsstatic.com/logos/powered-by-aws.png"
-		return <img className="stack-icon" title={ title } key={ icon } alt={ icon } src={ `/icons/skills/${icon}` }/>
+		const iconPath = '/icons/tech/'
+		// const iconPath = '/icons/skills/'
+
+		return <img 
+				className="stack-icon" 
+				title={ title } 
+				key={ icon } 
+				alt={ icon } 
+				src={ iconPath + icon }
+				onError={event => event.target.src = "https://via.placeholder.com/128"}
+			/>
 	}
 
 	getStack = (stack) => {
@@ -175,9 +180,11 @@ class ProjectPage extends React.Component  {
 	render(){
 		const project = this.state.project
 
+		
+
 		return(
 			<ProjectContainer>
-				<img src={ project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
+				<ProjectImg name={project.name} src={ project.name === "Hunger Swype" ? '/projects/hunger-swype.jpg' : project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
 					<div className="project-header">
 						<div className="project-title">
 							<h1>{ project.name }</h1>

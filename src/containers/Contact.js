@@ -78,9 +78,9 @@ function Contact(props)  {
 			<SocialContainer>
 				<div className="social-icons">
   				<h1 className ="social-header">Social:</h1>
-					<a className="social-link" href="https://github.com/cakeholeDC/" target="_blank"><img src="/icons/skills/github-solid.png"/></a>
-					<a className="social-link" href="https://www.linkedin.com/in/kylepcole/" target="_blank"><img src="/icons/LI-In-Bug.png"/></a>
-					<a className="social-link" href="https://stackoverflow.com/users/12328717/cakehole" target="_blank"><img src="/icons/so-logo.svg"/></a>
+					<a className="social-link" href="https://github.com/cakeholeDC/" target="_blank"><img src="/icons/tech/github.svg"/></a>
+					<a className="social-link" href="https://www.linkedin.com/in/kylepcole/" target="_blank"><img src="/icons/social/LI-In-Bug.png"/></a>
+					<a className="social-link" href="https://stackoverflow.com/users/12328717/cakehole" target="_blank"><img src="/icons/social/so-logo.svg"/></a>
 				</div>
 				<TwitterFeed/> 
 			</SocialContainer>

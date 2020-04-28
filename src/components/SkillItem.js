@@ -54,9 +54,11 @@ const Skill = styled.div`
 `
 
 function SkillItem (props) {
+	const iconPath = '/icons/tech/'
+	// const iconPath = '/icons/skills/'
 	return(
 		<Skill>
-			<img src={ `icons/skills/${props.skill.icon}` } onError={event => event.target.src = "https://via.placeholder.com/128"} />
+			<img src={ iconPath + props.skill.icon } onError={event => event.target.src = "https://via.placeholder.com/128"} />
 			{/* @TODO => FALLBACK = icons/skills/coding-128.png */}
 			<p>{props.skill.name}</p>
 		</Skill>
