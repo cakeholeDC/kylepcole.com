@@ -29,7 +29,7 @@ const SocialContainer = styled.div`
 
     .social-header {
 	  margin: 0px auto;
-	  width: 94%;
+	  // width: 94%;
 	  font-size: 1.5em;
 	  border-bottom: 1px solid rgba(15,70,100,.12);
 	  margin-bottom: 1.25rem;

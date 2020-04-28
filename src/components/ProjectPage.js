@@ -180,8 +180,6 @@ class ProjectPage extends React.Component  {
 	render(){
 		const project = this.state.project
 
-		
-
 		return(
 			<ProjectContainer>
 				<ProjectImg name={project.name} src={ project.name === "Hunger Swype" ? '/projects/hunger-swype.jpg' : project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />

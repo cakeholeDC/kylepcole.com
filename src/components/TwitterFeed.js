@@ -5,11 +5,11 @@ import styled from 'styled-components'
 const FeedContainer = styled.section`
   flex: 1;
 
-  twitter-embed{
-    //${props => props.profile ? "margin: auto;" : null}
-    width: 94%;
-    margin: auto;
-  }
+  // .twitter-embed{
+  //   //${props => props.profile ? "margin: auto;" : null}
+  //   width: 94%;
+  //   margin: auto;
+  // }
 
   h1 {
     margin: 0px;
