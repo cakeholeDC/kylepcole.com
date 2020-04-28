@@ -143,6 +143,7 @@ class ProjectPage extends React.Component  {
 			case "heroku": title = "Heroku"; icon = 'heroku.svg'; break;
 			case "aws": title = "AWS"; icon = 'aws.svg'; break;
 			case "angular": title = "Angular"; icon = 'angular.svg'; break;
+			case "sass": title = "Sass"; icon = 'sass.svg'; break;
 		  	default: return '';
 		}
 		const iconPath = '/icons/tech/'

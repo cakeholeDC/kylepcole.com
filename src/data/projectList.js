@@ -11,6 +11,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "React",
+			framework: 'Sass',
 			hosting: 'Heroku',
 		},
 		technologies: [
@@ -42,6 +43,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "React",
+			framework: 'Semantic',
 			hosting: '',
 		},
 		technologies: [
@@ -69,6 +71,7 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "Javascript",
+			framework: 'Semantic',
 			hosting: '',
 		},
 		technologies: [
@@ -96,6 +99,7 @@ const projects = [
 			back: "",
 			api: "openbrewerydb",
 			front: "Angular",
+			framework: 'Bootstrap',
 			hosting: '',
 		},
 		technologies: [
@@ -121,7 +125,8 @@ const projects = [
 			back: "Ruby",
 			api: "Rails",
 			front: "React",
-			hosting: '',
+			framework: 'Semantic',
+			hosting: 'Heroku',
 		},
 		technologies: [
 			"Ruby on Rails",
@@ -153,6 +158,7 @@ const projects = [
 			back: '',
 			api: '',
 			front: "React",
+			framework: 'Sass',
 			hosting: 'AWS',
 		},
 		technologies: [
@@ -183,6 +189,7 @@ const projects = [
 			back: "Ruby",
 			api: "",
 			front: "Rails",
+			framework: 'Bulma',
 			hosting: '',
 		},
 		technologies: [
@@ -216,6 +223,7 @@ const projects = [
 			back: "Ruby",
 			api: "",
 			front: "",
+			framework: '',
 			hosting: '',
 		},
 		technologies: [
@@ -245,6 +253,7 @@ const projects = [
 			back: "",
 			api: "",
 			front: "",
+			framework: '',
 			hosting: '',
 		},
 		technologies: [],
