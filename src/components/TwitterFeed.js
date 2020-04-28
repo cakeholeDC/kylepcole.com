@@ -10,7 +10,7 @@ const FeedContainer = styled.section`
   }
 
   h1 {
-    margin-bottom: 0px;
+    margin: 0px;
   }
 `
 
@@ -38,7 +38,7 @@ const TwitterFeed = (props) => {
 
   return (
     <FeedContainer className="twitter-feed">
-      <h1>Tweets:</h1>
+      <h1>Twitter:</h1>
       <div className="twitter-embed"></div>
       <a href={`${twitterURL}?ref_src=twsrc%5Etfw`} class="twitter-follow-button" data-show-count="true">Follow @{username}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </FeedContainer>
