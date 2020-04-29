@@ -20,5 +20,9 @@ export default async function getMediumBlogPosts() {
   // });
 
   // console.log("mediumRSS=>", output)
+
+  //hotfix for incorrect images
+  output.find(blog => blog.title ==="display: flex-grid v0.5").thumbnail = 'https://cdn-images-1.medium.com/max/1024/1*RTM5nUISCNJbl_yOZTO7WQ.png'
+  
   return output
 }

@@ -88,19 +88,21 @@ class BlogPost extends React.Component {
         })
 	}
 
-
 	getPostContent = () => {
-
 		if (this.state.post) {
+
+			const post = this.state.post//this.hotfixContent(this.state.post)
+			const postContent = post.content.replace('"https://cdn-images-1.medium.com/max/1024/1*tfBMJe7IqTliA5w3hfc6lQ.jpeg"', 'https://cdn-images-1.medium.com/max/1024/1*RTM5nUISCNJbl_yOZTO7WQ.png')
+
 			return (
 				<React.Fragment>
 					<Disclaimer>
 						Note: This post was imported from Medium's RSS feed. External media may be displayed as text links.
-						<br/><a href={ this.state.post.link }>Click here to view the original post.</a>
+						<br/><a href={ post.link }>Click here to view the original post.</a>
 					</Disclaimer>
-					<h1>{ ReactHtmlParser(this.state.post.title) }</h1>
-					<PubDate>Published { moment(this.state.post.pubDate).format(`dddd, MMMM D, YYYY`) }</PubDate>
-					{ ReactHtmlParser(this.state.post.content) }
+					<h1>{ ReactHtmlParser(post.title) }</h1>
+					<PubDate>Published { moment(post.pubDate).format(`dddd, MMMM D, YYYY`) }</PubDate>
+					{ ReactHtmlParser(postContent) }
 				</React.Fragment>
 			)
 		} else { 
