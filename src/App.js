@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Header from './containers/Header.js'
 import HomePage from './containers/HomePage.js'
 import Projects from './containers/Projects.js'
@@ -13,6 +13,7 @@ import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
 import { withTheme } from 'styled-components';
 
+
 //helpers
 import getMediumBlogPosts from './utils/getMediumBlogPosts.js'
 
@@ -20,10 +21,17 @@ import getMediumBlogPosts from './utils/getMediumBlogPosts.js'
 import $ProjectList from './data/projectList.js'
 import $SkillList from './data/skillList.js'
 
-// let theme = {
-//   $header: "'Fjalla One', sans-serif;",
-//   $body: "'Cantarell', sans-serif;"
-// }
+// GOOGLE ANALYTICS
+import ReactGA from 'react-ga'
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
+history.listen(location => {
+  ReactGA.set({ page: location.pathname })
+  ReactGA.pageview(location.pathname)
+})
+
+// END GOOGLE ANALYTICS
 
 class App extends React.Component {
   state={
@@ -36,12 +44,14 @@ class App extends React.Component {
     this.setState({ 
       posts: await getMediumBlogPosts()
     })
+    ReactGA.pageview(window.location.pathname)
   }
 
 
   render(){
     console.log(this.props)
     return (
+      <Router history={history}>
       <div className="App">
       	<Header />
         <div className="content">
@@ -62,6 +72,7 @@ class App extends React.Component {
           </div>
           <Footer/>
       </div>
+      </Router>
     );
   }
 }
