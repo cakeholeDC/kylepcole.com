@@ -39,7 +39,7 @@ const Filters = styled.div`
 	}
 
 	.filter {
-		flex: 4;
+		flex: 6;
 		justify-content: flex-end;
 		display: flex;
 
