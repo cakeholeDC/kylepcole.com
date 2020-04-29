@@ -246,7 +246,7 @@ const projects = [
 		year: 2018,
 		name: 'Scootie Gang',
 		thumbnail: '/projects/scootiegang.jpg',
-		teaser: 'A Micromobility and Public Transit focused Twitter Account',
+		teaser: 'A Micromobility and Public Transit focused Twitter Account.',
 		description: '<a class="twitter-timeline" href="https://twitter.com/ScootieGang?ref_src=twsrc%5Etfw">Tweets by ScootieGang</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
 		stack: {
 			database: "",
