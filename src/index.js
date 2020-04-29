@@ -5,17 +5,12 @@ import App from './App';
 import ErrorPage from './components/ErrorPage';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ReactGA from 'react-ga'
 
+ReactGA.initialize('UA-15625763-1') // Add your ID
 
 ReactDOM.render(
-	<Router>
-	  <React.StrictMode>
-	  <Switch>
-          <Route exact path="/404" component={ ErrorPage } />
-          <Route path="/" component={ App } />
-	    </Switch>
-	  </React.StrictMode>
-	</Router>,
+	<App />,
   document.getElementById('root')
 );
 
