@@ -15,12 +15,13 @@ const Post = styled.div`
 	text-align: left;
 
 	figure{
+		text-align: center;
+
 		img {
 			width: 100%;
 		}
 
 		figcaption {
-			text-align: center;
 			font-style: italic;
 		}
 	}
@@ -88,6 +89,17 @@ class BlogPost extends React.Component {
         })
 	}
 
+	showMediumImportDisclaimer(post){
+		if (post.title !== "Try-Angular"){
+			return (
+				<Disclaimer>
+					Note: This post was imported from Medium's RSS feed. External media may be displayed as text links.
+					<br/><a href={ post.link }>Click here to view the original post.</a>
+				</Disclaimer>
+			)
+		} else return null
+	}
+
 	getPostContent = () => {
 		if (this.state.post) {
 
@@ -96,10 +108,7 @@ class BlogPost extends React.Component {
 			console.log(post)
 			return (
 				<React.Fragment>
-					<Disclaimer>
-						Note: This post was imported from Medium's RSS feed. External media may be displayed as text links.
-						<br/><a href={ post.link }>Click here to view the original post.</a>
-					</Disclaimer>
+					{ this.showMediumImportDisclaimer(post) }
 					<h1>{ ReactHtmlParser(post.title) }</h1>
 					<PubDate>Published { moment(post.pubDate).format(`dddd, MMMM D, YYYY`) }</PubDate>
 					{ ReactHtmlParser(postContent) }
