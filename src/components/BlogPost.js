@@ -53,6 +53,7 @@ const Post = styled.div`
 
 	code {
 		background: black;
+		color: #4AF626;
 	}
 
 	blockquote {

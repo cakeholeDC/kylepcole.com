@@ -141,7 +141,7 @@ class BlogTile extends React.Component {
 		const { title, pubDate, description, history } = this.props
 
 		const published = moment(pubDate).format(`MMMM D, YYYY`)
-		const teaser = ReactHtmlParser(description)//.replace('&lt;','')) // hotfix for <Component /> title => fixed in medium, pending update
+		const teaser = ReactHtmlParser(description)
 
 		return(
 			<Project>
