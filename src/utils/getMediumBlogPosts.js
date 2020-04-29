@@ -12,7 +12,8 @@ export default async function getMediumBlogPosts() {
 
 	let output = await fetch(rss2jsonAPI + blogRSS)
      .then(res => res.json())
-     .then(json => [...json.items, $AngularBlog].sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 ))
+     // .then(json => [...json.items, $AngularBlog].sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 ))
+     .then(json => [...json.items]
 
   // // @TODO - explore rss-to-json package to convert locally => must import at top
   // let output = await Feed.load(corsProxy + blogRSS, function(err, rss){

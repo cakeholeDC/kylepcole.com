@@ -91,9 +91,9 @@ class BlogPost extends React.Component {
 	getPostContent = () => {
 		if (this.state.post) {
 
-			const post = this.state.post//this.hotfixContent(this.state.post)
+			const post = this.state.post
 			const postContent = post.content.replace('"https://cdn-images-1.medium.com/max/1024/1*tfBMJe7IqTliA5w3hfc6lQ.jpeg"', 'https://cdn-images-1.medium.com/max/1024/1*RTM5nUISCNJbl_yOZTO7WQ.png')
-
+			console.log(post)
 			return (
 				<React.Fragment>
 					<Disclaimer>
