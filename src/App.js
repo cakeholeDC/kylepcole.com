@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './containers/Header.js'
 import HomePage from './containers/HomePage.js'
 import Projects from './containers/Projects.js'
@@ -49,7 +49,7 @@ class App extends React.Component {
 
 
   render(){
-    console.log(this.props)
+
     return (
       <Router history={history}>
       <div className="App">

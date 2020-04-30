@@ -1,6 +1,4 @@
 import React from 'react'
-import SKILLS from '../data/skillList.js'
-import SkillItem from '../components/SkillItem'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 

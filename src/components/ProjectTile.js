@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
-
+import { device } from '../device';
 
 //helper functions
 import stringToURL  from '../utils/stringToUrl.js'
@@ -26,6 +26,8 @@ const Project = styled.div`
 		  opacity: 1;
 		}
 	}
+
+
 
 	.project-image {
 	  //animations 
@@ -70,16 +72,15 @@ const Project = styled.div`
 		}
 	}
 
-
-	// @TODO mobile overlays
-	// @media (min-width: 576px) { 
-	// 	.project-image {
-	// 	  opacity: 0.3 !important;
-	// 	}
-	// 	.project-overlay {
-	// 	  opacity: 1 !important;
-	// 	}
-	// }
+	//mobile overlays
+	@media only screen and ${device.mobileL} {
+		.project-image {
+		  opacity: 0.5;
+		}
+		.project-overlay {
+		  opacity: 1;
+		}
+	}
 
 `
 
@@ -90,7 +91,7 @@ function ProjectTile(props)  {
 	return(
 			<Link to={`/projects/${stringToURL(project.name)}`}>
 			<Project>
-				<img className="project-image" src={ project.thumbnail} onError={event => event.target.src = "https://via.placeholder.com/300"} />
+				<img className="project-image" alt={ project.name } src={ project.thumbnail} onError={event => event.target.src = "https://via.placeholder.com/300"} />
 				<div className="project-overlay">
 					<div className="overlay-content">
 						<h2>{ project.name }</h2>

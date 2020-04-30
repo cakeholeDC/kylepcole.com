@@ -5,12 +5,6 @@ import styled from 'styled-components'
 const FeedContainer = styled.section`
   flex: 1;
 
-  // .twitter-embed{
-  //   //${props => props.profile ? "margin: auto;" : null}
-  //   width: 94%;
-  //   margin: auto;
-  // }
-
   h1 {
     margin: 0px;
     border-bottom: 0px;
@@ -20,10 +14,11 @@ const FeedContainer = styled.section`
 
 const TwitterFeed = (props) => {
 
-  const twitterURL = props.profile ? props.profile : 'https://twitter.com/kylepcole'
-  const username = twitterURL.replace('https://twitter.com/','')
+    const twitterURL = props.profile ? props.profile : 'https://twitter.com/kylepcole'
+    const username = twitterURL.replace('https://twitter.com/','')
   
-  useEffect(() => {
+  useEffect((twitterURL, props) => {
+
     const anchor = document.createElement("a");
     anchor.setAttribute("class", "twitter-timeline");
     anchor.setAttribute("data-theme", "light"); //light/dark

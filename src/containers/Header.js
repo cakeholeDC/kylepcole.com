@@ -2,11 +2,11 @@ import React from 'react'
 import NavBar from '../components/NavBar.js'
 import styled from 'styled-components'
 import Headroom from 'react-headroom'
+import { device } from '../device';
+
 
 const HeaderBar = styled.div`
-    // display: inline-block;
     display: flex;
-    // position: relative;
     width: 100%;
     height: 100px;
 	text-align: left;
@@ -16,6 +16,11 @@ const HeaderBar = styled.div`
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
+
+    @media only screen and ${device.mobileL} { 
+		padding: 1.5rem;
+		padding-top: 2rem;
+	}
 
 	#home { 
 		flex: 4;
@@ -32,11 +37,17 @@ const HeaderBar = styled.div`
 		display: inline-block;
 		margin: 0px;
 		margin-top: -.375rem;
+
 	}
 
 	.nav-container {
 		flex: 3;
 		text-align: right;
+
+		@media only screen and ${device.mobileL} { 
+			flex: 1;
+		}
+
 	}
 `
 

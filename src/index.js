@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import ErrorPage from './components/ErrorPage';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ReactGA from 'react-ga'
 
 ReactGA.initialize('UA-15625763-1') // Add your ID

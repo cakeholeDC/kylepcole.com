@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 import { withRouter } from "react-router-dom";
-import AngularBlog from '../data/AngularBlog'
 import moment from 'moment'
+import { device } from '../device';
+
 
 //helper functions
 import stringToURL from '../utils/stringToUrl.js'
@@ -14,8 +15,22 @@ const Post = styled.div`
 	margin: auto;
 	text-align: left;
 
+	@media only screen and ${device.mobileL} { 
+		width: 90%;
+	}
+
 	figure{
 		text-align: center;
+
+		@media only screen and ${device.mobileL} {
+			margin-inline-start: 20px;
+		    margin-inline-end: 20px;
+			
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
+		}
 
 		img {
 			width: 100%;
@@ -24,6 +39,7 @@ const Post = styled.div`
 		figcaption {
 			font-style: italic;
 		}
+
 	}
 
 	a[href^="https://medium.com/media/"] {
@@ -45,6 +61,7 @@ const Post = styled.div`
 		padding: 1rem;
 		background: black;
 		color: #4AF626;
+		overflow: auto;
 	}
 
 	h1 {
@@ -54,12 +71,19 @@ const Post = styled.div`
 	code {
 		background: black;
 		color: #4AF626;
+		font-family: 'Cantarell', sans-serif;
+		padding: .1375rem;
 	}
 
 	blockquote {
 		background-color: #e0e0e0;
 		padding: 1rem;
 		border-left: 5px solid gray;
+
+		@media only screen and ${device.mobileL} {
+			margin-inline-start: 20px;
+		    margin-inline-end: 20px;
+		}
 	}
 `
 const Disclaimer = styled.div`
@@ -69,6 +93,10 @@ const Disclaimer = styled.div`
 	font-family: monospaced;
 	padding: 1rem;
 	font-style: italic;
+
+	@media only screen and ${device.mobileL} { 
+		width: 90%;
+	}
 `
 
 const PubDate = styled.div`

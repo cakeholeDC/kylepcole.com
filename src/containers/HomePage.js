@@ -3,7 +3,7 @@ import React from 'react'
 // import Projects from '../containers/Projects'
 import styled from 'styled-components'
 // import TwitterFeed from '../components/TwitterFeed'
-
+import { device } from '../device';
 
 const PrimaryImg = styled.img`
 	width: 100vw;
@@ -11,12 +11,21 @@ const PrimaryImg = styled.img`
     object-fit: cover;
     object-position: center;
 
+	@media only screen and ${device.mobileL} { 
+	    height: 30vh;
+	}
+
 `
 const HomePageContent = styled.div`
 	display:flex;
+    flex-direction: row;
 	width: 90%;
 	margin: auto;
 	text-align: left;
+
+	@media only screen and ${device.mobileL} { 
+	    flex-direction: column;
+	}
 `
 
 const Left = styled.h3`
@@ -27,18 +36,22 @@ const Left = styled.h3`
 const Right = styled.div`
 	margin-left: 1rem;
 	flex: 5;
+
+	@media only screen and ${device.mobileL} { 
+	    margin-left: 0px;
+	}
 `
 
 function HomePage() {
-	const codeImg = "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3353&q=80"
-	const metroImg = "https://images.unsplash.com/photo-1508046894814-45baae4132da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80"
+	const codeImg = "https://images.unsplash.com/photo-1504639725590-34d0984388bd"
+	// const metroImg = "https://images.unsplash.com/photo-1508046894814-45baae4132da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80"
 	const notebook = "/images/notebook.jpg"
 
 	return(
 		<div id="homepage-container">
 			<PrimaryImg 
 				src={ notebook }
-				onError={event => event.target.src = "https://via.placeholder.com/1800x600"}
+				onError={event => event.target.src = codeImg}
 			/>
 			<HomePageContent>
 				<Left>Hi, I'm Kyle. I'm a Web Developer living in Washington, DC. <br/>My passions are code, music, sustainability, and accesibility.</Left>

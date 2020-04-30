@@ -2,6 +2,7 @@ import React from 'react'
 import BlogTile from '../components/BlogTile.js'
 import styled from 'styled-components'
 import moment from 'moment'
+import { device } from '../device';
 
 const BlogList = styled.div`
 	width: 75%;
@@ -12,29 +13,44 @@ const BlogList = styled.div`
   	flex-direction: row;
   	justify-content: center;
 
+  	
+
   	h1 {
 		width: 100%;
 		border-bottom: 1px solid lightgray;
 		padding-bottom: .5rem;
 		font-family: 'Fjalla One', sans-serif;
+
+		@media only screen and ${device.mobileL} { 
+			margin-bottom: .25rem;
+		}
 	}
 `
 
 const Filters = styled.div`
+	text-align: left;
 	display: flex;
 	width: 100%;
 	height: 3rem;
 	border-bottom: 1px solid lightgray;
 	padding: 0 1rem;
 
+	@media only screen and ${device.mobileL} { 
+		flex-direction: column;
+		height: 7rem;
+	}
 
 	.sort {
 		flex: 4;
-		// justify-content: space-between;
 		display:flex;
 
 		label {
 			flex: 1;
+		}
+
+		@media only screen and ${device.mobileL} { 
+			flex: 1;
+			flex-direction: column;
 		}
 	}
 
@@ -46,6 +62,12 @@ const Filters = styled.div`
 		select {
 			margin-left: 1rem;
 			margin-top:.25rem;
+		}
+
+		@media only screen and ${device.mobileL} { 
+			margin-top: 1rem;
+			flex: 1;
+			display: block;
 		}
 	}
 `
@@ -93,7 +115,7 @@ class Blog extends React.Component {
 				<h1>Sometimes I write.</h1>
 				<Filters >
 					<div className="sort">
-						<label for="sort">Sort Posts:</label>
+						<label for="sort"><strong>Sort Posts:</strong></label>
 						<label for="new-old">
 							<input 
 								checked={this.state.sort === "new-old"}
@@ -114,7 +136,7 @@ class Blog extends React.Component {
 						Oldest First</label>
 					</div>
 					<div className="filter">
-						Filter by Year
+						<strong>Filter by Year:</strong>
 						<select name="filter" onChange={ (e) => this.eventToState(e) }>
 							<option selected value="all">All</option>
 							{ this.getAllPostYears().map(year => <option value={ year }>{ year }</option> ) }

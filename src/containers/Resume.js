@@ -5,21 +5,22 @@ import Skills from './Skills.js'
 import FunFacts from './FunFacts.js'
 import Experience from '../components/Experience.js'
 import Education from '../components/Education.js'
+import { device } from '../device';
 
 
 const ResumeContainer = styled.div`
-	// min-height: 100%;
 	width: 75%;
 	margin: auto;
-	// display: flex;
-	// flex-wrap: wrap;
-	// flex-direction: row;
-	// justify-content: center;
+
+	@media only screen and ${device.mobileL} {
+		width: 90%;
+	}
 
 	h1 {
 		width: 100%;
-		border-bottom: 1px solid lightgray;
+		// border-bottom: 1px solid lightgray;
 		padding-bottom: .5rem;
+		margin-bottom: 1rem;
 		font-family: 'Fjalla One', sans-serif;
 	}
 `

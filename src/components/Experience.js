@@ -1,12 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
+import { device } from '../device';
+
 
 const PositionDetails = styled.div`
 	text-align: justify;
 	width: 90%;
 	margin: auto;
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
+	border-top: 1px solid lightgray;
+    padding-top: 1rem;
+
+	@media only screen and ${device.mobileL} {
+		ul {
+			padding-left: 1rem;
+		}
+
+		.job-header {
+			flex-direction: column;
+		}
+	}
 	
 	h1 {
 		font-size: 1.5rem;
@@ -14,6 +28,8 @@ const PositionDetails = styled.div`
 		margin-bottom: 0px;
 		padding-bottom: 0px;
 	}
+
+
 
 	p, h1 {
 		margin-top: 0px;
@@ -25,11 +41,21 @@ const PositionDetails = styled.div`
 		.left {
 			flex: 2;
 			text-align: left;
+
+			p {
+				margin-bottom: 0px;
+			}
 		}
 
 		.right {
 			flex: 1;
 			text-align: right;
+
+			@media only screen and ${device.mobileL} {
+				display: flex;
+				flex-direction: column-reverse;
+				text-align: left;
+			}
 
 			p {
 				margin-bottom: 0px;
@@ -49,7 +75,7 @@ export default class Experience extends React.Component {
 				</div>
 				<div className="right">
 					<p className="term">{ job.positionTerm }</p>
-					<p className="term">{ this.props.job.location }</p>
+					<p className="location">{ this.props.job.location }</p>
 				</div>
 				</div>
 				{ /*job.positionTerm === this.props.job.fullTerm ? null : <p>{ job.positionTerm }</p> */}

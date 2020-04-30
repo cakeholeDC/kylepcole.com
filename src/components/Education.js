@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import ReactHtmlParser from 'react-html-parser';
+import { device } from '../device';
+
 
 const EducationDetails = styled.div`
 	text-align: justify;
 	width: 90%;
 	margin: auto;
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
+	border-top: 1px solid lightgray;
+    padding-top: 1rem;
 	
 	h1 {
 		font-size: 1.5rem;
@@ -19,8 +22,11 @@ const EducationDetails = styled.div`
 		margin-top: 0px;
 	}
 
-	.job-header {
+	.educationHeader {
 		display: flex;
+		@media only screen and ${device.mobileL} {
+			flex-direction: column;
+		}
 
 		.left {
 			flex: 2;
@@ -30,6 +36,9 @@ const EducationDetails = styled.div`
 		.right {
 			flex: 1;
 			text-align: right;
+			@media only screen and ${device.mobileL} {
+				text-align: left;
+			}
 
 			p {
 				margin-bottom: 0px;
@@ -43,14 +52,14 @@ export default function Education(props) {
 	let school = props.school
 	return (
 		<EducationDetails>
-			<div className="job-header">
+			<div className="educationHeader">
 				<div className="left">
-					<h1 className="name">{ school.school }</h1>
-					<p className="company">{ school.program }</p>
+					<h1 className="school">{ school.school }</h1>
+					<p className="program">{ school.program }</p>
 				</div>
 				<div className="right">
-					<p className="term">{ school.graduationYear }</p>
-					<p className="term">{ school.location }</p>
+					<p className="year">{ school.graduationYear }</p>
+					<p className="location">{ school.location }</p>
 				</div>
 			</div>
 		</EducationDetails>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
+import { device } from '../device';
 
 
 const FooterBar = styled.div`
@@ -16,18 +17,8 @@ const FooterBar = styled.div`
     border-top: 1px solid lightgray;
     margin-top: 2.5rem;
 
-	a { 
-		text-decoration: none;
-		color: black;
-
-		:hover {
-			text-decoration: none;
-		}
-	}
-
-	.title {
-		display: inline-block;
-	    // margin-left: 5rem;
+	@media only screen and ${device.mobileL} { 
+		padding: 1.5rem;
 	}
 `
 

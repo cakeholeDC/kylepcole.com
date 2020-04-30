@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 import TwitterFeed from '../components/TwitterFeed'
+import { device } from '../device';
 
 
 //helper functions
@@ -12,8 +13,14 @@ import stringToURL  from '../utils/stringToUrl.js'
 const ProjectContainer = styled.div`
 	width: 75%;
 	display: inline-block;
-	padding: 0 3rem;
+	padding: 0 1rem;
 	margin-top: 3rem;
+
+	@media only screen and ${device.mobileL} {
+		width: 90%;
+		padding: 0, .5rem;
+		margin-top: 1rem;
+	}
 
 	.project-header {
 		width: 100%;
@@ -24,6 +31,10 @@ const ProjectContainer = styled.div`
 			display: flex;
 			margin-bottom: 1rem;
 			border-bottom: 1px solid lightgray;
+
+			@media only screen and ${device.mobileL} {
+				flex-direction: column;
+			}
 			
 			h1 {
 				flex: 2;
@@ -38,12 +49,20 @@ const ProjectContainer = styled.div`
 				justify-content: flex-end;
 				padding-top: .5rem;
 
+				@media only screen and ${device.mobileL} {
+					justify-content: space-between;
+					margin-bottom: 1rem;
+				}
+
 				.stack-icon {
 					flex: 1;
 					max-height: 2rem;
 					max-width: 2rem;
 					object-fit: contain;
 					margin-right: .5rem;
+					@media only screen and ${device.mobileL} {
+						margin-right: 0px;
+					}
 				}
 			}
 		}
@@ -71,8 +90,17 @@ const ProjectContainer = styled.div`
 	.project-details {
 		display:flex;
 
+		@media only screen and ${device.mobileL} {
+			flex-direction: column-reverse;
+		}
+
 		.tech {
 			flex: 1;
+
+			@media only screen and ${device.mobileL} {
+				padding: 0px;
+				padding-left: 1rem;
+			}
 		}
 
 		.desc {

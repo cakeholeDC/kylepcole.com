@@ -14,6 +14,7 @@
 <p>As you can see, each piece of data has been assigned a specific datatype. Unlike regular Javascript, if you tried to set the value of <code>state=0</code> you would get an error. In the long term, this is significantly more consistent and maintainable than type handling in regular JS.</p>
 <h3>CLI Component Generation</h3>
 <p>This was probably the coolest thing about Angular to me. Because Angular has a CLI, you can generate components via the command line. By typing <code>ng generate [componentName]</code> the Angular CLI will initialize all the files required for that component, and place them in the appropriate directories (more on those files later). I love this feature! It reminds me of the Rails CLI generators for resources and migrations. Anyone who knows me knows that I'm all for automation.</p>
+<p>Note: Angular CLI Commands are prefixed with <strong>ng</strong> -  for <em>aNGular.</em></p>
 <h3>Data Binding</h3>
 <p>This was a big one in my opinion. Data binding (state management) happens by default in an Angular app and does not require an external package like Redux or Flux. While this is extremely useful, I found the way in which the data was passed around to be a little convoluted.</p>
 <p>In React, if you wanted to iterate over a list of breweries you would <code>.map()</code> over this.state.array turning each object into a component. In Angular, the array would be stored in state and accessed using props prefixed with <strong>*ng</strong> - again, for <em>aNGular.</em></p>

@@ -20,7 +20,7 @@ export default function ErrorPage() {
 	// header.classList.add("404")
 	return(
 		<Error404>
-			<img src="diving-404.png"/>
+			<img src="diving-404.png" alt="404"/>
 			<h1>Hmmm. We're having trouble finding that page.</h1>
 			<p>Here's some things you can try:
 			<ul>

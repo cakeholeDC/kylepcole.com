@@ -2,12 +2,17 @@ import React from 'react'
 import ContactForm from '../components/ContactForm'
 import styled from 'styled-components'
 import TwitterFeed from '../components/TwitterFeed'
+import { device } from '../device';
 
 
 const ContactContainer = styled.div`
 	width: 50%;
 	min-height: 100%;
 	margin: auto;
+
+	@media only screen and ${device.mobileL} {
+		width: 90%;
+	}
 
   	h1 {
 		width: 100%;
@@ -20,6 +25,10 @@ const ContactContainer = styled.div`
 const SocialContainer = styled.div`
 	display: flex;
 	height: 100%;
+
+	@media only screen and ${device.mobileL} {
+		flex-direction: column;
+	}
 
     margin: 0;
     padding: 1rem 1.5rem;
@@ -78,9 +87,30 @@ function Contact(props)  {
 			<SocialContainer>
 				<div className="social-icons">
   				<h1 className ="social-header">Social:</h1>
-					<a className="social-link" href="https://github.com/cakeholeDC/" target="_blank"><img src="/icons/tech/github.svg"/></a>
-					<a className="social-link" href="https://www.linkedin.com/in/kylepcole/" target="_blank"><img src="/icons/social/LI-In-Bug.png"/></a>
-					<a className="social-link" href="https://stackoverflow.com/users/12328717/cakehole" target="_blank"><img src="/icons/social/so-logo.svg"/></a>
+					<a
+						className="social-link"
+						href="https://github.com/cakeholeDC/"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<img alt="Github" src="/icons/tech/github.svg"/>
+					</a>
+					<a
+						className="social-link"
+						href="https://www.linkedin.com/in/kylepcole/"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<img alt="LinkedIn" src="/icons/social/LI-In-Bug.png"/>
+					</a>
+					<a
+						className="social-link"
+						href="https://stackoverflow.com/users/12328717/cakehole"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<img alt="Stack Overflow"src="/icons/social/so-logo.svg"/>
+					</a>
 				</div>
 				<TwitterFeed/> 
 			</SocialContainer>
