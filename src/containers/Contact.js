@@ -78,7 +78,6 @@ const SocialContainer = styled.div`
 `
 
 function Contact(props)  {
-
 	return (
 		<ContactContainer>
 			<h1>Send me a Note</h1>

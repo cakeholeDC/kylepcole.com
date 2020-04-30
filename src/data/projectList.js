@@ -154,7 +154,7 @@ const projects = [
 		teaser: "Personal Website.\nThe one you're on.",
 		description: '<p>Personal portfolio website showcasing past projects. This project is the website you\'re currently viewing. Go ahead, take a look around.</p><p>In the Blog section I\'ve imported my Medium Blog posts through an RSS feed integration. Under Resume, you can take a look at my background and past experiences. There\'s also a contact page, let\'s get in touch and build something together!</p><p>Built with React. Hosted with AWS.</p>',
 		stack: {
-			database: "Mongo",
+			database: "",
 			back: '',
 			api: '',
 			front: "React",
@@ -170,6 +170,7 @@ const projects = [
 			"Medium API",
 			"rss-2-json API",
 			"ReactHTMLParser",
+			"react-responsive-navbar"
 		],
 		collaborators: [],
 		demo: '',

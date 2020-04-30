@@ -17,7 +17,7 @@ const TwitterFeed = (props) => {
     const twitterURL = props.profile ? props.profile : 'https://twitter.com/kylepcole'
     const username = twitterURL.replace('https://twitter.com/','')
   
-  useEffect((twitterURL, props) => {
+  useEffect(() => {
 
     const anchor = document.createElement("a");
     anchor.setAttribute("class", "twitter-timeline");
@@ -35,6 +35,7 @@ const TwitterFeed = (props) => {
     document.getElementsByClassName("twitter-embed")[0].appendChild(script);
   }, []);
 
+    console.log("twitter")
   return (
     <FeedContainer className="twitter-feed">
       <h1>{props.profile ? "Tweets" : "Twitter:" }</h1>
