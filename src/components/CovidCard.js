@@ -104,7 +104,7 @@ class CovidCard extends React.Component {
 			const name = queryString.parse(this.props.location.search).name
 			return name
 		}
-		else return `Friends`
+		else return `Friend`
 	}
 
 	render(){
