@@ -104,7 +104,7 @@ class CovidCard extends React.Component {
 			const name = queryString.parse(this.props.location.search).name
 			return name
 		}
-		else return `Stay Safe`
+		else return `Friends`
 	}
 
 	render(){
@@ -112,13 +112,13 @@ class CovidCard extends React.Component {
 		return(
 			<CardContainer>
 				<Card className='cards'>
-				    <h1 className="click-me">We wrote you a note! Click to read it.</h1>
+				    <h1 className="click-me">A note for you during the COVID-19 pandemic.</h1>
 				    <div className='card'>
 				        <div className='face front-face'>
 				          <p className="front-text">GESUNDHEIT.</p>
 				        </div>
 				        <div className="face back-face">
-				        <p className="salutation">Dear, { this.getName() }</p>
+				        <p className="salutation">Dear { this.getName(), }</p>
 				          <p className="body">Last time we saw you, Leonardo DaVinci was probably still alive.</p>
 				          <p>Hope to reconnect before the next Renaissance.</p>
 				          <p>Stay safe out there.</p>
