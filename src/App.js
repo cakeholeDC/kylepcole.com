@@ -11,6 +11,7 @@ import BlogPost from './components/BlogPost.js'
 import Contact from './containers/Contact.js'
 import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
+import CovidCard from './components/CovidCard.js'
 
 
 //helpers
@@ -57,6 +58,7 @@ class App extends React.Component {
         	<Switch>
               <Route exact path="/404" component={ ErrorPage } />
               <Route exact path="/about" component={ HomePage } />
+              <Route exact path="/covid" component={ CovidCard } />
               <Route exact path="/blog" render={ () => <Blog posts={ this.state.posts }/> }/>
               <Route exact path="/blog/:id" render={ () => <BlogPost posts={ this.state.posts }/> }/>
               <Route exact path="/projects" render={ ()=> <Projects projects={ this.state.projects } /> } /> 
