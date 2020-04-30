@@ -118,7 +118,7 @@ class CovidCard extends React.Component {
 				          <p className="front-text">GESUNDHEIT.</p>
 				        </div>
 				        <div className="face back-face">
-				        <p className="salutation">Dear { this.getName(), }</p>
+				        <p className="salutation">Dear { this.getName() },</p>
 				          <p className="body">Last time we saw you, Leonardo DaVinci was probably still alive.</p>
 				          <p>Hope to reconnect before the next Renaissance.</p>
 				          <p>Stay safe out there.</p>
