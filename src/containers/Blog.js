@@ -115,8 +115,8 @@ class Blog extends React.Component {
 				<h1>Sometimes I write.</h1>
 				<Filters >
 					<div className="sort">
-						<label for="sort"><strong>Sort Posts:</strong></label>
-						<label for="new-old">
+						<label htmlFor="sort"><strong>Sort Posts:</strong></label>
+						<label htmlFor="new-old">
 							<input 
 								checked={this.state.sort === "new-old"}
 								type="radio"
@@ -125,7 +125,7 @@ class Blog extends React.Component {
 								onChange={ (e) => this.eventToState(e) }
 							/>
 						Newest First</label>
-						<label for="old-new">
+						<label htmlFor="old-new">
 							<input 
 								checked={this.state.sort === "old-new"}
 								type="radio"
@@ -138,8 +138,8 @@ class Blog extends React.Component {
 					<div className="filter">
 						<strong>Filter by Year:</strong>
 						<select name="filter" onChange={ (e) => this.eventToState(e) }>
-							<option selected value="all">All</option>
-							{ this.getAllPostYears().map(year => <option value={ year }>{ year }</option> ) }
+							<option value="all">All</option>
+							{ this.getAllPostYears().map(year => <option key={ year } value={ year }>{ year }</option> ) }
 						</select>
 					</div>
 				</Filters>
