@@ -35,12 +35,12 @@ const TwitterFeed = (props) => {
     document.getElementsByClassName("twitter-embed")[0].appendChild(script);
   }, []);
 
-    console.log("twitter")
+    // console.log("twitter")
   return (
     <FeedContainer className="twitter-feed">
       <h1>{props.profile ? "Tweets" : "Twitter:" }</h1>
       <div className="twitter-embed"></div>
-      <a href={`${twitterURL}?ref_src=twsrc%5Etfw`} class="twitter-follow-button" data-show-count="true">Follow @{username}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href={`${twitterURL}?ref_src=twsrc%5Etfw`} className="twitter-follow-button" data-show-count="true">Follow @{username}</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </FeedContainer>
   );
 };

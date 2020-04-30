@@ -53,8 +53,8 @@ function FunFacts(props)  {
 		<FactsContainer>
 			<h1>Fun Facts</h1>
 			{ facts.map(fact => { return (
-					<Fact>
-						<h1>{ fact.year } - {fact.fact }</h1>
+					<Fact key={ fact.fact}>
+						<h1 key={ fact.fact}>{ fact.year } - {fact.fact }</h1>
 						{ fact.note === '' ? null : <p className="sidebar">{ ReactHtmlParser(fact.note) }</p>}
 					</Fact>
 				) }

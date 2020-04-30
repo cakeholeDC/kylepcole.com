@@ -48,7 +48,6 @@ const EducationDetails = styled.div`
 `
 
 export default function Education(props) {
-	console.log(props)
 	let school = props.school
 	return (
 		<EducationDetails>

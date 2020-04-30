@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import Header from './containers/Header.js'
 import HomePage from './containers/HomePage.js'
 import Projects from './containers/Projects.js'
@@ -11,7 +11,6 @@ import BlogPost from './components/BlogPost.js'
 import Contact from './containers/Contact.js'
 import Footer from './containers/Footer.js'
 import ErrorPage from './components/ErrorPage.js'
-import { withTheme } from 'styled-components';
 
 
 //helpers
@@ -77,4 +76,4 @@ class App extends React.Component {
   }
 }
 
-export default withTheme(App);
+export default App;

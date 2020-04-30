@@ -67,7 +67,7 @@ const PositionDetails = styled.div`
 export default class Experience extends React.Component {
 	positionDetails = (job) => {
 		return(
-			<PositionDetails>
+			<PositionDetails key={job.role}>
 				<div className="job-header">
 				<div className="left">
 					<h1 className="role">{ job.role }</h1>
@@ -80,7 +80,7 @@ export default class Experience extends React.Component {
 				</div>
 				{ /*job.positionTerm === this.props.job.fullTerm ? null : <p>{ job.positionTerm }</p> */}
 				<ul>
-					{ job.bullets.map(b => <li>{ ReactHtmlParser(b) }</li>) }
+					{ job.bullets.map((b, index) => <li key={index}>{ ReactHtmlParser(b) }</li>) }
 				</ul>
 			</PositionDetails>
 		)
