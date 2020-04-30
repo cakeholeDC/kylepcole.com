@@ -58,6 +58,7 @@ font-family: 'Open Sans', sans-serif;
 	}
 	.back-face {
 	  background: white;
+	  border: 1px solid gray;
 	  padding: 1.25rem;
 	  box-sizing: border-box;
 	  -webkit-transform: rotateY(0deg);
@@ -93,7 +94,11 @@ font-family: 'Open Sans', sans-serif;
 
 	p.salutation {
 		font-weight: bold;
-		margin-top: 0px;
+		// margin-top: 0px;
+	}
+
+	p.farewell {
+		// margin-bottom: 0px;
 	}
 `
 
@@ -122,7 +127,7 @@ class CovidCard extends React.Component {
 				          <p className="body">Last time we saw you, Leonardo DaVinci was probably still alive.</p>
 				          <p>Hope to reconnect before the next Renaissance.</p>
 				          <p>Stay safe out there.</p>
-				          <p>Love,
+				          <p className="farewell">Love,
 				          <br/>Kyle & Sulli
 				          </p>
 				        </div>
