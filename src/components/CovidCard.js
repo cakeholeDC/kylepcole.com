@@ -112,7 +112,7 @@ class CovidCard extends React.Component {
 		return(
 			<CardContainer>
 				<Card className='cards'>
-				    <h1 className="click-me">A note for you during the COVID-19 pandemic.</h1>
+				    <h1 className="click-me">A message during the COVID-19 pandemic.</h1>
 				    <div className='card'>
 				        <div className='face front-face'>
 				          <p className="front-text">GESUNDHEIT.</p>
