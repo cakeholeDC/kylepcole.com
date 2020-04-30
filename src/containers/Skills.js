@@ -16,7 +16,6 @@ const SkillsContainer = styled.div`
 		width: 100%;
 		border-bottom: 1px solid lightgray;
 		padding-bottom: .5rem;
-		font-family: 'Fjalla One', sans-serif;
 	}
 `
 
@@ -28,7 +27,7 @@ function Skills(props)  {
 
 	return (
 		<SkillsContainer>
-			<h1>Skills</h1>
+			<h1>My Skills.</h1>
 			{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
 		</SkillsContainer>
 	)

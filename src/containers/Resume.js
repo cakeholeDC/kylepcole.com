@@ -21,7 +21,6 @@ const ResumeContainer = styled.div`
 		// border-bottom: 1px solid lightgray;
 		padding-bottom: .5rem;
 		margin-bottom: 1rem;
-		font-family: 'Fjalla One', sans-serif;
 	}
 `
 
@@ -32,9 +31,9 @@ function Resume(props)  {
 
 	return (
 		<ResumeContainer>
-			<h1>WORK EXPERIENCE</h1>
+			<h1>My Experience.</h1>
 			{ resume.experience.map(job => <Experience job={ job } key={ job.company }/> ) }
-			<h1>Education</h1>
+			<h1>My Training.</h1>
 			{ education.map(school => <Education school={ school } key={ school.school }/>) }
 			<Skills />
 			<FunFacts facts={ resume.funFacts }/>

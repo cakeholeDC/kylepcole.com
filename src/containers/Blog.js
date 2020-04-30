@@ -17,9 +17,7 @@ const BlogList = styled.div`
 
   	h1 {
 		width: 100%;
-		border-bottom: 1px solid lightgray;
 		padding-bottom: .5rem;
-		font-family: 'Fjalla One', sans-serif;
 
 		@media only screen and ${device.mobileL} { 
 			margin-bottom: .25rem;
@@ -31,9 +29,9 @@ const Filters = styled.div`
 	text-align: left;
 	display: flex;
 	width: 100%;
-	height: 3rem;
 	border-bottom: 1px solid lightgray;
-	padding: 0 1rem;
+	border-top: 1px solid lightgray;
+	padding: 1rem;
 
 	@media only screen and ${device.mobileL} { 
 		flex-direction: column;
