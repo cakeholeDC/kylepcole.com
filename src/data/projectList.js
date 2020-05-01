@@ -66,7 +66,7 @@ const projects = [
 		name: 'Flytinerary',
 		thumbnail: '/projects/flytinerary.jpg',
 		teaser: "Group itinerary planner.",
-		description: "<p>Have you ever planned a vacation with your friends? If so, you know how difficult it is to coordinate a half-dozen flights, a 5 hour arrival window, 3 rental car reservations, a grocery run, and check-in. Maybe you created a shared spreadsheet to log everything, maybe you screame to the heavens that there must be a better way. Flytinerary is here to help.</p><p><strong>Flytinerary is a group itinery planner.</strong> Create a trip and share it with your fellow travelers who will all log their own individual travel plans. Travelers can then see a detailed day-by-day itinerary for everyone on the trip including flight numbers, check-in times, reservation IDs, and more!</p>",
+		description: "<p>Have you ever planned a vacation with your friends? If so, you know how difficult it is to coordinate a half-dozen flights, a 5 hour arrival window, 3 rental car reservations, a grocery run, and check-in. Maybe you created a shared spreadsheet to log everything, maybe you screame to the heavens that there must be a better way. Flytinerary is here to help.</p><p><strong>Flytinerary is a group itinerary planner.</strong> Create a trip and share it with your fellow travelers who will all log their own individual travel plans. Travelers can then see a detailed day-by-day itinerary for everyone on the trip including flight numbers, check-in times, reservation IDs, and more!</p>",
 		stack: {
 			database: "SQLite",
 			back: "Ruby",
