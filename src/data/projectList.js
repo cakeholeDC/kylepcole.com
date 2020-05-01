@@ -12,7 +12,8 @@ const projects = [
 			api: "Rails",
 			front: "React",
 			framework: 'Sass',
-			hosting: 'Heroku',
+			hosting: 'AWS',
+			hostingBack: 'Heroku',
 		},
 		technologies: [
 			"ReactJS",
@@ -28,7 +29,7 @@ const projects = [
 		collaborators: [],
 		demo: 'https://youtu.be/Lu9ow-RFO3c',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
-		link: 'http://hunger-swype.herokuapp.com/',
+		link: 'https://master.d12dcd0jiavy5p.amplifyapp.com/',
 		githubFront: 'https://github.com/cakeholeDC/hunger-swype-frontend',
 		gitbubBack: 'https://github.com/cakeholeDC/hunger-swype-backend',
 	},
