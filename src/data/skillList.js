@@ -3,6 +3,7 @@ const skillList = [
 	{ name: "HTML5", icon: "html5.svg" },
 	{ name: "CSS3", icon: "css3.svg" },
 	{ name: "SASS/SCSS", icon: "sass.svg" },
+	// { name: "gulp", icon: "nodejs.svg" },
 	{ name: "JavaScript", icon: "javascript.svg" },
 	{ name: "ReactJS", icon: "react.svg" },
 	{ name: "Redux", icon: "redux.svg" },
@@ -16,9 +17,13 @@ const skillList = [
 	{ name: "Ruby", icon: "ruby.svg" },
 	{ name: "Rails", icon: "rails.svg" },
 	{ name: "PostgreSQL", icon: "postgres.svg" },
+	// { name: "SQL", icon: "postgres.svg" },
 	{ name: "Node.js", icon: "nodejs.svg" },
 	// DEV OPS
 	{ name: "GIT", icon: "git.svg" },
+	// { name: "npm", icon: "nodejs.svg" },
+	// { name: "yarn", icon: "nodejs.svg" },
+	// { name: "brew", icon: "git.svg" },
 	{ name: "Amazon Web Services", icon: "aws.svg" },
 	{ name: "Heroku", icon: "heroku.svg" },
 	// SOFTWARE
