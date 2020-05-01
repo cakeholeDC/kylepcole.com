@@ -83,7 +83,7 @@ const projects = [
 			"Unsplash API",
 		],
 		collaborators: [],
-		demo: '',
+		demo: 'https://youtu.be/5KnOD__AIvw',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: '',
 		githubFront: 'https://github.com/cakeholeDC/flytinerary-beta/tree/master/flytinerary-front-end',
@@ -142,7 +142,7 @@ const projects = [
 				link: "https://github.com/mrh9ud"
 			}
 		],
-		demo: '',
+		demo: 'https://youtu.be/7adZnYWPMPU',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: '',
 		githubFront: 'https://github.com/cakeholeDC/bandmates-frontend',

@@ -183,7 +183,7 @@ class ProjectPage extends React.Component  {
 
 	wakeHungerSwype(){
 		console.log("Pinging heroku...")
-		fetch('https://hunger-swype.herokuapp.com/about');
+		// fetch('https://hunger-swype.herokuapp.com/about');
 		fetch('https://hunger-swype-api.herokuapp.com/about');
 	}
 
@@ -275,7 +275,7 @@ class ProjectPage extends React.Component  {
 					{/* @@TODO - Add Links.*/}
 					<div className="desc">
 						{ project.name !== "Scootie Gang" ? ReactHtmlParser(project.description) : <TwitterFeed profile={project.link}/> }
-						{ project.link !== '' ? <div className="launch-app"><a  href={project.link}>Launch {project.name}</a></div> : null }
+						{ project.link !== '' ? <div className="launch-app"><a target="_blank" href={project.link}>Launch {project.name}</a></div> : null }
 						{ project.demo !== '' ? this.getYoutubeEmbed(project.demo) : null }
 					</div>
 					</div>
