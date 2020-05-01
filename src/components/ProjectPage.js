@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
 import TwitterFeed from '../components/TwitterFeed'
 import { device } from '../device';
+import ErrorPage from '../components/ErrorPage.js'
 
 
 //helper functions
@@ -210,6 +211,7 @@ class ProjectPage extends React.Component  {
 		const project = this.state.project
 
 		return(
+			project ?
 			<ProjectContainer>
 				<ProjectImg name={project.name} src={ project.name === "Hunger Swype" ? '/projects/hunger-swype.jpg' : project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
 					<div className="project-header">
@@ -232,6 +234,7 @@ class ProjectPage extends React.Component  {
 					{ project.name !== "Scootie Gang" ? <div className="desc">{ReactHtmlParser(project.description)}</div> : <TwitterFeed profile={project.link}/> }
 					</div>
 			</ProjectContainer>
+			: <ErrorPage />
 		)
 	}
 }
