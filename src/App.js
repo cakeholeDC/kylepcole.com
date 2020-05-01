@@ -68,7 +68,7 @@ class App extends React.Component {
               <Route exact path="/home" component={ HomePage } />
               <Route exact path="/" component={ HomePage } />
           { /* allows for shortpath links to projects. Will direct to 404 as needed from ProjectPage.js */ }
-              <Route exact path="/:id" component={ ProjectPage } />
+              <Route exact path="/:id" render={ () => <ProjectPage projects={ this.state.projects } /> } />
             </Switch>
           </div>
           <Footer/>

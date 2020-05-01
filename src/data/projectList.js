@@ -12,7 +12,8 @@ const projects = [
 			api: "Rails",
 			front: "React",
 			framework: 'Sass',
-			hosting: 'Heroku',
+			hosting: 'AWS',
+			hostingBack: 'Heroku',
 		},
 		technologies: [
 			"ReactJS",
@@ -26,9 +27,9 @@ const projects = [
 			"SASS/SCSS",
 		],
 		collaborators: [],
-		demo: '',
+		demo: 'https://youtu.be/Lu9ow-RFO3c',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
-		link: '',
+		link: 'https://master.d12dcd0jiavy5p.amplifyapp.com/',
 		githubFront: 'https://github.com/cakeholeDC/hunger-swype-frontend',
 		gitbubBack: 'https://github.com/cakeholeDC/hunger-swype-backend',
 	},
@@ -65,7 +66,7 @@ const projects = [
 		name: 'Flytinerary',
 		thumbnail: '/projects/flytinerary.jpg',
 		teaser: "Group itinerary planner.",
-		description: "<p>Have you ever planned a vacation with your friends? If so, you know how difficult it is to coordinate a half-dozen flights, a 5 hour arrival window, 3 rental car reservations, a grocery run, and check-in. Maybe you created a shared spreadsheet to log everything, maybe you screame to the heavens that there must be a better way. Flytinerary is here to help.</p><p><strong>Flytinerary is a group itinery planner.</strong> Create a trip and share it with your fellow travelers who will all log their own individual travel plans. Travelers can then see a detailed day-by-day itinerary for everyone on the trip including flight numbers, check-in times, reservation IDs, and more!</p>",
+		description: "<p>Have you ever planned a vacation with your friends? If so, you know how difficult it is to coordinate a half-dozen flights, a 5 hour arrival window, 3 rental car reservations, a grocery run, and check-in. Maybe you created a shared spreadsheet to log everything, maybe you screame to the heavens that there must be a better way. Flytinerary is here to help.</p><p><strong>Flytinerary is a group itinerary planner.</strong> Create a trip and share it with your fellow travelers who will all log their own individual travel plans. Travelers can then see a detailed day-by-day itinerary for everyone on the trip including flight numbers, check-in times, reservation IDs, and more!</p>",
 		stack: {
 			database: "SQLite",
 			back: "Ruby",
@@ -82,7 +83,7 @@ const projects = [
 			"Unsplash API",
 		],
 		collaborators: [],
-		demo: '',
+		demo: 'https://youtu.be/5KnOD__AIvw',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: '',
 		githubFront: 'https://github.com/cakeholeDC/flytinerary-beta/tree/master/flytinerary-front-end',
@@ -141,7 +142,7 @@ const projects = [
 				link: "https://github.com/mrh9ud"
 			}
 		],
-		demo: '',
+		demo: 'https://youtu.be/7adZnYWPMPU',
 		gallery: ["https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300","https://via.placeholder.com/300"],
 		link: '',
 		githubFront: 'https://github.com/cakeholeDC/bandmates-frontend',
