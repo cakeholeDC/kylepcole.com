@@ -127,6 +127,27 @@ const ProjectContainer = styled.div`
 			margin: 0 0 1rem 3rem;
 		}
 	}
+
+	iframe {
+	    display: block;
+	    margin: auto;
+	}
+
+	.launch-app {
+		font-family: 'Abril Fatface', cursive;
+		font-size: 3rem;
+		width: 100%;
+		margin: 1rem 0;
+
+		a {
+			text-decoration: none;
+			color: black;
+
+			&:hover {
+				color: #FFCD00;
+			}
+		}
+	}
 `
 const ProjectImg = styled.img`
 	width: 100%;
@@ -158,6 +179,12 @@ class ProjectPage extends React.Component  {
 		this.setState({ 
 			project: this.props.projects.find(proj => stringToURL(proj.name) === this.props.match.params.id)
 		})
+	}
+
+	wakeHungerSwype(){
+		console.log("Pinging heroku...")
+		fetch('https://hunger-swype.herokuapp.com/about');
+		fetch('https://hunger-swype-api.herokuapp.com/about');
 	}
 
 	getStackIcon(tech){
@@ -206,6 +233,18 @@ class ProjectPage extends React.Component  {
 			return null
 		}
 	}
+
+	getYoutubeEmbed(link){
+		let url = link.split('/') // => https://youtu.be/Lu9ow-RFO3c
+		return <iframe 
+			width="560"
+			height="315"
+			src={`https://www.youtube.com/embed/${url[3]}`} //"https://www.youtube.com/embed/Lu9ow-RFO3c"
+			frameBorder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+			allowFullScreen
+		/>
+	}
 	
 	render(){
 		const project = this.state.project
@@ -213,6 +252,7 @@ class ProjectPage extends React.Component  {
 		return(
 			project ?
 			<ProjectContainer>
+				{ project.name === "Hunger Swype" ? this.wakeHungerSwype() : null }
 				<ProjectImg name={project.name} src={ project.name === "Hunger Swype" ? '/projects/hunger-swype.jpg' : project.thumbnail } onError={event => event.target.src = "https://via.placeholder.com/300"} />
 					<div className="project-header">
 						<div className="project-title">
@@ -231,7 +271,13 @@ class ProjectPage extends React.Component  {
 								{ project.technologies.map(tech => <li className="tech" key={ stringToURL(tech) }>{ tech }</li>) }
 							</ul>
 					: null }
-					{ project.name !== "Scootie Gang" ? <div className="desc">{ReactHtmlParser(project.description)}</div> : <TwitterFeed profile={project.link}/> }
+					{/* @@TODO - refactor entire page ScootieGang entirely.*/}
+					{/* @@TODO - Add Links.*/}
+					<div className="desc">
+						{ project.name !== "Scootie Gang" ? ReactHtmlParser(project.description) : <TwitterFeed profile={project.link}/> }
+						{ project.link !== '' ? <div className="launch-app"><a  href={project.link}>Launch {project.name}</a></div> : null }
+						{ project.demo !== '' ? this.getYoutubeEmbed(project.demo) : null }
+					</div>
 					</div>
 			</ProjectContainer>
 			: <ErrorPage />
