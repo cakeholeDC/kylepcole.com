@@ -9,18 +9,19 @@ import { device } from '../device';
 
 
 const ResumeContainer = styled.div`
-	width: 75%;
+	width: 47%;
 	margin: auto;
+
+	@media only screen and ${device.tablet} { 
+		width: 70%;
+	}
+
+	@media only screen and ${device.laptop} { 
+		width: 50%;
+	}
 
 	@media only screen and ${device.mobileL} {
 		width: 90%;
-	}
-
-	h1 {
-		width: 100%;
-		// border-bottom: 1px solid lightgray;
-		padding-bottom: .5rem;
-		margin-bottom: 1rem;
 	}
 `
 

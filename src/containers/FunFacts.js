@@ -25,21 +25,15 @@ const Fact = styled.div`
 	margin: auto;
 	margin-bottom: 1rem;
 	
-	h1 {
-		font-size: 1.5rem;
-		border-bottom: 0px !important;
+	h2 {
+		font-size: 1rem;
 		margin-bottom: 0px;
-		padding-bottom: 0px;
-		
-	}
-
-	p, h1 {
 		margin-top: 0px;
 	}
 
 	.sidebar {
-		margin-left: 1rem;
 		font-size: .8rem;
+		margin-left: 1rem;
 	}
 `
 
@@ -54,7 +48,7 @@ function FunFacts(props)  {
 			<h1>Fun Facts</h1>
 			{ facts.map(fact => { return (
 					<Fact key={ fact.fact}>
-						<h1 key={ fact.fact}>{ fact.year } - {fact.fact }</h1>
+						<h2 key={ fact.fact}>{ fact.year } - {fact.fact }</h2>
 						{ fact.note === '' ? null : <p className="sidebar">{ ReactHtmlParser(fact.note) }</p>}
 					</Fact>
 				) }

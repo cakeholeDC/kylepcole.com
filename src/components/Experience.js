@@ -5,10 +5,10 @@ import { device } from '../device';
 
 
 const PositionDetails = styled.div`
-	text-align: justify;
+	text-align: left;
 	width: 90%;
 	margin: auto;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	border-top: 1px solid lightgray;
     padding-top: 1rem;
 
@@ -16,23 +16,31 @@ const PositionDetails = styled.div`
 		ul {
 			padding-left: 1rem;
 		}
-
 		.job-header {
 			flex-direction: column;
 		}
 	}
 	
-	h1 {
-		font-size: 1.5rem;
-		border-bottom: 0px !important;
+	h2 {
+		font-size: 1rem;
 		margin-bottom: 0px;
-		padding-bottom: 0px;
+		margin-top: 0px;
 	}
 
+	p {
+		font-size: .8rem;
+		margin-top: .125rem;
+		margin-bottom: 0px;
 
+		&.term {
+			font-size: .7rem;
+		}
+	}
 
-	p, h1 {
-		margin-top: 0px;
+	ul {
+		font-size: .8rem;
+		// margin-top: .125rem;
+		margin-bottom: 0px;
 	}
 
 	.job-header {
@@ -41,10 +49,6 @@ const PositionDetails = styled.div`
 		.left {
 			flex: 2;
 			text-align: left;
-
-			p {
-				margin-bottom: 0px;
-			}
 		}
 
 		.right {
@@ -56,10 +60,6 @@ const PositionDetails = styled.div`
 				flex-direction: column-reverse;
 				text-align: left;
 			}
-
-			p {
-				margin-bottom: 0px;
-			}
 		}
 	}
 `
@@ -70,7 +70,7 @@ export default class Experience extends React.Component {
 			<PositionDetails key={job.role}>
 				<div className="job-header">
 				<div className="left">
-					<h1 className="role">{ job.role }</h1>
+					<h2 className="role">{ job.role }</h2>
 					<p className="company">{ this.props.job.company }</p>
 				</div>
 				<div className="right">

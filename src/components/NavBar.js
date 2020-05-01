@@ -9,6 +9,14 @@ const Navbar = styled.nav`
 	flex-direction: row;
     flex-wrap: wrap;
 	justify-content: space-evenly;
+
+	@media only screen and ${device.tablet} { 
+		justify-content: flex-end;
+	}
+
+	@media only screen and ${device.laptop} { 
+		justify-content: flex-end;
+	}
 		
 	a {
 		text-decoration: none;
@@ -18,6 +26,14 @@ const Navbar = styled.nav`
 		&:hover {
 			border-bottom: 2px solid lightgray;
 			color: lightgray;
+		}
+
+		@media only screen and ${device.tablet} { 
+			margin-right: 1rem;
+		}
+
+		@media only screen and ${device.laptop} { 
+			margin-right: 1rem;
 		}
 	}
 	
@@ -29,7 +45,6 @@ const Navbar = styled.nav`
 	    border: 1px solid black;
 	    text-align: right;
 	    clear: right;
-
 	}
 `
 

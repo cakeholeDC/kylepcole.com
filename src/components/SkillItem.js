@@ -34,10 +34,10 @@ const Skill = styled.div`
 	img {
 	  // max-height: 8rem;
 	  // max-width: 8rem;
-	  max-height: 5rem;
-	  max-width: 5rem;
-	  min-height: 5rem;
-	  min-width: 5rem;
+	  max-height: 4.5rem;
+	  max-width: 4.5rem;
+	  min-height: 4.5rem;
+	  min-width: 4.5rem;
 	  margin: auto;
 		
 		&:hover {

@@ -11,13 +11,22 @@ import stringToURL from '../utils/stringToUrl.js'
 import getMediumBlogPosts from '../utils/getMediumBlogPosts.js'
 
 const Post = styled.div`
-	width: 65%;
+	width: 35%;
 	margin: auto;
 	text-align: left;
+
+	@media only screen and ${device.tablet} { 
+		width: 70%;
+	}
+
+	@media only screen and ${device.laptop} { 
+		width: 75%;
+	}
 
 	@media only screen and ${device.mobileL} { 
 		width: 90%;
 	}
+
 
 	figure{
 		text-align: center;

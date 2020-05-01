@@ -19,11 +19,16 @@ const HeaderBar = styled.div`
 
     @media only screen and ${device.mobileL} { 
 		padding: 1.5rem;
-		padding-top: 2rem;
+		padding-top: 2.5rem;
+	}
+
+	@media only screen and ${device.tablet} { 
+		padding: 1.5rem;
+		padding-top: 2.5rem;
 	}
 
 	#home { 
-		flex: 4;
+		flex: 2;
 		text-decoration: none;
 		color: black;
 
@@ -41,7 +46,7 @@ const HeaderBar = styled.div`
 	}
 
 	.nav-container {
-		flex: 3;
+		flex: 5;
 		text-align: right;
 
 		@media only screen and ${device.mobileL} { 
