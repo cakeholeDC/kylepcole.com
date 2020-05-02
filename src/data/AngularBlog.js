@@ -63,7 +63,7 @@ const AngularBlog = {
 	"guid": "",
 	"author": "Kyle Cole",
 	"thumbnail": "/blog/angular.jpg",
-	"description": "<p>I tried Angular, here's a few things I learned. For starters, Angular is an open-sourced TypeScript-based framework (whereas React is a Javascript library). Angular is maintained by Google, along with the open source community (React is maintained by Facebook).</p>",
+	"description": "<p>I tried Angular, here's a few things I learned. Angular is a TypeScript-based framework (whereas React is a Javascript library). Angular is maintained by Google, along with the open source community (React is maintained by Facebook).</p>",
 	"content": `${content}`,
 	"enclosure": {},
 	"categories": ["angular", "javascript", "framework"]
