@@ -55,6 +55,7 @@ const Post = styled.div`
 		text-align: center;
 		text-decoration: none;
 		color: black;
+	    word-break: break-word;
 
 		&:hover {
 			text-decoration: underline;
