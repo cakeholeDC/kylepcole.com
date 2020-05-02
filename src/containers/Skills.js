@@ -27,7 +27,7 @@ function Skills(props)  {
 
 	return (
 		<SkillsContainer>
-			<h1>My Skills.</h1>
+			<h1>Skills.</h1>
 			{ skills.map(skill => <SkillItem skill={ skill } key={ skill.name }/> ) }
 		</SkillsContainer>
 	)

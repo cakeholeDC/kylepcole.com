@@ -17,14 +17,28 @@ const HeaderBar = styled.div`
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
 
-    @media only screen and ${device.mobileL} { 
+
+	@media only screen and ${device.tablet} {
+    	height: 9vh; 
 		padding: 1.5rem;
-		padding-top: 2.5rem;
+		padding-top: 2rem;
+	}
+    
+    @media only screen and ${device.mobileL} { 
+    	height: 9vh;
+		padding: 1.5rem;
+		padding-top: 1.5rem;
 	}
 
-	@media only screen and ${device.tablet} { 
-		padding: 1.5rem;
-		padding-top: 2.5rem;
+	@media only screen and ${device.mobileM} { 
+    	height: 9vh;
+		padding: 1rem;
+		// padding-top: 1rem;
+
+		h1 {
+			font-size: 1.5rem;
+			margin-top: 0rem;;
+		}
 	}
 
 	#home { 
@@ -37,8 +51,7 @@ const HeaderBar = styled.div`
 		}
 	}
 
-	.title {
-		font-family: 'Fjalla One', sans-serif;
+	h1 {
 		display: inline-block;
 		margin: 0px;
 		margin-top: -.375rem;
@@ -51,6 +64,7 @@ const HeaderBar = styled.div`
 
 		@media only screen and ${device.mobileL} { 
 			flex: 1;
+			margin-top: -.25rem;
 		}
 
 	}
