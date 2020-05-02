@@ -76,6 +76,7 @@ const Post = styled.div`
 
 	h1 {
 		margin-bottom: 0px;
+		word-break: break-word;
 	}
 
 	code {
