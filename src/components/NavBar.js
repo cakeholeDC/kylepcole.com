@@ -53,6 +53,14 @@ const MobileMenuButton = styled.img`
 	max-width: 2rem;
 	float:right;
 	margin-bottom: .5rem;
+
+
+	@media only screen and ${device.mobileM} {
+		max-height: 1.75rem;
+	    max-width: 1.75rem;
+	    float: right;
+	    margin-top: .25rem;
+	}
 `
 
 export default class NavBar extends React.Component {

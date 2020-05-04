@@ -2,11 +2,13 @@ import React from 'react'
 import { Link, withRouter } from "react-router-dom";
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser';
+import { device } from '../device';
+
 
 //helper functions
 import stringToURL  from '../utils/stringToUrl.js'
 
-const Project = styled.div`
+const PostTile = styled.div`
 	max-width: 19rem;
 	vertical-align: top;
 	display: flex; 
@@ -103,6 +105,33 @@ const Project = styled.div`
 		    overflow: hidden;
 		}
 	}
+
+	//mobile overlays
+	@media only screen and ${device.laptop} {
+		max-width: 16rem;
+		
+		.blog-image {
+		  opacity: 0.5;
+		  width: 16rem;
+	      height: 12.5rem;
+		}
+		.image-overlay {
+		  opacity: 1;
+		}
+	}
+
+	@media only screen and ${device.mobileL} {
+		max-width: 20rem;
+
+		.blog-image {
+		  width: 20rem;
+		  opacity: 0.5;
+		}
+		.image-overlay {
+		  opacity: 1;
+		}
+	}
+
 `
 
 
@@ -144,7 +173,7 @@ class BlogTile extends React.Component {
 		const teaser = ReactHtmlParser(description)
 
 		return(
-			<Project>
+			<PostTile>
 				<Link to={`/blog/${stringToURL(this.props.title)}`}>
 					<img className="blog-image" src={ this.getBlogImage() } alt={this.props.title} onError={event => event.target.src = "https://via.placeholder.com/300x200"} />
 					<div className="image-overlay">
@@ -156,7 +185,7 @@ class BlogTile extends React.Component {
 						<PostTeaser>{ teaser }</PostTeaser>
 					</div>
 				</Link>
-			</Project>
+			</PostTile>
 		)
 	}
 }

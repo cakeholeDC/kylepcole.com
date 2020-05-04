@@ -17,45 +17,10 @@ const HeaderBar = styled.div`
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
 
-
-	@media only screen and ${device.tablet} {
-    	height: 9vh; 
-		padding: 1.5rem;
-		padding-top: 2rem;
-	}
-    
-    @media only screen and ${device.mobileL} { 
-    	height: 9vh;
-		padding: 1.5rem;
-		padding-top: 1.5rem;
-	}
-
-	@media only screen and ${device.mobileM} { 
-    	height: 9vh;
-		padding: 1rem;
-		// padding-top: 1rem;
-
-		h1 {
-			font-size: 1.5rem;
-			margin-top: 0rem;;
-		}
-	}
-
-	#home { 
-		flex: 2;
-		text-decoration: none;
-		color: black;
-
-		:hover {
-			text-decoration: none;
-		}
-	}
-
-	h1 {
+    h1 {
 		display: inline-block;
 		margin: 0px;
 		margin-top: -.375rem;
-
 	}
 
 	.nav-container {
@@ -66,8 +31,45 @@ const HeaderBar = styled.div`
 			flex: 1;
 			margin-top: -.25rem;
 		}
-
 	}
+
+	#home { 
+		flex: 4;
+		text-decoration: none;
+		color: black;
+
+		:hover {
+			text-decoration: none;
+		}
+
+		@media only screen and ${device.tablet} {
+			flex: 3;
+		}
+	}
+
+
+	@media only screen and ${device.tablet} {
+    	height: 9vh; 
+		padding: 1.75rem;
+		padding-top: 2rem;
+	}
+    
+    @media only screen and ${device.mobileL} { 
+    	height: 9vh;
+		padding: 1.5rem;
+		padding-top: 1.5rem;
+	}
+
+	@media only screen and ${device.mobileM} { 
+    	height: 10vh;
+	    padding: 1rem;
+
+		h1 {
+			font-size: 1.5rem;
+			margin-top: 0px;
+		}
+	}
+	
 `
 
 export default function Header() {

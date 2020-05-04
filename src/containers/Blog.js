@@ -13,6 +13,9 @@ const BlogList = styled.div`
   	flex-direction: row;
   	justify-content: center;
 
+  	@media only screen and ${device.mobileL} {
+  		width: 90%;
+  	}
   	
 
   	h1 {

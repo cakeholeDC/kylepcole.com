@@ -12,12 +12,12 @@ const ResumeContainer = styled.div`
 	width: 47%;
 	margin: auto;
 
-	@media only screen and ${device.tablet} { 
-		width: 70%;
-	}
-
 	@media only screen and ${device.laptop} { 
 		width: 50%;
+	}
+
+	@media only screen and ${device.tablet} { 
+		width: 70%;
 	}
 
 	@media only screen and ${device.mobileL} {

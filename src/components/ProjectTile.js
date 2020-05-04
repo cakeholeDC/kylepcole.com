@@ -82,6 +82,19 @@ const Project = styled.div`
 		}
 	}
 
+	@media only screen and ${device.laptop} {
+		.project-image {
+		  opacity: 0.5;
+		}
+		.project-overlay {
+		  opacity: 1;
+		}
+		.project-image {
+			width: 18rem;
+	        height: 18rem; 
+		}
+	}
+
 `
 
 
