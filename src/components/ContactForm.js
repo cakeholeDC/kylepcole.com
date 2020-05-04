@@ -1,6 +1,7 @@
 // form for formspree.io
 import React from "react";
 import styled from 'styled-components'
+import FormMessages from '../data/FormMessages.js'
 
 const ContactMe = styled.form`
   width: 100%;
@@ -59,12 +60,14 @@ export default class MyForm extends React.Component {
     super(props);
     this.submitForm = this.submitForm.bind(this);
     this.state = {
-      status: ""
+      status: "",
+      prefill: FormMessages[[Math.floor(Math.random() * FormMessages.length)]]
     };
   }
 
   render() {
     const { status } = this.state;
+    let formPrefill = this.state.prefill
     return (
       <ContactMe
           onSubmit={ this.submitForm }
@@ -73,11 +76,11 @@ export default class MyForm extends React.Component {
         >
         <fieldset>
           <label>Name:</label>
-          <input required type="text" name="name" placeholder="Fred Flintstone"/>
+          <input required type="text" name="name" placeholder={ formPrefill.name }/>
           <label>Email:</label>
-          <input required type="email" name="email" placeholder="fred@bedrock.com"/>
+          <input required type="email" name="email" placeholder={ formPrefill.email }/>
           <label>Message:</label>
-          <textarea required rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." ></textarea>
+          <textarea required rows="5" name="message" id="message" placeholder={ formPrefill.message }></textarea>
           <input type="text" name="_gotcha" style={{display:"none"}} />
           <input type="hidden" name="_subject" value="Message from kylepcole.com!" />
           { /* @TODO - add CORS protection https://help.formspree.io/hc/en-us/articles/360038664534-Restrict-to-Domain */}

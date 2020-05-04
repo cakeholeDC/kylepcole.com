@@ -33,7 +33,7 @@ const PositionDetails = styled.div`
 		margin-bottom: 0px;
 
 		&.term {
-			font-size: .7rem;
+			// font-size: .7rem;
 		}
 	}
 

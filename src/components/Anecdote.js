@@ -28,7 +28,7 @@ const Fact = styled.div`
 		margin-bottom: 0px;
 
 		&.year {
-			font-size: .7rem;
+			// font-size: .7rem;
 		}
 	}
 
@@ -65,8 +65,8 @@ export default function Anecdote(props)  {
 				<p>{ ReactHtmlParser(fact.note) }</p>
 			</div>
 			<div className="right">
-				<p>{ fact.year }</p>
-				<p>{ fact.location }</p>
+				<p className="year">{ fact.year }</p>
+				<p className='location'>{ fact.location }</p>
 			</div>
 		</Fact>
 	)

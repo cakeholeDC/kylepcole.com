@@ -26,7 +26,7 @@ export default function Footer() {
 	const currentYear = moment().format("YYYY")
 	return(
 		<FooterBar>
-			Copyright & Design &copy;{ currentYear } Kyle P. Cole
+			&copy;{ currentYear } All rights reserved.
 		</FooterBar>
 	)
 }

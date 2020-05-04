@@ -28,7 +28,7 @@ const EducationDetails = styled.div`
 		margin-bottom: 0px;
 
 		&.year {
-			font-size: .7rem;
+			// font-size: .7rem;
 		}
 	}
 
@@ -61,12 +61,12 @@ export default function Education(props) {
 	return (
 		<EducationDetails>
 				<div className="left">
-					<h2>{ school.school }</h2>
-					<p>{ school.program }</p>
+					<h2 className="school">{ school.school }</h2>
+					<p  className="program">{ school.program }</p>
 				</div>
 				<div className="right">
-					<p>{ school.graduationYear }</p>
-					<p>{ school.location }</p>
+					<p className="year">{ school.graduationYear }</p>
+					<p className="location">{ school.location }</p>
 				</div>
 		</EducationDetails>
 	)
