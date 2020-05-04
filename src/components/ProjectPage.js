@@ -277,6 +277,8 @@ class ProjectPage extends React.Component  {
 						{ project.name !== "Scootie Gang" ? ReactHtmlParser(project.description) : <TwitterFeed profile={project.link}/> }
 						{ project.link !== '' ? <div className="launch-app"><a target="_blank" href={project.link}>Launch {project.name}</a></div> : null }
 						{ project.demo !== '' ? this.getYoutubeEmbed(project.demo) : null }
+						{ project.githubFront !== '' ? <p><a href="project.githubFront">Github Front-End</a></p> : null }
+						{ project.gitbubBack !== '' ? <p><a href="project.githubBack">Github Back-End</a></p> : null }
 					</div>
 					</div>
 			</ProjectContainer>
