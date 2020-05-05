@@ -69,7 +69,7 @@ export default class NavBar extends React.Component {
 			<ResponsiveMenu
 		        menuOpenButton={<MobileMenuButton src="/icons/navigation/bars-solid.svg" />}
 	            menuCloseButton={<MobileMenuButton src="/icons/navigation/times-solid.svg" />}
-		        changeMenuOn={ size.mobileL }
+		        changeMenuOn={ size.tablet }
 		        largeMenuClassName="large-menu"
 		        smallMenuClassName="mobile-menu"
 		        menu={<Navbar>

@@ -27,6 +27,16 @@ const HeaderBar = styled.div`
 		flex: 5;
 		text-align: right;
 
+		@media only screen and ${device.tablet} { 
+			flex: 6;
+			margin-top: -.25rem;
+		}
+
+		@media only screen and ${device.laptop} { 
+			flex: 7;
+			margin-top: -.25rem;
+		}
+
 		@media only screen and ${device.mobileL} { 
 			flex: 1;
 			margin-top: -.25rem;
@@ -42,11 +52,10 @@ const HeaderBar = styled.div`
 			text-decoration: none;
 		}
 
-		@media only screen and ${device.tablet} {
-			flex: 3;
-		}
+		// @media only screen and ${device.tablet} {
+		// 	flex: 4;
+		// }
 	}
-
 
 	@media only screen and ${device.tablet} {
     	height: 9vh; 

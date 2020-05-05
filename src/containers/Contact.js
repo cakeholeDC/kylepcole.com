@@ -10,7 +10,7 @@ const ContactContainer = styled.div`
 	min-height: 100%;
 	margin: auto;
 
-	@media only screen and ${device.mobileL} {
+	@media only screen and ${device.tablet} {
 		width: 90%;
 	}
 
@@ -78,9 +78,9 @@ const SocialContainer = styled.div`
 function Contact(props)  {
 	return (
 		<ContactContainer>
-			<h1>Send me a Note</h1>
+			<h1>Send me a Note.</h1>
 			<ContactForm />
-			<h1>Or find me on Social Media</h1>
+			<h1>Or find me on Social Media.</h1>
 			<SocialContainer>
 				<div className="social-icons">
   				<h1 className ="social-header">Social:</h1>
