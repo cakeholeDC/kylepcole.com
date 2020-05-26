@@ -1,5 +1,5 @@
 //stitch in overly ambitious external HTML blog post
-import $AngularBlog from '../data/AngularBlog'
+// import $AngularBlog from '../data/AngularBlog' // HOTFIX FOR MANUAL BLOG, REFACTORED.
 // import Feed from 'rss-to-json'
 
 export default async function getMediumBlogPosts() {
@@ -12,7 +12,7 @@ export default async function getMediumBlogPosts() {
 
 	let output = await fetch(rss2jsonAPI + blogRSS)
      .then(res => res.json())
-     .then(json => [...json.items, $AngularBlog].sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 ))
+     .then(json => [...json.items])//, $AngularBlog].sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 ))
 
   // // @TODO - explore rss-to-json package to convert locally => must import at top
   // let output = await Feed.load(corsProxy + blogRSS, function(err, rss){
@@ -21,8 +21,6 @@ export default async function getMediumBlogPosts() {
 
   // console.log("mediumRSS=>", output)
 
-  //hotfix for incorrect images
-  output.find(blog => blog.title ==="display: flex-grid v0.5").thumbnail = 'https://cdn-images-1.medium.com/max/1024/1*RTM5nUISCNJbl_yOZTO7WQ.png'
   
   return output
 }

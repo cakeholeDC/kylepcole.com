@@ -14,7 +14,7 @@ const BlogList = styled.div`
   	justify-content: center;
 
   	@media only screen and ${device.mobileL} {
-  		width: 90%;
+  		width: 100%;
   	}
   	
 
