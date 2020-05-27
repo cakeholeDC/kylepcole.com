@@ -130,14 +130,12 @@ class BlogPost extends React.Component {
 	}
 
 	showMediumImportDisclaimer(post){
-		if (post.title !== "Try-Angular"){
-			return (
-				<Disclaimer>
-					Note: This post was imported from Medium's RSS feed. External media may be displayed as text links.
-					<br/><a href={ post.link }>Click here to view the original post.</a>
-				</Disclaimer>
-			)
-		} else return null
+		return (
+			<Disclaimer>
+				Note: This post was imported from Medium's RSS feed. External media may be displayed as text links.
+				<br/><a href={ post.link }>Click here to view the original post.</a>
+			</Disclaimer>
+		)
 	}
 
 	getPostContent = () => {
