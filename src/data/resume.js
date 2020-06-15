@@ -10,6 +10,18 @@ const resume = {
 	},
 	experience: [
 		{
+			company: "Aveshka",
+			location: "Washington, DC",
+			fullTerm: "06/2020 - Present",
+			positions: [
+				{
+					role: "Software Engineer",
+					positionTerm: "06/2020 - Present",
+					bullets: []
+				}
+			]
+		},
+		{
 			company: "More Vang",
 			location: "Alexandria, VA",
 			fullTerm: "06/2010 - 10/2019",

@@ -55,7 +55,7 @@ function HomePage() {
 			/>
 			<HomePageContent>
 				<Left>Hi, I'm a Web Developer living in Washington, DC. <br/>My passions are code, music, sustainability, and accesibility.</Left>
-				<Right><p>I am a full-stack engineer specializing in creating engaging digital experiences. I am currently seeking a position where I can leverage my background in communications, marketing, and product management to achieve impactful goals.</p><p>I spent the last few years at <a href="https://www.morevang.com">More Vang</a> where I coded PDFs from scratch on a daily basis while overseeing the product team. Before that, I worked at Apple and managed a print shop. When I'm not writing code I can be found ouside enjoying nature or playing guitar in my basement.</p>
+				<Right><p>I am a full-stack engineer developing innovative solutions to solve complex problems. I spent the last few years coding PDFs from scratch, and before that I worked for Apple and managed a print shop. When I'm not writing code I can be found ouside enjoying nature or playing guitar in my basement.</p>
 				<p>Check out my <a href='/projects'>projects</a> &amp; <a href='blog'>blog</a> to see what I have been up to lately.</p>
 				</Right>
 			</HomePageContent>
