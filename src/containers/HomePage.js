@@ -54,7 +54,7 @@ function HomePage() {
 				onError={event => event.target.src = codeImg}
 			/>
 			<HomePageContent>
-				<Left>Hi, I'm a Web Developer living in Washington, DC. <br/>My passions are code, music, sustainability, and accesibility.</Left>
+				<Left>Hi, I'm a Web Developer living in Raleigh, NC. <br/>My passions are code, music, sustainability, and accesibility.</Left>
 				<Right><p>I am a full-stack engineer developing innovative solutions to solve complex problems. I spent the last few years coding PDFs from scratch, and before that I worked for Apple and managed a print shop. When I'm not writing code I can be found ouside enjoying nature or playing guitar in my basement.</p>
 				<p>Check out my <a href='/projects'>projects</a> &amp; <a href='blog'>blog</a> to see what I have been up to lately.</p>
 				</Right>
