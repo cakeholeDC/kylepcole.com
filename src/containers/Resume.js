@@ -39,7 +39,7 @@ function Resume(props)  {
 			{ education.map(school => <Education school={ school } key={ school.school }/>) }
 			<Skills />
 			<h1>Anecdotes.</h1>
-			{ resume.funFacts.map(fact => <FunFact fact={ fact } key={fact.fact} />) }
+			{ facts.map(fact => <FunFact fact={ fact } key={fact.fact} />) }
 		</ResumeContainer>
 	)
 }

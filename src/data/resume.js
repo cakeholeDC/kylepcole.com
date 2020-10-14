@@ -17,7 +17,12 @@ const resume = {
 				{
 					role: "Software Engineer",
 					positionTerm: "06/2020 - Present",
-					bullets: []
+					bullets: [
+						// "Applying innovative solutions to create novel customer facing software that addresses various business needs for key federal clients.",
+						"Applied data analysis principles to geospatial data in order to facilitate the deployment of aid resources during the COVID-19 pandemic.",
+						"Used machine learning algorithms to calculate and predict risk.",
+						"Utilized biometrics for access control purposes.",
+					]
 				}
 			]
 		},

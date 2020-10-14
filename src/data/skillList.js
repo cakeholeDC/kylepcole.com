@@ -16,7 +16,7 @@ const skillList = [
 	{ name: "PostScript", icon: "postscript2.svg" },
 	// #### BACK END ####
 	{ name: "Python", icon: "python-icon.svg" },
-	// { name: "Flask", icon: "flask.svg" },
+	{ name: "Flask", icon: "flask.svg" },
 	{ name: "Ruby", icon: "ruby.svg" },
 	{ name: "Rails", icon: "rails.svg" },
 	{ name: "PostgreSQL", icon: "postgres.svg" },
