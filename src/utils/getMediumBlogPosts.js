@@ -1,6 +1,7 @@
 //stitch in overly ambitious external HTML blog post
 // import $AngularBlog from '../data/AngularBlog' // HOTFIX FOR MANUAL BLOG, REFACTORED.
 // import Feed from 'rss-to-json'
+import BLOG_BACKUP from '../data/medium_rss_backup.js'
 
 export default async function getMediumBlogPosts() {
 	// // use corsProxy to get around cors protection, required if FETCHING directly from MediumRSS feed
@@ -18,9 +19,14 @@ export default async function getMediumBlogPosts() {
   // let output = await Feed.load(corsProxy + blogRSS, function(err, rss){
   //     return [...rss.items, $AngularBlog].sort((a, b) => a.pubDate > b.pubDate ? -1 : 1 )
   // });
+  let blog_backup = BLOG_BACKUP.items
+
+  // let posts = output.forEach(post => (post)){
+  //   if blog_backup
+  // }
 
   // console.log("mediumRSS=>", output)
-
   
-  return output
+  // return output
+  return blog_backup
 }
